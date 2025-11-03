@@ -23,10 +23,10 @@
   --shadow-strong: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-/* 🎉 Welcome Section */
+/*  Welcome Section */
 .wellcome-section {
   height: 100vh;
-  background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary));
+  /* background: linear-gradient(135deg, var(--color-primary-light), var(--color-primary)); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,10 +41,10 @@
   box-shadow: var(--shadow-strong);
   transition: 0.3s ease;
 }
-/* .wellcome-content:hover {
+.wellcome-content:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-} */
+}
 
 .wellcome-titel {
   display: flex;
@@ -69,8 +69,8 @@
   margin-top: 20px;
 }
 
-/* 🧭 Reusable Button Styles */
-/* 🎨 Advanced Button Hover Effects */
+/*  Reusable Button Styles */
+/*  Advanced Button Hover Effects */
 .btn-register, .btn-login {
   position: relative;
   padding: 12px 36px;
@@ -82,7 +82,7 @@
   cursor: pointer;
 }
 
-/* Register Button (filled style) */
+/*WELLCOME Register Button (filled style) */
 .btn-register {
   background: var(--color-primary-dark);
   color: var(--text-light);
@@ -111,7 +111,7 @@
   transform: translateY(-3px);
 }
 
-/* Login Button (outline style) */
+/*WELLOCOME Login Button (outline style) */
 .btn-login {
   border: 2px solid var(--color-primary-dark);
   color: var(--color-primary-dark);
@@ -127,12 +127,3 @@
 }
 
 
-/* 📱 Responsive Design */
-@media (max-width: 768px) {
-  .wellcome-titel h1 { font-size: 48px; }
-  .wellcome-content { padding: 35px 20px; }
-}
-@media (max-width: 576px) {
-  .wellcome-titel h1 { font-size: 36px; }
-  .wellcome-content-titel-img { width: 70px; }
-}

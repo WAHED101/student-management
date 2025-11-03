@@ -1,0 +1,9 @@
+/*  WellCOME PAGE */
+@media (max-width: 768px) {
+  .wellcome-titel h1 { font-size: 48px; }
+  .wellcome-content { padding: 35px 20px; }
+}
+@media (max-width: 576px) {
+  .wellcome-titel h1 { font-size: 36px; }
+  .wellcome-content-titel-img { width: 70px; }
+}
