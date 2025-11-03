@@ -16,10 +16,115 @@
     <!-- css link -->
      <link rel="stylesheet" href="./assets/css/animation.css">
      <link rel="stylesheet" href="./assets/css/media.css">
-     <link rel="stylesheet" href="./assets/css/style.css">
+     <link rel="stylesheet" href="./assets/css/style.css">  
     <!-- css link -->
   </head>
   <body>
+
+<div class="container-fluid">
+  <div class="row">
+    <!-- Vertical Sidebar -->
+<nav id="sidebar" class="col-lg-2 col-md-3 d-none d-md-block p-3 text-center position-relative bg-glass shadow-lg">
+
+  <!-- Toggle Button -->
+  <button id="toggleSidebarBtn" class="btn btn-light rounded-circle position-absolute top-0 end-0 m-3 shadow-sm">
+    <i class="fa-solid fa-arrow-right"></i>
+  </button>
+
+  <!-- Profile Image -->
+  <a class="navbar-brand d-block mt-4 mb-4" href="#">
+    <img 
+      class="nav-modal img-fluid rounded-circle shadow" 
+      src="assets/img/profile/user.png" 
+      alt="User Profile"
+      data-bs-toggle="modal" 
+      data-bs-target="#profileModalSidebar" 
+      style="width: 70px; height: 70px; object-fit: cover; cursor: pointer; border: 3px solid #fff;">
+  </a>
+
+
+  <!-- Navigation links -->
+  <ul class="nav flex-column text-start mt-3" id="sidebarLinks">
+    <li class="nav-item">
+      <a class="nav-link text-white active" href="#" data-bs-toggle="tooltip" title="Home"><i class="fa-solid fa-house me-2"></i><span>Home</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="#" data-bs-toggle="tooltip" title="Profile"><i class="fa-solid fa-user me-2"></i><span>Profile</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="#" data-bs-toggle="tooltip" title="Messages"><i class="fa-solid fa-envelope me-2"></i><span>Messages</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="#" data-bs-toggle="tooltip" title="Settings"><i class="fa-solid fa-gear me-2"></i><span>Settings</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-white" href="#" data-bs-toggle="tooltip" title="Logout"><i class="fa-solid fa-right-from-bracket me-2"></i><span>Logout</span></a>
+    </li>
+  </ul>
+</nav>
+
+
+    <!-- Mobile Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary d-md-none">
+      <div class="container-fluid">
+
+
+
+        <a class="navbar-brand " href="#">
+              <!-- trigger modal -->
+              <img class="nav-modal" data-bs-toggle="modal" data-bs-target="#profileModalMobile" src="assets/img/profile/user.png" alt="">
+            <!-- Modal -->
+            <div class="modal fade" id="profileModalMobile" tabindex="-1" aria-labelledby="profileModalMobileLabel" aria-hidden="true" data-bs-backdrop="false">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="profileModalMobileLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>            
+            </a>
+            
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mobileNav">
+          <ul class="navbar-nav flex-column text-center">
+            <li class="nav-item">
+              <a class="nav-link active" href="#"><i class="fa-solid fa-house"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-user"></i> Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-envelope"></i> Messages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="col-lg-10 col-md-9 p-4">
+      <h1>Dashboard</h1>
+      <p>This is your main content area. Resize the window to see the vertical sidebar on large screens and mobile collapse navbar on small screens.</p>
+    </main>
+  </div>
+</div>
 
     
     
@@ -34,5 +139,24 @@
     <!-- js link -->
      <script src="./assets/js/main.js"></script>
     <!-- js link -->
+    
+    <!-- Sidebar Profile Modal placed at root for correct centering -->
+    <div class="modal fade" id="profileModalSidebar" tabindex="-1" aria-labelledby="profileModalSidebarLabel" aria-hidden="true" data-bs-backdrop="false">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="profileModalSidebarLabel">Profile Info</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="assets/img/profile/user.png" class="rounded-circle mb-3 shadow" width="100" alt="">
+            <h5 class="mb-0">John Doe</h5>
+            <p class="text-muted">Web Developer</p>
+            <hr>
+            <p>Welcome back to your dashboard!</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
