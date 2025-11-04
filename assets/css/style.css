@@ -1,10 +1,16 @@
 *{
 font-family: "Space Grotesk", Inter, sans-serif;
 }
+
+    *:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
 /*  Global Color Variables — Use Across the Whole Website */
 :root {
   /* Brand Colors */
   --color-primary: #fd8984;
+  --color-primary-light-ultra: #ffc2c1;
   --color-primary-light: #feaeac;
   --color-primary-dark: #d3280c;
   --color-primary-hover: #f53010;
@@ -191,6 +197,7 @@ font-family: "Space Grotesk", Inter, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+  white-space: nowrap;
 }
 #sidebar .nav {
   width: 100%;
@@ -206,29 +213,55 @@ font-family: "Space Grotesk", Inter, sans-serif;
 /* Sidebar Transition */
 #sidebar {
   transition: flex-basis 0.4s ease, max-width 0.4s ease, padding 0.4s ease, margin 0.4s ease;
+  will-change: flex-basis, max-width;
+  overflow: hidden; /* avoid content reflow causing blink during resize */
 }
 
 /* Collapsed state: shrink actual column width */
 #sidebar.collapsed {
-  flex: 0 0 72px; /* override Bootstrap column width */
-  max-width: 72px;
+  flex: 0 0 100px; /* override Bootstrap column width */
+  max-width: 100px;
   padding-left: 8px;
   padding-right: 8px;
 }
 
 /* Ensure animated baseline sizes match Bootstrap grid at breakpoints */
-@media (min-width: 992px) { /* lg and up: col-lg-2 => 16.6667% */
+@media (min-width: 992px) { 
   #sidebar:not(.collapsed) {
     flex: 0 0 16.666667%;
     max-width: 16.666667%;
   }
+  /* match main content baseline for smooth transition */
+  #mainContent {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 991.98px) { /* md: col-md-3 => 25% */
+@media (min-width: 768px) and (max-width: 991.98px) { 
   #sidebar:not(.collapsed) {
     flex: 0 0 25%;
     max-width: 25%;
   }
+  /* match main content baseline for smooth transition */
+  #mainContent {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+
+/* When sidebar is collapsed, let main content expand to fill remaining width */
+@media (min-width: 768px) {
+  #sidebar.collapsed ~ #mainContent {
+    flex: 0 0 calc(100% - 100px);
+    max-width: calc(100% - 100px);
+  }
+}
+
+/* Animate main content width changes too to prevent flicker */
+#mainContent {
+  transition: flex-basis 0.4s ease, max-width 0.4s ease, padding 0.4s ease, margin 0.4s ease;
+  will-change: flex-basis, max-width;
 }
 
 #sidebar .nav-link {
@@ -274,6 +307,12 @@ font-family: "Space Grotesk", Inter, sans-serif;
 #toggleSidebarBtn.rotate {
   transform: rotate(180deg);
 }
-.mobile-modal{
-  display: inline !important;
+.mobile-navbar{
+  background-color: var(--color-primary-light-ultra);
+}
+
+.mobail-nav-toggler{
+  background-color:none;
+  border: none;
+  color:var(--color-primary-hover);
 }
