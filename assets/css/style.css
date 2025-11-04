@@ -2,10 +2,25 @@
 font-family: "Space Grotesk", Inter, sans-serif;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
     *:focus {
       outline: none !important;
       box-shadow: none !important;
     }
+
+  .sidebar-scrollable::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+
 /*  Global Color Variables — Use Across the Whole Website */
 :root {
   /* Brand Colors */
@@ -169,6 +184,8 @@ font-family: "Space Grotesk", Inter, sans-serif;
     #sidebar {
       min-height: 100vh;
       background-color: #1863ff;
+      display: flex;
+      flex-direction: column;
     }
 
     #sidebar .nav-link {
@@ -189,7 +206,8 @@ font-family: "Space Grotesk", Inter, sans-serif;
 
 
 .nav-modal{
-  width: 20%;
+width: 50px;
+border-radius: 50%;
 }
 
 #sidebar {
@@ -198,6 +216,24 @@ font-family: "Space Grotesk", Inter, sans-serif;
   flex-direction: column;
   align-items: center;
   white-space: nowrap;
+  height: 100%;
+}
+
+#mainContent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-section {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Ensure sidebar scrollable area works with flexbox */
+.sidebar-scrollable {
+  min-height: 0;
 }
 #sidebar .nav {
   width: 100%;
@@ -307,6 +343,35 @@ font-family: "Space Grotesk", Inter, sans-serif;
 #toggleSidebarBtn.rotate {
   transform: rotate(180deg);
 }
+/* ---------------------------------------------  all section importent code -------------------------  */
+.page-s{
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+}
+
+.page-s_content{
+  white-space: no-wrap;
+  background-color: violet;
+  height: 300vh;
+
+}
+/* ---------------------------------------------  all section importent code -------------------------  */
+
+
+
+
+
+
+
+
+
+
+
+
+
 .mobile-navbar{
   background-color: var(--color-primary-light-ultra);
 }
@@ -315,4 +380,11 @@ font-family: "Space Grotesk", Inter, sans-serif;
   background-color:none;
   border: none;
   color:var(--color-primary-hover);
+}
+
+.mobile-navbar-bottom{
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  color: #ffffff;
 }

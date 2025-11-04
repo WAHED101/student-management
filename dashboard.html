@@ -21,14 +21,16 @@
   </head>
   <body>
 
-<div class="container-fluid">
-  <div class="row">
+
+    <div class="container-fluid vh-100 p-0">
+  <div class="row h-100 m-0">
+    
     <!-- Vertical Sidebar -->
-<nav id="sidebar" class="col-lg-2 col-md-3 d-none d-md-block p-3 text-center position-relative " >
+<nav id="sidebar" class="col-lg-2 col-md-3 d-none d-md-block p-3 text-center position-relative h-100" >
 
   <!-- Toggle Button -->
   <button id="toggleSidebarBtn" class="btn btn-light position-absolute top-0 end-0 m-3 shadow-sm">
-    <i class="fa-solid fa-arrow-left"></i>
+   <i class="fa-solid fa-square-half-stroke"></i>
   </button>
 
 
@@ -36,7 +38,7 @@
 <div class="sidevar-img">
   <img 
     class="nav-modal img-fluid rounded-circle shadow" 
-    src="assets/img/profile/user.png" 
+    src="assets/img/profile/profile-one.jpg" 
     alt="User Profile"
     data-bs-toggle="modal" 
     data-bs-target="#profileModalSidebar" 
@@ -45,71 +47,57 @@
 </div>
 
 
-  <div style="overflow-y:auto; overflow-x: hidden; height: 73vh;">
+  <div class="sidebar-scrollable" style="overflow-y:auto; overflow-x: hidden; flex: 1; height: 70vh;">
 
     <!-- Navigation links -->
   <ul class="nav flex-column text-start mt-3" id="sidebarLinks" style=" white-space: nowrap;">
     <li class="nav-item">
-      <a class="nav-link text-white active" href="#" data-section="home" data-bs-toggle="tooltip" title="Home">
+      <a class="nav-link text-white active" href="#" data-section="home">
         <i class="fa-solid fa-house me-2"></i><span>Home</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="Progress" data-bs-toggle="tooltip" title="Progress">
+      <a class="nav-link text-white" href="#" data-section="Progress" >
         <i class="fa-solid fa-spinner"></i><span>Progress</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="Notice" data-bs-toggle="tooltip" title="Notice">
+      <a class="nav-link text-white" href="#" data-section="Notice" >
         <i class="fa-solid fa-envelope me-2"></i><span>Notice</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="Task" data-bs-toggle="tooltip" title="Task">
+      <a class="nav-link text-white" href="#" data-section="Task" >
         <i class="fas fa-tasks"></i><span>Task</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="My-course" data-bs-toggle="tooltip" title="My Course">
+      <a class="nav-link text-white" href="#" data-section="My-course" >
         <i class="fa-solid fa-books"></i><span>My Course</span>
       </a>
     </li>
       <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="Lession" data-bs-toggle="tooltip" title="Lession">
+      <a class="nav-link text-white" href="#" data-section="Lession" >
         <i class="fa-solid fa-book-open"></i><span>Lession</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="Points" data-bs-toggle="tooltip" title="Points">
+      <a class="nav-link text-white" href="#" data-section="Points" >
         <i class="fa-sharp fa-solid fa-feather-pointed"></i><span>Points</span>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="Payment" data-bs-toggle="tooltip" title="Payment">
+      <a class="nav-link text-white" href="#" data-section="Payment">
         <i class="fa-solid fa-credit-card"></i><span>Payment</span>
       </a>
     </li>  
     <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="Help" data-bs-toggle="tooltip" title="Help's">
+      <a class="nav-link text-white" href="#" data-section="Help" >
         <i class="fa-brands fa-hire-a-helper"></i><span>Help's</span>
       </a>
     </li>
   
-      <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="Help" data-bs-toggle="tooltip" title="Help's">
-        <i class="fa-brands fa-hire-a-helper"></i><span>Help's</span>
-      </a>
-    </li>
-          <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="Help" data-bs-toggle="tooltip" title="Help's">
-        <i class="fa-brands fa-hire-a-helper"></i><span>Help's</span>
-      </a>
-    </li>
-          <li class="nav-item">
-      <a class="nav-link text-white" href="#" data-section="Help" data-bs-toggle="tooltip" title="Help's">
-        <i class="fa-brands fa-hire-a-helper"></i><span>Help's</span>
-      </a>
-    </li>
+
     
   </ul>
   </div>
@@ -126,7 +114,7 @@
 
         <a class="navbar-brand " href="#">
               <!-- trigger modal -->
-              <img class="nav-modal" data-bs-toggle="modal" data-bs-target="#profileModalMobile" src="assets/img/profile/user.png" alt="">
+              <img class="nav-modal" data-bs-toggle="modal" data-bs-target="#profileModalMobile" src="assets/img/profile/profile-one.jpg" alt="" >
             <!-- Modal -->
             <div class="modal fade" id="profileModalMobile" tabindex="-1" aria-labelledby="profileModalMobileLabel" aria-hidden="true" data-bs-backdrop="true">
               <div class="modal-dialog">
@@ -166,86 +154,156 @@
       </div>
     </nav>
 
+
+    <!-- Mobile bottom Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark  d-md-none  mobile-navbar-bottom">
+      <div class="container-fluid">
+        <div class="navbar-collapse" id="mobileNavbottm">
+          <ul class="navbar-nav flex-row justify-content-around align-items-center w-100 text-center">
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-label="HOME"> <i class="fa-solid fa-house me-2"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-label="NOTICE"><i class="fa-solid fa-envelope me-2"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-label="LESSION"><i class="fa-solid fa-book-open"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-label="MYCOURS"><i class="fa-solid fa-books"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-label="MORE"><i class="fa-solid fa-circle-chevron-up"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
     <!-- Main Content -->
-<main class="col-lg-10 col-md-9 p-0" id="mainContent" >
+<main class="col-lg-10 col-md-9 p-0 h-100" id="mainContent" >
 
   <!-- Home Section -->
-  <section id="homeSection" class="content-section" style="background-color: red; 
-   height: 100vh; overflow-y:auto; overflow-x: hidden; width: 100%;">
-    <div style="height: 200vh; background-color: green; white-space: no-wrap; padding: 20px 20px 0 20px;">
+  <section id="homeSection" class="content-section page-s"  >
+    <div class="page-s_content">
+
+
 
       <h1>Dashboard</h1>
       <p>Welcome to your dashboard overview.</p>
     </div>
-    <div style="height: 100vh; background-color: red;"></div>
+   
   </section>
   
 
   <!-- progress Section -->
-  <section id="ProgressSection" class="content-section d-none">
-    <h1>Progress</h1>
-    <div class="text-center mt-4">
-      <img src="assets/img/profile/user.png" class="rounded-circle shadow mb-3" width="120" alt="User">
-      <h5>John Doe</h5>
-      <p class="text-muted">Web Developer</p>
-      <hr>
-      <p>Email: johndoe@example.com</p>
-      <button class="btn btn-primary mt-3">Edit Profile</button>
+  <section id="ProgressSection" class="content-section d-none page-s">
+    <div class="page-s_content">
+
+      <h1>Progress</h1>
+      <div class="text-center mt-4">
+        <img src="assets/img/profile/user.png" class="rounded-circle shadow mb-3" width="120" alt="User">
+        <h5>John Doe</h5>
+        <p class="text-muted">Web Developer</p>
+        <hr>
+        <p>Email: johndoe@example.com</p>
+        <button class="btn btn-primary mt-3">Edit Profile</button>
+      </div>
     </div>
   </section>
 
 
   <!-- notice Section -->
-  <section id="NoticeSection" class="content-section d-none">
-    <h1>Notice</h1>
-    <p>No new messages available.</p>
+  <section id="NoticeSection" class="content-section d-none page-s">
+    <div class="page-s_content">
+      <h1>Notice</h1>
+      <p>No new messages available.</p>
+    </div>
   </section>
 
 
   <!-- task Section -->
-  <section id="TaskSection" class="content-section d-none">
-    <h1>Task</h1>
-    <p>Here you can update your preferences and account details.</p>
+  <section id="TaskSection" class="content-section d-none page-s">
+    <div class="page-s_content">
+
+      <h1>Task</h1>
+      <p>Here you can update your preferences and account details.</p>
+    </div>
   </section>
 
 
   <!-- mycours Section -->
-  <section id="My-courseSection" class="content-section d-none">
-    <h1>mycours</h1>
-    <p>Here you can update your preferences and account details.</p>
+  <section id="My-courseSection" class="content-section d-none page-s">
+    <div class="page-s_content">
+      <h1>mycours</h1>
+      <p>Here you can update your preferences and account details.</p>
+    </div>
   </section>
 
 
 
     <!-- lession Section -->
-    <section id="LessionSection" class="content-section d-none">
-    <h1>Lession</h1>
-    <p>Here you can update your preferences and account details.</p>
+    <section id="LessionSection" class="content-section d-none page-s">
+      <div class="page-s_content">
+        <h1>Lession</h1>
+        <p>Here you can update your preferences and account details.</p>
+      </div>
   </section>
 
 
   <!-- points Section -->
-    <section id="PointsSection" class="content-section d-none">
-    <h1>Points</h1>
-    <p>Here you can update your preferences and account details.</p>
+    <section id="PointsSection" class="content-section d-none page-s">
+      <div class="page-s_content">
+        <h1>Points</h1>
+        <p>Here you can update your preferences and account details.</p>
+      </div>
   </section>
 
 
 
     <!-- payment Section -->
-    <section id="PaymentSection" class="content-section d-none">
-    <h1>Payment</h1>
-    <p>Here you can update your preferences and account details.</p>
+    <section id="PaymentSection" class="content-section d-none page-s">
+      <div class="page-s_content">
+        <h1>Payment</h1>
+        <p>Here you can update your preferences and account details.</p>
+      </div>
   </section>
 
 
 
 
       <!-- Help Section -->
-    <section id="HelpSection" class="content-section d-none">
-    <h1>Help</h1>
-    <p>Here you can update your preferences and account details.</p>
+    <section id="HelpSection" class="content-section d-none page-s">
+      <div class="page-s_content">
+        <h1>Help</h1>
+        <p>Here you can update your preferences and account details.</p>
+      </div>
   </section>
+
+
+
+
+
+      <!-- Sidebar Profile Modal placed at root for correct centering -->
+    <div class="modal fade" id="profileModalSidebar" tabindex="-1" aria-labelledby="profileModalSidebarLabel" aria-hidden="true"
+    data-bs-backdrop="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+          <div class="modal-header bg-primary text-white">
+            <h5 class="modal-title" id="profileModalSidebarLabel">Profile Info</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <img src="assets/img/profile/profile-one.jpg" class="rounded-circle mb-3 shadow nav-modal" width="100" alt="">
+            <h5 class="mb-0">John Doe</h5>
+            <p class="text-muted">Web Developer</p>
+            <hr>
+            <p>Welcome back to your dashboard!</p>
+          </div>
+        </div>
+      </div>
+    </div>
 </main>
 
 
@@ -263,24 +321,5 @@
      <script src="./assets/js/main.js"></script>
     <!-- js link -->
     
-    <!-- Sidebar Profile Modal placed at root for correct centering -->
-    <div class="modal fade" id="profileModalSidebar" tabindex="-1" aria-labelledby="profileModalSidebarLabel" aria-hidden="true"
-    data-bs-backdrop="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content border-0 shadow-lg">
-          <div class="modal-header bg-primary text-white">
-            <h5 class="modal-title" id="profileModalSidebarLabel">Profile Info</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body text-center">
-            <img src="assets/img/profile/user.png" class="rounded-circle mb-3 shadow" width="100" alt="">
-            <h5 class="mb-0">John Doe</h5>
-            <p class="text-muted">Web Developer</p>
-            <hr>
-            <p>Welcome back to your dashboard!</p>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
 </html>
