@@ -1,3 +1,32 @@
+@import url('./register.css');
+
+/* Login-specific tweaks if needed */
+.signup-card::before{
+  /* move accent border to right for login page */
+  inset: 0 0 0 auto;
+}
+.login-card-title{
+  color: #6c757d;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+.remember-forgot{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.remember-forgot a{
+  color: var(--scarlet-400);
+  text-decoration: none;
+}
+
+.remember-forgot a:hover{
+  color: var(--scarlet-500);
+  text-decoration: underline;
+}
 :root {
   --scarlet-50: #ffedec;
   --scarlet-100: #fed5d3;
