@@ -135,11 +135,12 @@
             </div>            
             </a>
             
-        <button class="navbar-toggler mobail-nav-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler mobail-nav-toggler" type="button" id="mobileMenuToggle" aria-label="Toggle navigation">
           <i class="fa-regular fa-ellipsis-vertical"></i>
         </button>
-        <div class="collapse navbar-collapse" id="mobileNav">
-          <ul class="navbar-nav flex-column text-center">
+        <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+        <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+          <ul class="navbar-nav flex-column">
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
             </li>
@@ -147,7 +148,7 @@
               <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-envelope"></i>Create a New Account</a>
+              <a class="nav-link" href="#"><i class="fa-solid fa-envelope"></i> Create a New Account</a>
             </li>
           </ul>
         </div>
@@ -161,24 +162,46 @@
         <div class="navbar-collapse" id="mobileNavbottm">
           <ul class="navbar-nav flex-row justify-content-around align-items-center w-100 text-center">
             <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="HOME"> <i class="fa-solid fa-house me-2"></i></a>
+              <a class="nav-link" href="#" aria-label="HOME" data-section="home"> <i class="fa-solid fa-house me-2"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="NOTICE"><i class="fa-solid fa-envelope me-2"></i></a>
+              <a class="nav-link" href="#" aria-label="NOTICE" data-section="Notice"><i class="fa-solid fa-envelope me-2"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="LESSION"><i class="fa-solid fa-book-open"></i></a>
+              <a class="nav-link" href="#" aria-label="LESSION" data-section="Lession"><i class="fa-solid fa-book-open"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="MYCOURS"><i class="fa-solid fa-books"></i></a>
+              <a class="nav-link" href="#" aria-label="MYCOURS" data-section="My-course"><i class="fa-solid fa-books"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="MORE"><i class="fa-solid fa-circle-chevron-up"></i></a>
+              <a class="nav-link" href="#" aria-label="MORE" id="mobileMoreToggle"><i class="fa-solid fa-circle-chevron-up"></i></a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+
+    <!-- Mobile More Menu Dropdown -->
+    <div class="mobile-menu-backdrop" id="mobileMoreBackdrop"></div>
+    <div class="mobile-menu-dropdown mobile-more-dropdown" id="mobileMoreDropdown">
+      <ul class="navbar-nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-section="Progress"><i class="fa-solid fa-spinner"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-section="Task"><i class="fas fa-tasks"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-section="Points"><i class="fa-sharp fa-solid fa-feather-pointed"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-section="Payment"><i class="fa-solid fa-credit-card"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-section="Help"><i class="fa-brands fa-hire-a-helper"></i></a>
+        </li>
+      </ul>
+    </div>
 
 
     <!-- Main Content -->
