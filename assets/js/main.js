@@ -1,7 +1,9 @@
+document.addEventListener('DOMContentLoaded', function () {
+
  const sidebare = document.getElementById('sidebar');
   const toggleBtn = document.getElementById('toggleSidebarBtn');
   const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-  const tooltipList = tooltipTriggerList.map(el => new bootstrap.Tooltip(el));
+
 
   if (toggleBtn && sidebare) {
     toggleBtn.addEventListener('click', () => {
@@ -9,12 +11,9 @@
       toggleBtn.classList.toggle('rotate');
     });
   }
+// ---------------------------- side bar collapsed code 
 
 
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
   const sidebarLinks = document.querySelectorAll('#sidebar .nav-link');
   const sections = document.querySelectorAll('.content-section');
 
@@ -40,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+// ------------------------------------------- site bar section call code 
 
   // Mobile bottom navbar navigation
   const mobileBottomNavLinks = document.querySelectorAll('.mobile-navbar-bottom .nav-link[data-section]');
