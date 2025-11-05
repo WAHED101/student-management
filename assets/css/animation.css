@@ -1,0 +1,27 @@
+/* wellcome Floating + morphing animation */
+@keyframes shapeFloat {
+  0% {
+    transform: translate(0vw, 0vh) scale(1) rotate(0deg);
+    border-radius: 55% 45% 60% 40% / 50% 60% 40% 50%;
+  }
+  20% {
+    transform: translate(20vw, -10vh) scale(1.2) rotate(15deg);
+    border-radius: 60% 50% 55% 45% / 55% 45% 60% 50%;
+  }
+  40% {
+    transform: translate(-15vw, 15vh) scale(0.9) rotate(-10deg);
+    border-radius: 45% 55% 50% 60% / 60% 50% 45% 55%;
+  }
+  60% {
+    transform: translate(10vw, 20vh) scale(1.1) rotate(5deg);
+    border-radius: 50% 60% 45% 55% / 55% 50% 60% 45%;
+  }
+  80% {
+    transform: translate(-20vw, -15vh) scale(1.15) rotate(-15deg);
+    border-radius: 60% 50% 55% 50% / 50% 55% 45% 60%;
+  }
+  100% {
+    transform: translate(0vw, 0vh) scale(1) rotate(0deg);
+    border-radius: 55% 45% 60% 40% / 50% 60% 40% 50%;
+  }
+}
