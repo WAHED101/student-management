@@ -1,5 +1,11 @@
+document.addEventListener('DOMContentLoaded', function () {
+
+ const sidebare = document.getElementById('sidebar');
+  const toggleBtn = document.getElementById('toggleSidebarBtn');
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+
 // Password visibility toggle
-(function () {
+(function (){
   const toggleBtns = document.querySelectorAll(".toggle-password");
   toggleBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -18,7 +24,7 @@
       );
     });
   });
-})();
+})});
 
 // Validation disabled as requested
 (function () {
@@ -261,13 +267,29 @@ const tooltipTriggerList = [].slice.call(
 );
 const tooltipList = tooltipTriggerList.map((el) => new bootstrap.Tooltip(el));
 
-if (toggleBtn && sidebare) {
-  toggleBtn.addEventListener("click", () => {
-    sidebare.classList.toggle("collapsed");
-    toggleBtn.classList.toggle("rotate");
-  });
-}
+  if (toggleBtn && sidebare) {
+    toggleBtn.addEventListener('click', () => {
+      sidebare.classList.toggle('collapsed');
+      toggleBtn.classList.toggle('rotate');
+    });
+  }
+// ---------------------------- side bar collapsed code 
 
+
+  const sidebarLinks = document.querySelectorAll('#sidebar .nav-link');
+  const sections = document.querySelectorAll('.content-section');
+
+  // Function to switch sections
+  const switchSection = (sectionName, activeLinks = null) => {
+    sections.forEach(section => section.classList.add('d-none'));
+    const targetSection = document.getElementById(sectionName + 'Section');
+    if (targetSection) {
+      targetSection.classList.remove('d-none');
+    }
+    if (activeLinks) {
+      activeLinks.forEach(l => l.classList.remove('active'));
+    }
+  };
 document.addEventListener("DOMContentLoaded", function () {
   const sidebarLinks = document.querySelectorAll("#sidebar .nav-link");
   const sections = document.querySelectorAll(".content-section");
@@ -288,6 +310,61 @@ document.addEventListener("DOMContentLoaded", function () {
           targetSection.classList.remove("d-none");
         }
       });
+    });
+  }
+
+  // Mobile More menu dropdown toggle (bottom navbar)
+  const mobileMoreToggle = document.getElementById('mobileMoreToggle');
+  const mobileMoreDropdown = document.getElementById('mobileMoreDropdown');
+  const mobileMoreBackdrop = document.getElementById('mobileMoreBackdrop');
+
+  if (mobileMoreToggle && mobileMoreDropdown && mobileMoreBackdrop) {
+    const resetAnimations = () => {
+      mobileMoreDropdown.querySelectorAll('.nav-item').forEach(item => {
+        item.style.animation = 'none';
+        item.offsetWidth; // Force reflow
+        item.style.animation = '';
+      });
+    };
+
+    const openMenu = () => {
+      mobileMoreDropdown.classList.remove('closing');
+      resetAnimations();
+      mobileMoreDropdown.classList.add('show');
+      mobileMoreBackdrop.classList.add('show');
+    };
+
+    const closeMenu = () => {
+      mobileMoreDropdown.classList.add('closing');
+      mobileMoreBackdrop.classList.remove('show');
+      setTimeout(() => {
+        mobileMoreDropdown.classList.remove('show', 'closing');
+        resetAnimations();
+      }, 300);
+    };
+
+    mobileMoreToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      mobileMoreDropdown.classList.contains('show') ? closeMenu() : openMenu();
+    });
+
+    mobileMoreBackdrop.addEventListener('click', closeMenu);
+
+    document.addEventListener('click', (e) => {
+      if (!mobileMoreDropdown.contains(e.target) && !mobileMoreToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    // Event delegation for menu items
+    mobileMoreDropdown.addEventListener('click', (e) => {
+      const link = e.target.closest('.nav-link');
+      if (!link || !link.dataset.section) return;
+      
+      e.preventDefault();
+      switchSection(link.dataset.section, sidebarLinks);
+      closeMenu();
     });
   }
 });
