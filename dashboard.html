@@ -19,6 +19,11 @@
       href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css" />
     <!-- font awesome cdn -->
 
+    <!-- font family cdn -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <!-- font family cdn -->
     <!-- css link -->
     <link rel="stylesheet" href="./assets/css/animation.css" />
     <link rel="stylesheet" href="./assets/css/media.css" />
@@ -43,7 +48,7 @@
           <div class="sidevar-img">
             <img
               class="nav-modal img-fluid rounded-circle shadow"
-              src="assets/img/profile/user.png"
+              src="assets/img/profile/profile-one.jpg"
               alt="User Profile"
               data-bs-toggle="modal"
               data-bs-target="#profileModalSidebar"
@@ -171,6 +176,20 @@
               </div>
             </a>
 
+            <!-- Mobile top search  -->
+            <div
+              class="topbar-search ms-auto position-relative"
+              role="search"
+              aria-label="Search">
+              <i class="fa-regular fa-magnifying-glass search-icon"></i>
+              <input
+                type="search"
+                class="form-control top-search border-0"
+                placeholder="Search something..."
+                aria-label="Search input" />
+            </div>
+
+            <!-- three dot menu  -->
             <button
               class="navbar-toggler mobail-nav-toggler"
               type="button"
@@ -294,6 +313,29 @@
 
         <!-- Main Content -->
         <main class="col-lg-10 col-md-9 p-0 h-100" id="mainContent">
+          <!-- Topbar Content -->
+          <div class="topbar px-3 shadow-sm">
+            <!-- Left Section -->
+            <div class="topbar-left d-none d-md-flex align-items-center gap-2">
+              <span class="fw-semibold topbar-title" id="topbarTitle"
+                >Dashboard</span
+              >
+            </div>
+
+            <!-- Search Section -->
+            <div
+              class="topbar-search ms-auto position-relative"
+              role="search"
+              aria-label="Search">
+              <i class="fa-regular fa-magnifying-glass search-icon"></i>
+              <input
+                type="search"
+                class="form-control top-search border-0"
+                placeholder="Search "
+                aria-label="Search input" />
+            </div>
+          </div>
+
           <!-- Home Section -->
           <section id="homeSection" class="content-section page-s">
             <div class="page-s_content">
@@ -357,6 +399,14 @@
           <section id="PointsSection" class="content-section d-none page-s">
             <div class="page-s_content">
               <h1>Points</h1>
+              <p>Here you can update your preferences and account details.</p>
+            </div>
+          </section>
+
+          <!-- points Section -->
+          <section id="TeachersSection" class="content-section d-none page-s">
+            <div class="page-s_content">
+              <h1>Teachers</h1>
               <p>Here you can update your preferences and account details.</p>
             </div>
           </section>
