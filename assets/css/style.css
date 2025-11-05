@@ -335,6 +335,33 @@ body {
 #toggleSidebarBtn.rotate {
   transform: rotate(180deg);
 }
+
+
+/* Sidebar Name Control */
+.profile-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.profile-name .short-name {
+  display: none;
+}
+
+#sidebar.collapsed .profile-name .full-name {
+  display: none;
+}
+
+#sidebar.collapsed .profile-name .short-name {
+  display: inline;
+}
+
+/* Smooth Sidebar Collapse */
+#sidebar {
+  transition: all 0.4s ease;
+}
+
 /* ---------------------------------------------  all section importent code -------------------------  */
 .page-s {
   height: 100vh;
