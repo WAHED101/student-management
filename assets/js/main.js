@@ -1,5 +1,14 @@
+<<<<<<< HEAD
+=======
+document.addEventListener('DOMContentLoaded', function () {
+
+ const sidebare = document.getElementById('sidebar');
+  const toggleBtn = document.getElementById('toggleSidebarBtn');
+  const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+
+>>>>>>> 07cc7c3c0393e7b06b72d5d96ebaefab9d417504
 // Password visibility toggle
-(function () {
+(function (){
   const toggleBtns = document.querySelectorAll(".toggle-password");
   toggleBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -18,6 +27,7 @@
       );
     });
   });
+<<<<<<< HEAD
 })();
 document.addEventListener("DOMContentLoaded", function () {
   const sidebare = document.getElementById("sidebar");
@@ -70,6 +80,9 @@ document.addEventListener("DOMContentLoaded", function () {
         convertYearToDropdown(instance);
       },
     });
+=======
+})});
+>>>>>>> 07cc7c3c0393e7b06b72d5d96ebaefab9d417504
 
     function convertYearToDropdown(instance) {
       const container = instance && instance.calendarContainer;
@@ -201,6 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
         btnPrev.classList.toggle("invisible", index === 0);
         btnPrev.disabled = index === 0; // keep disabled too
       }
+<<<<<<< HEAD
       // Next button disabled on steps 0 and 1 if not filled
       if (btnNext) {
         const disableNext = index < steps.length - 1 && !isStepFilled(index);
@@ -213,6 +227,25 @@ document.addEventListener("DOMContentLoaded", function () {
           index === steps.length - 1 ? !isStepFilled(index) : false;
       }
     }
+=======
+      // const valueEmpty = inp.value.trim() === '';
+      // const shouldShow = force || inp.dataset.touched === 'true';
+      // const group = inp.parentElement;
+      // if (!valueEmpty){
+      //   inp.classList.remove('is-invalid');
+      //   if (group) group.classList.remove('has-error');
+      //   return;
+      // }
+      // if (shouldShow){
+      //   inp.classList.add('is-invalid');
+      //   if (group) group.classList.add('has-error');
+      // } else {
+      //   inp.classList.remove('is-invalid');
+      //   if (group) group.classList.remove('has-error');
+      // }
+    });
+  }
+>>>>>>> 07cc7c3c0393e7b06b72d5d96ebaefab9d417504
 
     function setStep(index) {
       const goingForward = index > current;
@@ -220,6 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
       indicators.forEach((it, i) => it.classList.toggle("active", i <= index));
       lines.forEach((ln, i) => ln.classList.toggle("active", i < index));
 
+<<<<<<< HEAD
       // shimmer the line we just crossed when moving forward
       if (goingForward && index - 1 >= 0 && lines[index - 1]) {
         const targetLine = lines[index - 1];
@@ -237,6 +271,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       // Next visible on non-last, hidden on last; Back/Submit handled in updateControls
       btnNext && btnNext.classList.toggle("d-none", index === steps.length - 1);
+=======
+  function wireStepInputListeners(index) {
+    const inputs = stepInputs(index);
+    const onInput = () => {
+      applyEmptyStyles(index);
+>>>>>>> 07cc7c3c0393e7b06b72d5d96ebaefab9d417504
       updateControls(index);
       initialized = true;
     }
@@ -295,10 +335,24 @@ document.addEventListener("DOMContentLoaded", function () {
         link.addEventListener("click", function (e) {
           e.preventDefault();
 
+<<<<<<< HEAD
           sidebarLinks.forEach((l) => l.classList.remove("active"));
           this.classList.add("active");
 
           sections.forEach((section) => section.classList.add("d-none"));
+=======
+  if (toggleBtn && sidebare) {
+    toggleBtn.addEventListener('click', () => {
+      sidebare.classList.toggle('collapsed');
+      toggleBtn.classList.toggle('rotate');
+    });
+  }
+// ---------------------------- side bar collapsed code 
+
+
+  const sidebarLinks = document.querySelectorAll('#sidebar .nav-link');
+  const sections = document.querySelectorAll('.content-section');
+>>>>>>> 07cc7c3c0393e7b06b72d5d96ebaefab9d417504
 
           const sectionId = this.dataset.section + "Section";
           const targetSection = document.getElementById(sectionId);
@@ -311,7 +365,17 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
     }
+<<<<<<< HEAD
     // ------------------------------------------- site bar section call code
+=======
+    if (activeLinks) {
+      activeLinks.forEach(l => l.classList.remove('active'));
+    }
+  };
+document.addEventListener("DOMContentLoaded", function () {
+  const sidebarLinks = document.querySelectorAll("#sidebar .nav-link");
+  const sections = document.querySelectorAll(".content-section");
+>>>>>>> 07cc7c3c0393e7b06b72d5d96ebaefab9d417504
 
     // Mobile bottom navbar navigation
     const mobileBottomNavLinks = document.querySelectorAll(
@@ -320,9 +384,12 @@ document.addEventListener("DOMContentLoaded", function () {
     mobileBottomNavLinks.forEach((link) => {
       link.addEventListener("click", function (e) {
         e.preventDefault();
+<<<<<<< HEAD
         switchSection(this.dataset.section, sidebarLinks);
       });
     });
+=======
+>>>>>>> 07cc7c3c0393e7b06b72d5d96ebaefab9d417504
 
     // Mobile menu dropdown toggle
     const mobileMenuToggle = document.getElementById("mobileMenuToggle");
@@ -359,6 +426,7 @@ document.addEventListener("DOMContentLoaded", function () {
           closeMenu();
         }
       });
+<<<<<<< HEAD
 
       // Close dropdown when clicking on a menu item
       const mobileMenuLinks = mobileMenuDropdown.querySelectorAll(".nav-link");
@@ -385,6 +453,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const openMenu = () => {
         mobileMoreDropdown.classList.remove("closing");
+=======
+    });
+  }
+
+  // Mobile More menu dropdown toggle (bottom navbar)
+  const mobileMoreToggle = document.getElementById('mobileMoreToggle');
+  const mobileMoreDropdown = document.getElementById('mobileMoreDropdown');
+  const mobileMoreBackdrop = document.getElementById('mobileMoreBackdrop');
+
+  if (mobileMoreToggle && mobileMoreDropdown && mobileMoreBackdrop) {
+    const resetAnimations = () => {
+      mobileMoreDropdown.querySelectorAll('.nav-item').forEach(item => {
+        item.style.animation = 'none';
+        item.offsetWidth; // Force reflow
+        item.style.animation = '';
+      });
+    };
+
+    const openMenu = () => {
+      mobileMoreDropdown.classList.remove('closing');
+      resetAnimations();
+      mobileMoreDropdown.classList.add('show');
+      mobileMoreBackdrop.classList.add('show');
+    };
+
+    const closeMenu = () => {
+      mobileMoreDropdown.classList.add('closing');
+      mobileMoreBackdrop.classList.remove('show');
+      setTimeout(() => {
+        mobileMoreDropdown.classList.remove('show', 'closing');
+>>>>>>> 07cc7c3c0393e7b06b72d5d96ebaefab9d417504
         resetAnimations();
         mobileMoreDropdown.classList.add("show");
         mobileMoreBackdrop.classList.add("show");
