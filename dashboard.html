@@ -1,350 +1,533 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Student-Managemetn</title>
-    <link rel="icon" href="./assets/img/logo/logo.png">
+    <link rel="icon" href="./assets/img/logo/logo.png" />
     <!-- bootstrap cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
     <!-- bootstrap cdn -->
 
     <!-- font awesome cdn -->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css">
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css"
+    />
     <!-- font awesome cdn -->
 
+    <!-- font family cdn -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font family cdn -->
     <!-- css link -->
-     <link rel="stylesheet" href="./assets/css/animation.css">
-     <link rel="stylesheet" href="./assets/css/media.css">
-     <link rel="stylesheet" href="./assets/css/style.css">  
+    <link rel="stylesheet" href="./assets/css/animation.css" />
+    <link rel="stylesheet" href="./assets/css/media.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- css link -->
   </head>
   <body>
-
-
     <div class="container-fluid vh-100 p-0">
-  <div class="row h-100 m-0">
-    
-    <!-- Vertical Sidebar -->
-      <nav id="sidebar" class="col-lg-2 col-md-3 d-none d-md-block p-3 text-center position-relative h-100" >
+      <div class="row h-100 m-0">
+        <!-- Vertical Sidebar -->
+        <nav
+          id="sidebar"
+          class="col-lg-2 col-md-3 d-none d-md-block p-3 text-center position-relative h-100"
+        >
+          <a class="navbar-brand" href="#">Navbar</a>
 
-        <!-- Toggle Button -->
-        <button id="toggleSidebarBtn" class="btn btn-light position-absolute top-0 end-0 m-3 shadow-sm">
-        <i class="fa-solid fa-square-half-stroke"></i>
-        </button>
+          <!-- Toggle Button -->
+          <button
+            id="toggleSidebarBtn"
+            class="btn position-absolute top-0 end-0 m-3 shadow-sm fs-4 border-0 text-light"
+          >
+            <i class="fa-solid fa-square-half-stroke"></i>
+          </button>
 
+          <div
+            class="sidebar-scrollable"
+            style="
+              overflow-y: auto;
+              overflow-x: hidden;
+              flex: 1;
+              height: 80vh;
+              margin-top: 20px;
+            "
+          >
+            <!-- Navigation links -->
+            <ul
+              class="nav flex-column text-start mt-3"
+              id="sidebarLinks"
+              style="white-space: nowrap"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white active"
+                  href="#"
+                  data-section="home"
+                >
+                  <i class="fa-solid fa-house me-2"></i><span>Home</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-section="Progress">
+                  <i class="fa-solid fa-spinner"></i><span>Progress</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-section="Notice">
+                  <i class="fa-solid fa-envelope me-2"></i><span>Notice</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-section="Task">
+                  <i class="fas fa-tasks"></i><span>Task</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="My-course"
+                >
+                  <i class="fa-solid fa-books"></i><span>My Course</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-section="Lession">
+                  <i class="fa-solid fa-book-open"></i><span>Lession</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-section="Points">
+                  <i class="fa-sharp fa-solid fa-feather-pointed"></i
+                  ><span>Points</span>
+                </a>
+              </li>
 
-        <!-- Profile Image -->
-      <div class="sidevar-img">
-        <img 
-          class="nav-modal img-fluid rounded-circle shadow" 
-          src="assets/img/profile/profile-one.jpg" 
-          alt="User Profile"
-          data-bs-toggle="modal" 
-          data-bs-target="#profileModalSidebar" 
-          style="width: 70px; height: 70px; object-fit: cover; cursor: pointer; border: 3px solid #fff; margin-top: 50px;">
-          <h5 class="P-5">ARPON</h5>
-      </div>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-section="Teachers">
+                  <i class="fa-solid fa-credit-card"></i
+                  ><span>Teachers review</span>
+                </a>
+              </li>
 
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-section="Payment">
+                  <i class="fa-solid fa-credit-card"></i><span>Payment</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#" data-section="Help">
+                  <i class="fa-brands fa-hire-a-helper"></i><span>Help's</span>
+                </a>
+              </li>
+            </ul>
+          </div>
 
-        <div class="sidebar-scrollable" style="overflow-y:auto; overflow-x: hidden; flex: 1; height: 70vh;">
+          <!-- Profile Image -->
+          <div class="sidevar-img">
+            <img
+              class="nav-modal img-fluid rounded-circle shadow"
+              src="assets/img/profile/profile-one.jpg"
+              alt="User Profile"
+              data-bs-toggle="modal"
+              data-bs-target="#profileModalSidebar"
+              style="
+                width: 50px;
+                height: 50px;
+                object-fit: cover;
+                cursor: pointer;
+              "
+            />
+            <div>
+              <h6 class="P-5 text-light">ARPON HAZARY ABDULLAH</h6>
+            </div>
+          </div>
+        </nav>
 
-          <!-- Navigation links -->
-        <ul class="nav flex-column text-start mt-3" id="sidebarLinks" style=" white-space: nowrap;">
-          <li class="nav-item">
-            <a class="nav-link text-white active" href="#" data-section="home">
-              <i class="fa-solid fa-house me-2"></i><span>Home</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#" data-section="Progress" >
-              <i class="fa-solid fa-spinner"></i><span>Progress</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#" data-section="Notice" >
-              <i class="fa-solid fa-envelope me-2"></i><span>Notice</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#" data-section="Task" >
-              <i class="fas fa-tasks"></i><span>Task</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#" data-section="My-course" >
-              <i class="fa-solid fa-books"></i><span>My Course</span>
-            </a>
-          </li>
-            <li class="nav-item">
-            <a class="nav-link text-white" href="#" data-section="Lession" >
-              <i class="fa-solid fa-book-open"></i><span>Lession</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#" data-section="Points" >
-              <i class="fa-sharp fa-solid fa-feather-pointed"></i><span>Points</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#" data-section="Payment">
-              <i class="fa-solid fa-credit-card"></i><span>Payment</span>
-            </a>
-          </li>  
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#" data-section="Help" >
-              <i class="fa-brands fa-hire-a-helper"></i><span>Help's</span>
-            </a>
-          </li>
-        
-
-          
-        </ul>
-        </div>
-
-
-      </nav>
-
-
-    <!-- Mobile Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark  d-md-none  mobile-navbar">
-      <div class="container-fluid">
-
-
-
-        <a class="navbar-brand " href="#">
+        <!-- Mobile Navbar -->
+        <nav
+          class="navbar navbar-expand-lg navbar-dark d-md-none mobile-navbar"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
               <!-- trigger modal -->
-              <img class="nav-modal" data-bs-toggle="modal" data-bs-target="#profileModalMobile" src="assets/img/profile/profile-one.jpg" alt="" >
-            <!-- Modal -->
-            <div class="modal fade" id="profileModalMobile" tabindex="-1" aria-labelledby="profileModalMobileLabel" aria-hidden="true" data-bs-backdrop="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="profileModalMobileLabel">Modal title</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    ...
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+              <img
+                class="nav-modal"
+                data-bs-toggle="modal"
+                data-bs-target="#profileModalMobile"
+                src="assets/img/profile/profile-one.jpg"
+                alt=""
+              />
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="profileModalMobile"
+                tabindex="-1"
+                aria-labelledby="profileModalMobileLabel"
+                aria-hidden="true"
+                data-bs-backdrop="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="profileModalMobileLabel">
+                        Modal title
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">...</div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="button" class="btn btn-primary">
+                        Save changes
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>            
             </a>
-            
-        <button class="navbar-toggler mobail-nav-toggler" type="button" id="mobileMenuToggle" aria-label="Toggle navigation">
-          <i class="fa-regular fa-ellipsis-vertical"></i>
-        </button>
-        <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
-        <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+
+            <!-- Mobile top search  -->
+            <div
+              class="topbar-search ms-auto position-relative"
+              role="search"
+              aria-label="Search"
+            >
+              <i class="fa-regular fa-magnifying-glass search-icon"></i>
+              <input
+                type="search"
+                class="form-control top-search border-0"
+                placeholder="Search something..."
+                aria-label="Search input"
+              />
+            </div>
+
+            <!-- three dot menu  -->
+            <button
+              class="navbar-toggler mobail-nav-toggler"
+              type="button"
+              id="mobileMenuToggle"
+              aria-label="Toggle navigation"
+            >
+              <i class="fa-regular fa-ellipsis-vertical"></i>
+            </button>
+            <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+            <div class="mobile-menu-dropdown" id="mobileMenuDropdown">
+              <ul class="navbar-nav flex-column">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><i class="fa-solid fa-gear"></i> Settings</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><i class="fa-solid fa-envelope"></i> Create a New
+                    Account</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Mobile bottom Navbar -->
+        <nav
+          class="navbar navbar-expand-lg navbar-dark d-md-none mobile-navbar-bottom"
+        >
+          <div class="container-fluid">
+            <div class="navbar-collapse" id="mobileNavbottm">
+              <ul
+                class="navbar-nav flex-row justify-content-around align-items-center w-100 text-center"
+              >
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                    aria-label="HOME"
+                    data-section="home"
+                  >
+                    <i class="fa-solid fa-house me-2"></i
+                  ></a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                    aria-label="NOTICE"
+                    data-section="Notice"
+                    ><i class="fa-solid fa-envelope me-2"></i
+                  ></a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                    aria-label="LESSION"
+                    data-section="Lession"
+                    ><i class="fa-solid fa-book-open"></i
+                  ></a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                    aria-label="MYCOURS"
+                    data-section="My-course"
+                    ><i class="fa-solid fa-books"></i
+                  ></a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link"
+                    href="#"
+                    aria-label="MORE"
+                    id="mobileMoreToggle"
+                    ><i class="fa-solid fa-circle-chevron-up"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Mobile More Menu Dropdown -->
+        <div class="mobile-menu-backdrop" id="mobileMoreBackdrop"></div>
+        <div
+          class="mobile-menu-dropdown mobile-more-dropdown"
+          id="mobileMoreDropdown"
+        >
           <ul class="navbar-nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+              <a class="nav-link" href="#" data-section="Progress"
+                ><i class="fa-solid fa-spinner"></i
+              ></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+              <a class="nav-link" href="#" data-section="Task"
+                ><i class="fas fa-tasks"></i
+              ></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa-solid fa-envelope"></i> Create a New Account</a>
+              <a class="nav-link" href="#" data-section="Points"
+                ><i class="fa-sharp fa-solid fa-feather-pointed"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-section="Payment"
+                ><i class="fa-solid fa-credit-card"></i
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-section="Help"
+                ><i class="fa-brands fa-hire-a-helper"></i
+              ></a>
             </li>
           </ul>
         </div>
-      </div>
-    </nav>
 
+        <!-- Main Content -->
+        <main class="col-lg-10 col-md-9 p-0 h-100" id="mainContent">
+          <!-- Topbar Content -->
+          <div class="topbar px-3 shadow-sm">
+            <!-- Left Section -->
+            <div class="topbar-left d-none d-md-flex align-items-center gap-2">
+              <span class="fw-semibold topbar-title" id="topbarTitle"
+                >Dashboard</span
+              >
+            </div>
 
-    <!-- Mobile bottom Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark  d-md-none  mobile-navbar-bottom">
-      <div class="container-fluid">
-        <div class="navbar-collapse" id="mobileNavbottm">
-          <ul class="navbar-nav flex-row justify-content-around align-items-center w-100 text-center">
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="HOME" data-section="home"> <i class="fa-solid fa-house me-2"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="NOTICE" data-section="Notice"><i class="fa-solid fa-envelope me-2"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="LESSION" data-section="Lession"><i class="fa-solid fa-book-open"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="MYCOURS" data-section="My-course"><i class="fa-solid fa-books"></i></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" aria-label="MORE" id="mobileMoreToggle"><i class="fa-solid fa-circle-chevron-up"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-
-    </nav>
-    <!-- Mobile More Menu Dropdown -->
-    <div class="mobile-menu-backdrop" id="mobileMoreBackdrop"></div>
-    <div class="mobile-menu-dropdown mobile-more-dropdown" id="mobileMoreDropdown">
-      <ul class="navbar-nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-section="Progress"><i class="fa-solid fa-spinner"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-section="Task"><i class="fas fa-tasks"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-section="Points"><i class="fa-sharp fa-solid fa-feather-pointed"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-section="Payment"><i class="fa-solid fa-credit-card"></i></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-section="Help"><i class="fa-brands fa-hire-a-helper"></i></a>
-        </li>
-      </ul>
-    </div>
-
-
-
-    <!-- Main Content -->
-<main class="col-lg-10 col-md-9 p-0 h-100" id="mainContent" >
-
-  <!-- Home Section -->
-  <section id="homeSection" class="content-section page-s"  >
-    <div class="page-s_content">
-
-
-
-      <h1>Dashboard</h1>
-      <p>Welcome to your dashboard overview.</p>
-    </div>
-   
-  </section>
-  
-
-  <!-- progress Section -->
-  <section id="ProgressSection" class="content-section d-none page-s">
-    <div class="page-s_content">
-
-      <h1>Progress</h1>
-      <div class="text-center mt-4">
-        <img src="assets/img/profile/user.png" class="rounded-circle shadow mb-3" width="120" alt="User">
-        <h5>John Doe</h5>
-        <p class="text-muted">Web Developer</p>
-        <hr>
-        <p>Email: johndoe@example.com</p>
-        <button class="btn btn-primary mt-3">Edit Profile</button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- notice Section -->
-  <section id="NoticeSection" class="content-section d-none page-s">
-    <div class="page-s_content">
-      <h1>Notice</h1>
-      <p>No new messages available.</p>
-    </div>
-  </section>
-
-
-  <!-- task Section -->
-  <section id="TaskSection" class="content-section d-none page-s">
-    <div class="page-s_content">
-
-      <h1>Task</h1>
-      <p>Here you can update your preferences and account details.</p>
-    </div>
-  </section>
-
-
-  <!-- mycours Section -->
-  <section id="My-courseSection" class="content-section d-none page-s">
-    <div class="page-s_content">
-      <h1>mycours</h1>
-      <p>Here you can update your preferences and account details.</p>
-    </div>
-  </section>
-
-
-
-    <!-- lession Section -->
-    <section id="LessionSection" class="content-section d-none page-s">
-      <div class="page-s_content">
-        <h1>Lession</h1>
-        <p>Here you can update your preferences and account details.</p>
-      </div>
-  </section>
-
-
-  <!-- points Section -->
-    <section id="PointsSection" class="content-section d-none page-s">
-      <div class="page-s_content">
-        <h1>Points</h1>
-        <p>Here you can update your preferences and account details.</p>
-      </div>
-  </section>
-
-
-
-    <!-- payment Section -->
-    <section id="PaymentSection" class="content-section d-none page-s">
-      <div class="page-s_content">
-        <h1>Payment</h1>
-        <p>Here you can update your preferences and account details.</p>
-      </div>
-  </section>
-
-
-
-
-      <!-- Help Section -->
-    <section id="HelpSection" class="content-section d-none page-s">
-      <div class="page-s_content">
-        <h1>Help</h1>
-        <p>Here you can update your preferences and account details.</p>
-      </div>
-  </section>
-
-
-
-
-
-      <!-- Sidebar Profile Modal placed at root for correct centering -->
-    <div class="modal fade" id="profileModalSidebar" tabindex="-1" aria-labelledby="profileModalSidebarLabel" aria-hidden="true"
-    data-bs-backdrop="true">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content border-0 shadow-lg">
-          <div class="modal-header bg-primary text-white">
-            <h5 class="modal-title" id="profileModalSidebarLabel">Profile Info</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Search Section -->
+            <div
+              class="topbar-search ms-auto position-relative"
+              role="search"
+              aria-label="Search"
+            >
+              <i class="fa-regular fa-magnifying-glass search-icon"></i>
+              <input
+                type="search"
+                class="form-control top-search border-0"
+                placeholder="Search something..."
+                aria-label="Search input"
+              />
+            </div>
           </div>
-          <div class="modal-body text-center">
-            <img src="assets/img/profile/profile-one.jpg" class="rounded-circle mb-3 shadow nav-modal" width="100" alt="">
-            <h5 class="mb-0">John Doe</h5>
-            <p class="text-muted">Web Developer</p>
-            <hr>
-            <p>Welcome back to your dashboard!</p>
+
+          <!-- Home Section -->
+          <section id="homeSection" class="content-section page-s">
+            <div class="page-s_content">
+              <h1>Dashboard</h1>
+              <p>Welcome to your dashboard overview.</p>
+            </div>
+          </section>
+
+          <!-- progress Section -->
+          <section id="ProgressSection" class="content-section d-none page-s">
+            <div class="page-s_content">
+              <h1>Progress</h1>
+              <div class="text-center mt-4">
+                <img
+                  src="assets/img/profile/user.png"
+                  class="rounded-circle shadow mb-3"
+                  width="120"
+                  alt="User"
+                />
+                <h5>John Doe</h5>
+                <p class="text-muted">Web Developer</p>
+                <hr />
+                <p>Email: johndoe@example.com</p>
+                <button class="btn btn-primary mt-3">Edit Profile</button>
+              </div>
+            </div>
+          </section>
+
+          <!-- notice Section -->
+          <section id="NoticeSection" class="content-section d-none page-s">
+            <div class="page-s_content">
+              <h1>Notice</h1>
+              <p>No new messages available.</p>
+            </div>
+          </section>
+
+          <!-- task Section -->
+          <section id="TaskSection" class="content-section d-none page-s">
+            <div class="page-s_content">
+              <h1>Task</h1>
+              <p>Here you can update your preferences and account details.</p>
+            </div>
+          </section>
+
+          <!-- mycours Section -->
+          <section id="My-courseSection" class="content-section d-none page-s">
+            <div class="page-s_content">
+              <h1>mycours</h1>
+              <p>Here you can update your preferences and account details.</p>
+            </div>
+          </section>
+
+          <!-- lession Section -->
+          <section id="LessionSection" class="content-section d-none page-s">
+            <div class="page-s_content">
+              <h1>Lession</h1>
+              <p>Here you can update your preferences and account details.</p>
+            </div>
+          </section>
+
+          <!-- points Section -->
+          <section id="PointsSection" class="content-section d-none page-s">
+            <div class="page-s_content">
+              <h1>Points</h1>
+              <p>Here you can update your preferences and account details.</p>
+            </div>
+          </section>
+
+          <!-- points Section -->
+          <section id="TeachersSection" class="content-section d-none page-s">
+            <div class="page-s_content">
+              <h1>Teachers</h1>
+              <p>Here you can update your preferences and account details.</p>
+            </div>
+          </section>
+
+          <!-- payment Section -->
+          <section id="PaymentSection" class="content-section d-none page-s">
+            <div class="page-s_content">
+              <h1>Payment</h1>
+              <p>Here you can update your preferences and account details.</p>
+            </div>
+          </section>
+
+          <!-- Help Section -->
+          <section id="HelpSection" class="content-section d-none page-s">
+            <div class="page-s_content">
+              <h1>Help</h1>
+              <p>Here you can update your preferences and account details.</p>
+            </div>
+          </section>
+
+          <!-- Sidebar Profile Modal placed at root for correct centering -->
+          <div
+            class="modal fade"
+            id="profileModalSidebar"
+            tabindex="-1"
+            aria-labelledby="profileModalSidebarLabel"
+            aria-hidden="true"
+            data-bs-backdrop="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-primary text-white">
+                  <h5 class="modal-title" id="profileModalSidebarLabel">
+                    Profile Info
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body text-center">
+                  <img
+                    src="assets/img/profile/profile-one.jpg"
+                    class="rounded-circle mb-3 shadow nav-modal"
+                    width="100"
+                    alt=""
+                  />
+                  <h5 class="mb-0">John Doe</h5>
+                  <p class="text-muted">Web Developer</p>
+                  <hr />
+                  <p>Welcome back to your dashboard!</p>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        </main>
       </div>
     </div>
-</main>
 
-
-    
-    
     <!-- bootstrap cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
     <!-- bootstrap cdn -->
 
     <!-- jquery cdn -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- jquery cdn -->
 
     <!-- js link -->
-     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
     <!-- js link -->
-    
   </body>
 </html>

@@ -146,4 +146,25 @@ document.addEventListener('DOMContentLoaded', function () {
       closeMenu();
     });
   }
+
+
+  
+});
+// ======== Dynamic Topbar Title Updater ========
+document.addEventListener('DOMContentLoaded', function () {
+  const topbarTitle = document.querySelector('.topbar-left span');
+  const sidebarLinks = document.querySelectorAll('#sidebar .nav-link, .mobile-navbar-bottom .nav-link[data-section]');
+
+  if (sidebarLinks.length > 0 && topbarTitle) {
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        const sectionName = this.dataset.section;
+        if (sectionName) {
+          let formattedTitle = sectionName.replace(/-/g, ' ');
+          formattedTitle = formattedTitle.charAt(0).toUpperCase() + formattedTitle.slice(1);
+          topbarTitle.textContent = formattedTitle;
+        }
+      });
+    });
+  }
 });
