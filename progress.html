@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student-Managemetn</title>
+    <link rel="icon" href="./assets/img/logo/logo.png" />
+    <!-- bootstrap cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <!-- bootstrap cdn -->
+
+    <!-- font awesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css"
+    />
+    <!-- font awesome cdn -->
+
+    <!-- css link -->
+    <link rel="stylesheet" href="./assets/css/animation.css" />
+    <link rel="stylesheet" href="./assets/css/media.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- css link -->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Vertical Sidebar -->
+        <nav
+          id="sidebar"
+          class="col-lg-2 col-md-3 d-none d-md-block p-3 text-center position-relative"
+        >
+          <!-- Toggle Button -->
+          <button
+            id="toggleSidebarBtn"
+            class="btn btn-light position-absolute top-0 end-0 m-3 shadow-sm"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+
+          <!-- Profile Image -->
+          <div class="sidevar-img">
+            <img
+              class="nav-modal img-fluid rounded-circle shadow"
+              src="assets/img/profile/user.png"
+              alt="User Profile"
+              data-bs-toggle="modal"
+              data-bs-target="#profileModalSidebar"
+              style="
+                width: 70px;
+                height: 70px;
+                object-fit: cover;
+                cursor: pointer;
+                border: 3px solid #fff;
+                margin-top: 50px;
+              "
+            />
+            <h5 class="P-5">ARPON</h5>
+          </div>
+
+          <div style="overflow-y: auto; overflow-x: hidden; height: 73vh">
+            <!-- Navigation links -->
+            <ul
+              class="nav flex-column text-start mt-3"
+              id="sidebarLinks"
+              style="white-space: nowrap"
+            >
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white active"
+                  href="#"
+                  data-section="home"
+                  data-bs-toggle="tooltip"
+                  title="Home"
+                >
+                  <i class="fa-solid fa-house me-2"></i><span>Home</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="Progress"
+                  data-bs-toggle="tooltip"
+                  title="Progress"
+                >
+                  <i class="fa-solid fa-spinner"></i><span>Progress</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="Notice"
+                  data-bs-toggle="tooltip"
+                  title="Notice"
+                >
+                  <i class="fa-solid fa-envelope me-2"></i><span>Notice</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="Task"
+                  data-bs-toggle="tooltip"
+                  title="Task"
+                >
+                  <i class="fas fa-tasks"></i><span>Task</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="My-course"
+                  data-bs-toggle="tooltip"
+                  title="My Course"
+                >
+                  <i class="fa-solid fa-books"></i><span>My Course</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="Lession"
+                  data-bs-toggle="tooltip"
+                  title="Lession"
+                >
+                  <i class="fa-solid fa-book-open"></i><span>Lession</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="Points"
+                  data-bs-toggle="tooltip"
+                  title="Points"
+                >
+                  <i class="fa-sharp fa-solid fa-feather-pointed"></i
+                  ><span>Points</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="Payment"
+                  data-bs-toggle="tooltip"
+                  title="Payment"
+                >
+                  <i class="fa-solid fa-credit-card"></i><span>Payment</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="Help"
+                  data-bs-toggle="tooltip"
+                  title="Help's"
+                >
+                  <i class="fa-brands fa-hire-a-helper"></i><span>Help's</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="Help"
+                  data-bs-toggle="tooltip"
+                  title="Help's"
+                >
+                  <i class="fa-brands fa-hire-a-helper"></i><span>Help's</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="Help"
+                  data-bs-toggle="tooltip"
+                  title="Help's"
+                >
+                  <i class="fa-brands fa-hire-a-helper"></i><span>Help's</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  href="#"
+                  data-section="Help"
+                  data-bs-toggle="tooltip"
+                  title="Help's"
+                >
+                  <i class="fa-brands fa-hire-a-helper"></i><span>Help's</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Mobile Navbar -->
+        <nav
+          class="navbar navbar-expand-lg navbar-dark d-md-none mobile-navbar"
+        >
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <!-- trigger modal -->
+              <img
+                class="nav-modal"
+                data-bs-toggle="modal"
+                data-bs-target="#profileModalMobile"
+                src="assets/img/profile/user.png"
+                alt=""
+              />
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="profileModalMobile"
+                tabindex="-1"
+                aria-labelledby="profileModalMobileLabel"
+                aria-hidden="true"
+                data-bs-backdrop="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="profileModalMobileLabel">
+                        Modal title
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">...</div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="button" class="btn btn-primary">
+                        Save changes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <button
+              class="navbar-toggler mobail-nav-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#mobileNav"
+              aria-controls="mobileNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fa-regular fa-ellipsis-vertical"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="mobileNav">
+              <ul class="navbar-nav flex-column text-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><i class="fa-solid fa-gear"></i> Settings</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><i class="fa-solid fa-right-from-bracket"></i> Logout</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"
+                    ><i class="fa-solid fa-envelope"></i>Create a New Account</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="col-lg-10 col-md-9 p-0" id="mainContent">
+          <!-- progress Section -->
+          <section id="ProgressSection" class="content-section">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <h1 class="Overview text-center">Overview</h1>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="profile-card mx-auto">
+                    <div class="profile mx-auto">
+                      <img src="assets/img/profile/girl-avatar.jpg" alt="" />
+                    </div>
+                    <div class="profile-content">
+                      <h4 class="text-center">Sarika Binte Shanto</h4>
+                      <p class="text-center text-muted">sarika019@gmail.com</p>
+                      <hr />
+                      <div class="profile-icon">
+                        <p><i class="fa-solid fa-id-card-clip"></i>ID-651806</p>
+                        <p><i class="fa-solid fa-user-sith"></i>Second Batch</p>
+                        <p>
+                          <i class="fa-solid fa-graduation-cap"></i>GPA-5.00
+                        </p>
+                        <p>
+                          <i class="fa-solid fa-location-dot"></i>JI. Lavender
+                          Tangerang
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="row">
+                    <!-- card-1 -->
+                    <div class="col-md-6">
+                      <div class="card-section float-end">
+                        <div class="card">
+                          <div class="hed-liner mx-auto"></div>
+                          <h4 class="text-center">ACADEMIC</h4>
+                          <hr />
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Mollitia harum tenetur at dolores. Repellat
+                            est aut sit officiis, consectetur aliquam minus
+                            doloremque beatae fugiat blanditiis libero eius
+                            voluptatibus reiciendis enim.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- card-2 -->
+                    <div class="col-md-6">
+                      <div class="card-section">
+                        <div class="card">
+                          <div class="hed-liner mx-auto"></div>
+                          <h4 class="text-center">ATTENDANCE</h4>
+                          <hr />
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Mollitia harum tenetur at dolores. Repellat
+                            est aut sit officiis, consectetur aliquam minus
+                            doloremque beatae fugiat blanditiis libero eius
+                            voluptatibus reiciendis enim.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <!-- card-3 -->
+                    <div class="col-md-6">
+                      <div class="card-section float-end">
+                        <div class="card">
+                          <div class="hed-liner mx-auto"></div>
+                          <h4 class="text-center">CLASS</h4>
+                          <hr />
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Mollitia harum tenetur at dolores. Repellat
+                            est aut sit officiis, consectetur aliquam minus
+                            doloremque beatae fugiat blanditiis libero eius
+                            voluptatibus reiciendis enim.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- card-4 -->
+                    <div class="col-md-6">
+                      <div class="card-section">
+                        <div class="card">
+                          <div class="hed-liner mx-auto"></div>
+                          <h4 class="text-center">TOTAL COURSE</h4>
+                          <hr />
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Mollitia harum tenetur at dolores. Repellat
+                            est aut sit officiis, consectetur aliquam minus
+                            doloremque beatae fugiat blanditiis libero eius
+                            voluptatibus reiciendis enim.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Sidebar Profile Modal placed at root for correct centering -->
+          <div
+            class="modal fade"
+            id="profileModalSidebar"
+            tabindex="-1"
+            aria-labelledby="profileModalSidebarLabel"
+            aria-hidden="true"
+            data-bs-backdrop="true"
+          >
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header bg-primary text-white">
+                  <h5 class="modal-title" id="profileModalSidebarLabel">
+                    Profile Info
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close btn-close-white"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body text-center">
+                  <img
+                    src="assets/img/profile/user.png"
+                    class="rounded-circle mb-3 shadow"
+                    width="100"
+                    alt=""
+                  />
+                  <h5 class="mb-0">John Doe</h5>
+                  <p class="text-muted">Web Developer</p>
+                  <hr />
+                  <p>Welcome back to your dashboard!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- bootstrap cdn -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <!-- bootstrap cdn -->
+
+    <!-- jquery cdn -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- jquery cdn -->
+
+    <!-- js link -->
+    <script src="./assets/js/main.js"></script>
+    <!-- js link -->
+  </body>
+</html>

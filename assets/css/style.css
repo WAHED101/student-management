@@ -1,4 +1,48 @@
+<<<<<<< Updated upstream
 /* 🌈 Global Color Variables — Use Across the Whole Website */
+=======
+* {
+  font-family: "Space Grotesk", Inter, sans-serif;
+}
+
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/*  Global Color Variables — Use Across the Whole Website */
+@import url("./register.css");
+
+/* Login-specific tweaks if needed */
+.signup-card::before {
+  /* move accent border to right for login page */
+  inset: 0 0 0 auto !important;
+}
+
+.login-card-title {
+  color: #6c757d;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.remember-forgot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.remember-forgot a {
+  color: var(--scarlet-400);
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  color: var(--scarlet-500);
+  text-decoration: underline;
+}
+
+>>>>>>> Stashed changes
 :root {
   /* Brand Colors */
   --color-primary: #fd8984;
@@ -19,8 +63,29 @@
 
   /* Borders & Shadows */
   --border-radius: 20px;
+<<<<<<< Updated upstream
   --shadow-soft: 0 5px 20px rgba(0,0,0,0.1);
   --shadow-strong: 0 10px 30px rgba(0,0,0,0.15);
+=======
+  --shadow-soft: 0 5px 20px rgba(0, 0, 0, 0.1);
+  --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+:root {
+  --scarlet-50: #ffedec;
+  --scarlet-100: #fed5d3;
+  --scarlet-200: #feaeac;
+  --scarlet-300: #fd8984;
+  --scarlet-400: #fd6056;
+  --scarlet-500: #f53010;
+  --scarlet-600: #d3280c;
+  --scarlet-700: #a61d07;
+  --scarlet-800: #751103;
+  --scarlet-900: #440601;
+  --scarlet-950: #2a0200;
+  --p-section-bg: #f2fafd;
+  --icon-bg: #E4A2A4;
+>>>>>>> Stashed changes
 }
 
 /*  Welcome Section */
@@ -54,12 +119,40 @@
   gap: 20px;
   color: var(--text-accent);
 }
+<<<<<<< Updated upstream
 .wellcome-content-titel-img { width: 100px; }
 .wellcome-titel h1 { font-size: 64px; font-weight: 800; margin: 0; }
 .wellcome-titel p { font-size: 20px; font-weight: bold; }
 
 .wellcome-subtext h3 { font-size: 20px; color: var(--text-accent); margin: 20px 0 10px; }
 .wellcome-subtext p { color: var(--text-muted); }
+=======
+
+.wellcome-content-titel-img {
+  width: 100px;
+}
+
+.wellcome-titel h1 {
+  font-size: 64px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.wellcome-titel p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.wellcome-subtext h3 {
+  font-size: 20px;
+  color: var(--text-accent);
+  margin: 20px 0 10px;
+}
+
+.wellcome-subtext p {
+  color: var(--text-muted);
+}
+>>>>>>> Stashed changes
 
 .wellcome-buttons {
   display: flex;
@@ -97,7 +190,14 @@
   left: -100%;
   width: 100%;
   height: 100%;
+<<<<<<< Updated upstream
   background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+=======
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
+>>>>>>> Stashed changes
   transition: all 0.6s ease;
 }
 
@@ -112,6 +212,68 @@
 }
 
 /*WELLOCOME Login Button (outline style) */
+<<<<<<< Updated upstream
+=======
+.bg-glass-login {
+  background-color: #f5f5f5;
+  /* simple light background */
+  color: #333;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bg-glass-login:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+body.modal-open .bg-glass-login:hover {
+  transform: none;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.btn-simple {
+  background-color: #f5f5f5;
+  /* matches your card */
+  color: #333;
+  border: 2px solid var(--scarlet-100);
+  /* subtle border */
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-simple:disabled {
+  cursor: no-drop !important;
+  pointer-events: visible;
+  background-color: rgba(0, 0, 0, 0.098) !important;
+}
+
+.btn-simple:disabled:hover {
+  border-color: rgba(0, 0, 0, 0.162);
+}
+
+/* hover effect */
+.btn-simple:hover {
+  border: 2px solid var(--scarlet-300);
+  /* subtle border */
+  transform: translateY(-2px);
+  /* subtle lift */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* active effect */
+.btn-simple:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+>>>>>>> Stashed changes
 .btn-login {
   border: 2px solid var(--color-primary-dark);
   color: var(--color-primary-dark);
@@ -127,3 +289,314 @@
 }
 
 
+<<<<<<< Updated upstream
+=======
+.two {
+  top: 0%;
+  left: 20%;
+  width: 15vw;
+  height: 15vw;
+  animation: shapeFloat 80s ease-in-out infinite alternate;
+}
+
+#gooey-shape {
+  position: fixed;
+  background: radial-gradient(circle at 30% 30%, #ff671b, #fe320a, #ffd100);
+  filter: blur(25px) saturate(180%);
+  opacity: 0.85;
+  z-index: -1;
+  border-radius: 55% 45% 60% 40% / 50% 60% 40% 50%;
+
+  box-shadow: 0 0 80px rgba(254, 50, 10, 0.5);
+}
+
+/* Sidebar styling */
+#sidebar {
+  min-height: 100vh;
+  background-color: #1863ff;
+}
+
+#sidebar .nav-link {
+  color: white;
+  font-weight: 500;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+#sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffd700;
+}
+
+#sidebar .nav-link i {
+  margin-right: 10px;
+}
+
+.nav-modal {
+  width: 20%;
+}
+
+#sidebar {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  white-space: nowrap;
+}
+
+#sidebar .nav {
+  width: 100%;
+}
+
+/* Background Glass Effect */
+.bg-glass {
+  background: rgba(25, 72, 194, 0.9);
+  backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Transition */
+#sidebar {
+  transition: flex-basis 0.4s ease, max-width 0.4s ease, padding 0.4s ease,
+    margin 0.4s ease;
+  will-change: flex-basis, max-width;
+  overflow: hidden;
+  /* avoid content reflow causing blink during resize */
+}
+
+/* Collapsed state: shrink actual column width */
+#sidebar.collapsed {
+  flex: 0 0 100px;
+  /* override Bootstrap column width */
+  max-width: 100px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* Ensure animated baseline sizes match Bootstrap grid at breakpoints */
+@media (min-width: 992px) {
+  #sidebar:not(.collapsed) {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+
+  /* match main content baseline for smooth transition */
+  #mainContent {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #sidebar:not(.collapsed) {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  /* match main content baseline for smooth transition */
+  #mainContent {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+
+/* When sidebar is collapsed, let main content expand to fill remaining width */
+@media (min-width: 768px) {
+  #sidebar.collapsed~#mainContent {
+    flex: 0 0 calc(100% - 100px);
+    max-width: calc(100% - 100px);
+  }
+}
+
+/* Animate main content width changes too to prevent flicker */
+#mainContent {
+  transition: flex-basis 0.4s ease, max-width 0.4s ease, padding 0.4s ease,
+    margin 0.4s ease;
+  will-change: flex-basis, max-width;
+}
+
+#sidebar .nav-link {
+  padding: 12px 15px;
+  border-radius: 8px;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+#sidebar .nav-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
+}
+
+#sidebar .nav-link i {
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+/* Hide text when collapsed */
+#sidebar.collapsed .nav-link span {
+  display: none;
+}
+
+#sidebar.collapsed .nav-link {
+  text-align: center;
+}
+
+#sidebar.collapsed .nav-link i {
+  margin-right: 0 !important;
+}
+
+/* Hide large profile block when collapsed */
+#sidebar.collapsed .navbar-brand {
+  display: none;
+}
+
+/* Toggle Button Animation */
+#toggleSidebarBtn {
+  transition: transform 0.3s ease;
+}
+
+#toggleSidebarBtn.rotate {
+  transform: rotate(180deg);
+}
+
+.mobile-navbar {
+  background-color: var(--color-primary-light-ultra);
+}
+
+.mobail-nav-toggler {
+  background-color: none;
+  border: none;
+  color: var(--color-primary-hover);
+}
+
+
+/******************* progress-section****************** */
+#ProgressSection {
+  background-color: #D3DBDE;
+  width: 100%;
+
+}
+
+.profile-card {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  border-radius: 20px;
+  width: fit-content;
+  padding: 55px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    transition: transform 0.5s ease;
+    margin-top: 40px;
+    cursor: pointer;
+    &:hover{
+      transform: translateY(-20px); 
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    }
+}
+
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+
+}
+
+.profile {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  background-color: white;
+  display: flex;
+  box-shadow:
+    0 4px 20px rgba(255, 255, 255, 0.6),  /* soft white spread */
+    0 0 10px rgba(255, 255, 255, 0.4),    /* ambient white */
+    inset 0 1px 2px rgba(255, 255, 255, 0.8); 
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-content h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.profile-content i {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(to bottom, #fd8984, #fd6056);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+
+}
+
+.profile-icon p {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  
+
+}
+.profile-content p{
+  font-size: 15px;
+  color: #4b4c4d;
+}
+.card{
+  width: 300px;
+  padding: 10px;
+  margin-top: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0));
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+    transition: all 0.5s ease; 
+   cursor: pointer;
+    &:hover{
+      transform: translateY(-20px); 
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+
+}
+.card p{
+ font-size: 15px;
+   color: #4b4c4dab;
+
+}
+.hed-liner{
+  width: 150px;
+  height: 20px;
+ background: linear-gradient(to bottom, #fd8984, #fd6056);
+ border-radius: 20px;
+ margin-top: -18px;
+ margin-bottom: 20px;
+}
+.card h4 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--icon-bg);
+}
+
+.Overview{
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  /* font-size: 36px; */
+  margin-top: 40px;
+
+  color: var(--scarlet-900);
+  text-transform: uppercase;
+}
+>>>>>>> Stashed changes
