@@ -48,8 +48,8 @@
     cursor: pointer;
     color: var(--scarlet-400);
 }
-/* Notice filter styles */
-.notice-filters .btn{
+/* Task filter styles */
+.task-filters .btn{
     border-radius: 999px;
 }
 .filter-btn.active{
@@ -57,8 +57,8 @@
     border-color: var(--scarlet-500) !important;
 }
 
-/* Sticky filters bar at top of Notice section */
-.notice-filters{
+/* Sticky filters bar at top of Task section */
+.task-filters{
     position: sticky;
     top: 0;
     z-index: 1020;
@@ -66,35 +66,35 @@
     padding: 0;
 }
 
-/* Fixed width for notice cards to keep all consistent */
-.notice-card{
+/* Fixed width for task cards to keep all consistent */
+.task-card{
     width: 100%;
     max-width: 720px;
 }
 
 /* Ensure truncation elements behave consistently */
-.notice-card .text-truncate{
+.task-card .text-truncate{
     display: block;
 }
 
 /* Center align view button and time */
-.notice-meta{
+.task-meta{
     display: flex;
     align-items: center;
     gap: 8px;
 }
-.notice-meta .btn{
+.task-meta .btn{
     display: flex;
     align-items: center;
     gap: 6px;
     padding: 0;
 }
 /* Smooth expand/collapse for notice descriptions */
-.notice-card p.desc-collapsible{
+.task-card p.desc-collapsible{
     overflow: hidden;
     transition: max-height 300ms ease;
 }
-.notice-card p.is-collapsed{
+.task-card p.is-collapsed{
     /* approx single-line height; keeps width stable while collapsed */
     max-height: 1.6em;
 }
@@ -109,7 +109,7 @@
   margin-top: 12vh;
 }
 
-/* Responsive adjustments for Notice section only */
+/* Responsive adjustments for Task section only */
 @media (max-width: 991.98px) {
   /* Stack the right column and remove fixed behavior */
   .fixed-right{
@@ -123,28 +123,28 @@
     height: auto;
     min-height: 180px;
   }
-  /* Let notice cards use full width on small screens */
-  .notice-card{
+  /* Let task cards use full width on small screens */
+  .task-card{
     max-width: 100%;
   }
   /* Reduce outer padding around each item for compact mobile spacing */
   .notify .p-5{
     padding: 1rem !important;
   }
-  /* Better tablet handling for filters: remove gaps and keep controls usable */
-  .notice-filters{
+  /* Better tablet handling for filters */
+  .task-filters{
     padding: 8px;
     gap: 0;
   }
-  .notice-filters .btn-group{
+  .task-filters .btn-group{
     flex: 1 1 auto;
     overflow-x: auto;
     white-space: nowrap;
     padding-bottom: 2px;
   }
-  .notice-filters .btn-group .btn{ margin-right: 0; }
-  .notice-filters .ms-auto{ flex: 0 0 260px; }
-  .notice-filters .input-group{ width: 100%; }
+  .task-filters .btn-group .btn{ margin-right: 0; }
+  .task-filters .ms-auto{ flex: 0 0 260px; }
+  .task-filters .input-group{ width: 100%; }
   /* Ensure card appears after the notice list on tablets */
   .notify .col-md-8{ order: 1; }
   .notify .fixed-right{ order: 2; }
@@ -152,9 +152,20 @@
 
 @media (max-width: 575.98px) {
   /* Slightly smaller date number on very small screens to avoid overflow */
-  .date .fs-4{ font-size: 1rem !important; }
-  .notice-filters{ padding: 6px; }
-  .notice-filters .btn-group{ justify-content: center; }
-  .notice-filters .ms-auto{ width: 100%; margin-left: 0 !important; }
-  .notice-filters .input-group{ width: 100%; }
+  .date .fs-5{ font-size: 1rem !important; }
+  /* Stack filters and make search full-width */
+  .task-filters{ padding: 6px; }
+  .task-filters .btn-group{ justify-content: center; }
+  .task-filters .ms-auto{ width: 100%; margin-left: 0 !important; }
+  .task-filters .input-group{ width: 100%; }
+}
+.task-profile{
+  width: 5%;
+}
+.task-left-vh{
+  height: 85vh;
+}
+.web-img{
+  height: 30vh;
+  overflow: hidden;
 }
