@@ -17,10 +17,19 @@
     background-color: var(--scarlet-400) !important;
     border-color: var(--scarlet-400) !important;
 }
+.color-t{
+    color: var(--scarlet-400) !important;
+}
+.border-t{
+    border-color: var(--scarlet-400) !important;
+}
 .highlight{
-    border-left: 4px solid var(--scarlet-300) !important;
-    border-right: 4px solid var(--scarlet-300) !important;
-
+    border-left: 4px solid var(--scarlet-400) !important;
+    border-right: 4px solid var(--scarlet-400) !important;
+}
+.important{
+    border-left: 2px solid var(--scarlet-200) !important;  
+    border-bottom: 2px solid var(--scarlet-200) !important;  
 }
 .none-highlight{
     border-left: 2px solid rgba(227, 82, 82, 0.226) !important;
@@ -30,6 +39,9 @@
 }
 .fs-8{
     font-size: 0.7rem !important;
+}
+.fs-9{
+    font-size: 0.6rem !important;
 }
 .readmore{
     font-size: 0.8rem !important;
@@ -51,7 +63,7 @@
     top: 0;
     z-index: 1020;
     background: #fff;
-    padding: 8px 12px;
+    padding: 0;
 }
 
 /* Fixed width for notice cards to keep all consistent */
@@ -76,4 +88,23 @@
     align-items: center;
     gap: 6px;
     padding: 0;
+}
+/* Smooth expand/collapse for notice descriptions */
+.notice-card p.desc-collapsible{
+    overflow: hidden;
+    transition: max-height 300ms ease;
+}
+.notice-card p.is-collapsed{
+    /* approx single-line height; keeps width stable while collapsed */
+    max-height: 1.6em;
+}
+.fixed-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /* z-index: 1050; */
+}
+
+.fixed-card {
+  margin-top: 12vh;
 }

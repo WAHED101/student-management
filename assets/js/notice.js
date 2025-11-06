@@ -9,8 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
     noticeItems.forEach(function (item) {
       var category = item.getAttribute('data-category');
       var show = filterValue === 'all' || category === filterValue;
-      var col = item.closest('.col-md-12');
-      var target = col || item;
+      var paddingDiv = item.parentElement;
+      var target;
+      if (paddingDiv && paddingDiv.classList.contains('p-5')) {
+        target = paddingDiv;
+      } else {
+        target = item;
+      }
       if (show) {
         target.classList.remove('d-none');
       } else {
@@ -30,7 +35,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Read more / Read less toggle
+  // Prepare collapsible descriptions (keep width stable)
+  noticeSection.querySelectorAll('.notice-card p').forEach(function (p) {
+    p.classList.add('desc-collapsible', 'is-collapsed');
+    p.classList.remove('text-truncate');
+    // set initial max-height explicitly so first expand can animate from 1.6em
+    p.style.maxHeight = '1.6em';
+  });
+
+  // Read more / Read less toggle with slide animation
   noticeSection.addEventListener('click', function (e) {
     var readMore = e.target.closest('.readmore');
     if (!readMore) return;
@@ -41,13 +54,29 @@ document.addEventListener('DOMContentLoaded', function () {
     var desc = card.querySelector('p');
     if (!desc) return;
 
-    var expanded = card.classList.toggle('is-expanded');
-    if (expanded) {
-      desc.classList.remove('text-truncate');
+    var isCollapsed = desc.classList.contains('is-collapsed');
+
+    if (isCollapsed) {
+      // Expand: from current max-height to scrollHeight
+      var targetHeight = desc.scrollHeight;
+      desc.style.maxHeight = targetHeight + 'px';
+      desc.classList.remove('is-collapsed');
       readMore.textContent = 'Read less';
       readMore.setAttribute('aria-expanded', 'true');
+      // After transition completes, clear inline maxHeight so content can grow naturally
+      var onExpandEnd = function () {
+        desc.style.maxHeight = '';
+        desc.removeEventListener('transitionend', onExpandEnd);
+      };
+      desc.addEventListener('transitionend', onExpandEnd);
     } else {
-      desc.classList.add('text-truncate');
+      // Collapse: set current height, then reduce to single line
+      var current = desc.scrollHeight;
+      desc.style.maxHeight = current + 'px';
+      // force reflow
+      desc.getBoundingClientRect();
+      desc.style.maxHeight = '1.6em';
+      desc.classList.add('is-collapsed');
       readMore.textContent = 'Read more';
       readMore.setAttribute('aria-expanded', 'false');
     }
