@@ -1,38 +1,447 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Student-Managemetn</title>
-    <link rel="icon" href="./assets/img/logo/logo.png">
+    <link rel="icon" href="./assets/img/logo/logo.png" />
     <!-- bootstrap cdn -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
     <!-- bootstrap cdn -->
 
     <!-- font awesome cdn -->
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css">
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v7.0.1/css/all.css"
+    />
     <!-- font awesome cdn -->
 
     <!-- css link -->
-     <link rel="stylesheet" href="./assets/css/animation.css">
-     <link rel="stylesheet" href="./assets/css/media.css">
-     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/register.css" />
+    <!-- flatpickr css -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <!-- css link -->
+    <!-- font cdn -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font cdn -->
   </head>
   <body>
-    
-    
-    
+    <section class="min-vh-100 d-flex align-items-center">
+      <div class="container">
+        <div
+          class="row vh-100 d-flex justify-content-center align-items-center"
+        >
+          <div class="col-md-6 bg-glass py-5 px-5 rounded-5 signup-card">
+            <form id="signupForm">
+              <div
+                class="step-indicator d-flex align-items-center justify-content-between mb-4"
+              >
+                <div class="indicator-item active" data-step="1">
+                  <span>1</span>
+                </div>
+                <div class="indicator-line"></div>
+                <div class="indicator-item" data-step="2"><span>2</span></div>
+                <div class="indicator-line"></div>
+                <div class="indicator-item" data-step="3"><span>3</span></div>
+                <div class="indicator-spacer"></div>
+                <div class="indicator-title text-t">REGISTRATION</div>
+              </div>
+
+              <div class="step active" data-step="1">
+                <div class="input-group mb-3">
+                  <span
+                    class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                    ><i class="fa-regular fa-at"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                    placeholder="Username"
+                    name="username"
+                    id="username"
+                  />
+                </div>
+
+                <div class="input-group mb-3">
+                  <span
+                    class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                    ><i class="fa-regular fa-envelope"></i
+                  ></span>
+                  <input
+                    type="email"
+                    class="form-control border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                    placeholder="Email"
+                    name="email"
+                    id="email"
+                  />
+                </div>
+
+                <div class="input-group mb-3">
+                  <span
+                    class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                    ><i class="fa-regular fa-key"></i
+                  ></span>
+                  <input
+                    type="password"
+                    class="form-control border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                    placeholder="Password"
+                    name="password"
+                    id="password"
+                  />
+                  <button
+                    class="input-group-text bg-transparent border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t toggle-password"
+                    type="button"
+                    aria-label="Show password"
+                  >
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+                <div class="input-group mb-3">
+                  <span
+                    class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                    ><i class="fa-regular fa-key"></i
+                  ></span>
+                  <input
+                    type="password"
+                    class="form-control border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                    placeholder="Confirm password"
+                    name="confirmPassword"
+                    id="confirmPassword"
+                  />
+                  <button
+                    class="input-group-text bg-transparent border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t toggle-password"
+                    type="button"
+                    aria-label="Show password"
+                  >
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="step" data-step="2">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="profile-section">
+                      <div class="profile-preview" id="profilePreview">
+                        <div class="placeholder bg-transparent">
+                          <i class="fa-solid fa-camera-viewfinder"></i>
+                        </div>
+                        <img id="previewImage" src="" alt="Profile Preview" />
+                      </div>
+                      <div class="profile-info">
+                        <h3>Profile Picture</h3>
+                        <p>Click the image to upload</p>
+                        <div class="profile-actions">
+                          <button
+                            type="button"
+                            class="btn-small btn-primary d-none"
+                            id="uploadBtn"
+                          >
+                            Upload
+                          </button>
+                          <button
+                            type="button"
+                            class="btn-small btn-secondary"
+                            id="removeBtn"
+                            style="display: none"
+                          >
+                            Remove
+                          </button>
+                        </div>
+                        <div class="success-message" id="successMessage">
+                          Profile picture updated!
+                        </div>
+                      </div>
+                    </div>
+
+                    <input
+                      type="file"
+                      id="fileInput"
+                      class="file-input"
+                      accept="image/*"
+                    />
+
+                    <div class="crop-modal" id="cropModal">
+                      <div class="crop-container">
+                        <h3>Adjust Your Profile Picture</h3>
+                        <p>Position your image within the circle</p>
+                        <div class="crop-preview" id="cropPreview">
+                          <img id="cropImage" src="" alt="Crop Preview" />
+                        </div>
+                        <div class="crop-controls">
+                          <button
+                            type="button"
+                            class="zoom-btn text-black"
+                            id="zoomOut"
+                          >
+                            -
+                          </button>
+                          <button
+                            type="button"
+                            class="zoom-btn text-black"
+                            id="zoomIn"
+                          >
+                            +
+                          </button>
+                        </div>
+                        <div class="modal-buttons">
+                          <button
+                            type="button"
+                            class="modal-btn modal-btn-secondary"
+                            id="cancelCrop"
+                          >
+                            Cancel
+                          </button>
+                          <button
+                            type="button"
+                            class="modal-btn modal-btn-primary"
+                            id="saveCrop"
+                          >
+                            Save
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="input-group mb-3">
+                      <span
+                        class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                        ><i class="fa-regular fa-user"></i
+                      ></span>
+                      <input
+                        type="text"
+                        class="form-control border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                        placeholder="First name"
+                        name="firstName"
+                        id="firstName"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="input-group mb-3">
+                      <span
+                        class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                        ><i class="fa-regular fa-user"></i
+                      ></span>
+                      <input
+                        type="text"
+                        class="form-control border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                        placeholder="Last name"
+                        name="lastName"
+                        id="lastName"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="input-group mb-3">
+                      <span
+                        class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                        ><i class="fa-regular fa-calendar"></i
+                      ></span>
+                      <input
+                        type="text"
+                        class="form-control border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent date-control"
+                        placeholder="Date of Birth"
+                        name="dob"
+                        id="dob"
+                        autocomplete="off"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="input-group mb-3">
+                      <span
+                        class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                        ><i class="fa-regular fa-venus-mars"></i
+                      ></span>
+                      <select
+                        class="form-select border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                        name="gender"
+                        id="gender"
+                      >
+                        <option value="" selected disabled>Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <span
+                    class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                    ><i class="fa-regular fa-phone"></i
+                  ></span>
+                  <input
+                    type="tel"
+                    class="form-control border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                    placeholder="Phone"
+                    name="phone"
+                    id="phone"
+                  />
+                </div>
+              </div>
+
+              <div class="step" data-step="3">
+                <div class="input-group mb-3">
+                  <span
+                    class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                    ><i class="fa-regular fa-book"></i
+                  ></span>
+                  <select
+                    class="form-select border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                    name="courseName"
+                    id="courseName"
+                  >
+                    <option value="" selected disabled>Course Name</option>
+                    <option value="Office Design">Office Design</option>
+                    <option value="Frontend Web">Frontend Web</option>
+                    <option value="Backend Web">Backend Web</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <span
+                    class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                    ><i class="fa-regular fa-hourglass"></i
+                  ></span>
+                  <select
+                    class="form-select border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                    name="duration"
+                    id="duration"
+                  >
+                    <option value="" selected disabled>Duration</option>
+                    <option value="3 Months">3 Months</option>
+                    <option value="6 Months">6 Months</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <span
+                    class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                    ><i class="fa-regular fa-clock"></i
+                  ></span>
+                  <select
+                    class="form-select border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                    name="classTime"
+                    id="classTime"
+                  >
+                    <option value="" selected disabled>Class Time</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Full-time">Full-time</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <span
+                    class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                    ><i class="fa-regular fa-laptop"></i
+                  ></span>
+                  <select
+                    class="form-select border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                    name="learningMode"
+                    id="learningMode"
+                  >
+                    <option value="" selected disabled>Learning Mode</option>
+                    <option value="Online">Online</option>
+                    <option value="Offline">Offline</option>
+                  </select>
+                </div>
+                <div class="input-group mb-3">
+                  <span
+                    class="input-group-text bg-transparent border-end-0 border-start-0 border-top-0 rounded-0 border-3 border-t"
+                    ><i class="fa-regular fa-user"></i
+                  ></span>
+                  <input
+                    type="text"
+                    class="form-control border-start-0 border-top-0 border-end-0 rounded-0 border-3 border-t bg-transparent"
+                    placeholder="Reference (optional)"
+                    name="reference"
+                    id="reference"
+                  />
+                </div>
+              </div>
+
+              <div class="d-flex gap-2 mt-2">
+                <button
+                  type="button"
+                  class="btn btn-simple flex-fill btn-prev invisible"
+                  disabled
+                >
+                  Back
+                </button>
+                <button type="button" class="btn btn-simple flex-fill btn-next">
+                  Next
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-simple flex-fill btn-submit d-none"
+                >
+                  Submit
+                </button>
+              </div>
+
+              <div class="text-center small text-muted mt-3">
+                Already have an account?
+                <a
+                  href="login.html"
+                  class="link-underline text-t link-underline-opacity-0"
+                  >Sign in</a
+                >
+              </div>
+            </form>
+          </div>
+          <div
+            class="col-md-6 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="./assets/img/signup-in/signup-image.jpg"
+              class="img-fluid"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- bootstrap cdn -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
     <!-- bootstrap cdn -->
 
     <!-- jquery cdn -->
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <!-- jquery cdn -->
+
+    <!-- flatpickr js -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- flatpickr js -->
 
     <!-- js link -->
-     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/upload.js"></script>
     <!-- js link -->
   </body>
 </html>

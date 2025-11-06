@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Picture Upload</title>
+    <style>
+      .profile-section {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .profile-preview {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        border: 2px solid #e0e0e0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        flex-shrink: 0;
+      }
+
+      .profile-preview:hover {
+        border-color: #4a6cf7;
+      }
+
+      .profile-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+        transition: transform 0.3s ease;
+      }
+
+      .profile-preview .placeholder {
+        color: #888;
+        font-size: 24px;
+      }
+
+      .profile-info h3 {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .profile-info p {
+        font-size: 13px;
+        color: #666;
+        margin-bottom: 8px;
+      }
+
+      .profile-actions {
+        display: flex;
+        gap: 8px;
+      }
+
+      .btn-small {
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: none;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary {
+        background-color: #4a6cf7;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: #3a5ce5;
+      }
+
+      .btn-secondary {
+        background-color: #f0f0f0;
+        color: #333;
+      }
+
+      .btn-secondary:hover {
+        background-color: #e0e0e0;
+      }
+
+      .file-input {
+        display: none;
+      }
+
+      .success-message {
+        color: #4caf50;
+        font-size: 12px;
+        margin-top: 8px;
+        display: none;
+      }
+
+      /* Crop modal */
+      .crop-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .crop-container {
+        background-color: white;
+        border-radius: 12px;
+        padding: 20px;
+        width: 90%;
+        max-width: 400px;
+        text-align: center;
+      }
+
+      .crop-preview {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 0 auto 15px;
+        overflow: hidden;
+        border: 2px solid #e0e0e0;
+        position: relative;
+      }
+
+      .crop-preview img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1) translate(0, 0);
+        transition: transform 0.3s ease;
+      }
+
+      .crop-controls {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 15px 0;
+      }
+
+      .zoom-btn {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: none;
+        font-size: 18px;
+        transition: all 0.3s ease;
+      }
+
+      .zoom-btn:hover {
+        background-color: #e0e0e0;
+      }
+
+      .modal-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 15px;
+      }
+
+      .modal-btn {
+        padding: 8px 16px;
+        border-radius: 4px;
+        border: none;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .modal-btn-primary {
+        background-color: #4a6cf7;
+        color: white;
+      }
+      .modal-btn-secondary {
+        background-color: #f0f0f0;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="profile-section">
+          <div class="profile-preview" id="profilePreview">
+            <div class="placeholder">👤</div>
+            <img id="previewImage" src="" alt="Profile Preview" />
+          </div>
+          <div class="profile-info">
+            <h3>Profile Picture</h3>
+            <p>Click the image to upload</p>
+            <div class="profile-actions">
+              <button class="btn-small btn-primary" id="uploadBtn">
+                Upload
+              </button>
+              <button
+                class="btn-small btn-secondary"
+                id="removeBtn"
+                style="display: none"
+              >
+                Remove
+              </button>
+            </div>
+            <div class="success-message" id="successMessage">
+              Profile picture updated!
+            </div>
+          </div>
+        </div>
+
+        <input type="file" id="fileInput" class="file-input" accept="image/*" />
+
+        <div class="crop-modal" id="cropModal">
+          <div class="crop-container">
+            <h3>Adjust Your Profile Picture</h3>
+            <p>Position your image within the circle</p>
+            <div class="crop-preview" id="cropPreview">
+              <img id="cropImage" src="" alt="Crop Preview" />
+            </div>
+            <div class="crop-controls">
+              <button class="zoom-btn" id="zoomOut">-</button>
+              <button class="zoom-btn" id="zoomIn">+</button>
+            </div>
+            <div class="modal-buttons">
+              <button class="modal-btn modal-btn-secondary" id="cancelCrop">
+                Cancel
+              </button>
+              <button class="modal-btn modal-btn-primary" id="saveCrop">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const fileInput = document.getElementById("fileInput");
+        const profilePreview = document.getElementById("profilePreview");
+        const previewImage = document.getElementById("previewImage");
+        const uploadBtn = document.getElementById("uploadBtn");
+        const removeBtn = document.getElementById("removeBtn");
+        const successMessage = document.getElementById("successMessage");
+        const cropModal = document.getElementById("cropModal");
+        const cropImage = document.getElementById("cropImage");
+        const zoomInBtn = document.getElementById("zoomIn");
+        const zoomOutBtn = document.getElementById("zoomOut");
+        const cancelCropBtn = document.getElementById("cancelCrop");
+        const saveCropBtn = document.getElementById("saveCrop");
+
+        let currentScale = 1;
+        let currentPosition = { x: 0, y: 0 };
+        let isDragging = false;
+        let startPosition = { x: 0, y: 0 };
+        let currentFile = null;
+
+        uploadBtn.addEventListener("click", () => fileInput.click());
+        profilePreview.addEventListener("click", () => fileInput.click());
+
+        fileInput.addEventListener("change", (e) => {
+          if (e.target.files && e.target.files[0]) {
+            currentFile = e.target.files[0];
+            const reader = new FileReader();
+            reader.onload = (e) => {
+              cropImage.src = e.target.result;
+              cropModal.style.display = "flex";
+              currentScale = 1;
+              currentPosition = { x: 0, y: 0 };
+              updateCropImageTransform();
+            };
+            reader.readAsDataURL(currentFile);
+          }
+        });
+
+        removeBtn.addEventListener("click", () => {
+          previewImage.src = "";
+          previewImage.style.display = "none";
+          previewImage.style.transform = "scale(1) translate(0,0)";
+          document.querySelector(
+            ".profile-preview .placeholder"
+          ).style.display = "flex";
+          removeBtn.style.display = "none";
+          successMessage.style.display = "none";
+          fileInput.value = "";
+          currentFile = null;
+        });
+
+        zoomInBtn.addEventListener("click", () => {
+          currentScale = Math.min(currentScale + 0.1, 3);
+          updateCropImageTransform();
+        });
+
+        zoomOutBtn.addEventListener("click", () => {
+          currentScale = Math.max(currentScale - 0.1, 1);
+          updateCropImageTransform();
+        });
+
+        cropImage.addEventListener("mousedown", startDrag);
+        function startDrag(e) {
+          isDragging = true;
+          startPosition.x = e.clientX - currentPosition.x;
+          startPosition.y = e.clientY - currentPosition.y;
+          e.preventDefault();
+        }
+
+        document.addEventListener("mousemove", drag);
+        function drag(e) {
+          if (!isDragging) return;
+          currentPosition.x = e.clientX - startPosition.x;
+          currentPosition.y = e.clientY - startPosition.y;
+          updateCropImageTransform();
+        }
+
+        document.addEventListener("mouseup", () => {
+          isDragging = false;
+        });
+
+        function updateCropImageTransform() {
+          cropImage.style.transform = `translate(${currentPosition.x}px, ${currentPosition.y}px) scale(${currentScale})`;
+        }
+
+        cancelCropBtn.addEventListener("click", () => {
+          cropModal.style.display = "none";
+          fileInput.value = "";
+          currentFile = null;
+        });
+
+        saveCropBtn.addEventListener("click", () => {
+          previewImage.src = cropImage.src;
+          previewImage.style.display = "block";
+          document.querySelector(
+            ".profile-preview .placeholder"
+          ).style.display = "none";
+          removeBtn.style.display = "block";
+          successMessage.style.display = "block";
+          const scaleRatio = 70 / 200;
+          previewImage.style.transform = `translate(${
+            currentPosition.x * scaleRatio
+          }px, ${currentPosition.y * scaleRatio}px) scale(${currentScale})`;
+          cropModal.style.display = "none";
+          setTimeout(() => (successMessage.style.display = "none"), 3000);
+        });
+      });
+    </script>
+  </body>
+</html>
