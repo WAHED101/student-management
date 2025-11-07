@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Student-Managemetn</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <link rel="icon" href="./assets/img/logo/logo.png" />
     <!-- bootstrap cdn -->
     <link
@@ -299,7 +300,7 @@
         <main class="col-lg-10 col-md-9 p-0" id="mainContent">
           <!-- progress Section -->
           <section id="ProgressSection" class="content-section">
-            <div class="container">
+            <!-- <div class="container">
               <div class="row">
                 <div class="col-md-12">
                   <h1 class="Overview text-center">Overview</h1>
@@ -331,7 +332,7 @@
                 </div>
                 <div class="col-md-8">
                   <div class="row">
-                    <!-- card-1 -->
+                   
                     <div class="col-md-6">
                       <div class="card-section float-end">
                         <div class="card">
@@ -348,7 +349,7 @@
                         </div>
                       </div>
                     </div>
-                    <!-- card-2 -->
+                  
                     <div class="col-md-6">
                       <div class="card-section">
                         <div class="card">
@@ -368,7 +369,7 @@
                   </div>
 
                   <div class="row">
-                    <!-- card-3 -->
+                  
                     <div class="col-md-6">
                       <div class="card-section float-end">
                         <div class="card">
@@ -385,7 +386,7 @@
                         </div>
                       </div>
                     </div>
-                    <!-- card-4 -->
+                  
                     <div class="col-md-6">
                       <div class="card-section">
                         <div class="card">
@@ -402,6 +403,73 @@
                         </div>
                       </div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card-section">
+                    <div class="card-main">
+                      <div class="card-icon">
+                        <i class="fa-solid fa-person-pinball"></i>
+                      </div>
+
+                      <div class="card-content">
+                        <h6>ACADEMEIC</h6>
+                        <p>10 Subject</p>
+                      </div>
+                    </div>
+
+                    <div class="card-main">
+                      <div class="card-icon">
+                        <i class="fa-solid fa-clipboard-user"></i>
+                      </div>
+
+                      <div class="card-content">
+                        <h6>ATTENDANCE</h6>
+                        <p>60% in November</p>
+                      </div>
+                    </div>
+
+                    <div class="card-main">
+                      <div class="card-icon">
+                        <i class="fa-solid fa-user-group"></i>
+                      </div>
+
+                      <div class="card-content">
+                        <h6>CLASS</h6>
+                        <p>10 Subject</p>
+                      </div>
+                    </div>
+
+                    <div class="card-main">
+                      <div class="card-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                      </div>
+
+                      <div class="card-content">
+                        <h6>TOTAL COURSE</h6>
+                        <p>50 course</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-8">
+                  <!-- chart-bar -->
+                  <div class="chart-container">
+                    <h2>Monthly Attendance</h2>
+                    <canvas id="attendanceChart"></canvas>
+                  </div>
+                </div>
+
+                <div class="col-md-4">
+                  <div class="chart-container">
+                    <h2>Subject Attendance Overview</h2>
+                    <canvas id="subjectChart"></canvas>
                   </div>
                 </div>
               </div>

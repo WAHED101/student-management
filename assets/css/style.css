@@ -1,6 +1,4 @@
-<<<<<<< Updated upstream
 /* 🌈 Global Color Variables — Use Across the Whole Website */
-=======
 * {
   font-family: "Space Grotesk", Inter, sans-serif;
 }
@@ -42,7 +40,6 @@
   text-decoration: underline;
 }
 
->>>>>>> Stashed changes
 :root {
   /* Brand Colors */
   --color-primary: #fd8984;
@@ -63,10 +60,8 @@
 
   /* Borders & Shadows */
   --border-radius: 20px;
-<<<<<<< Updated upstream
   --shadow-soft: 0 5px 20px rgba(0,0,0,0.1);
   --shadow-strong: 0 10px 30px rgba(0,0,0,0.15);
-=======
   --shadow-soft: 0 5px 20px rgba(0, 0, 0, 0.1);
   --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
@@ -85,7 +80,6 @@
   --scarlet-950: #2a0200;
   --p-section-bg: #f2fafd;
   --icon-bg: #E4A2A4;
->>>>>>> Stashed changes
 }
 
 /*  Welcome Section */
@@ -119,14 +113,12 @@
   gap: 20px;
   color: var(--text-accent);
 }
-<<<<<<< Updated upstream
 .wellcome-content-titel-img { width: 100px; }
 .wellcome-titel h1 { font-size: 64px; font-weight: 800; margin: 0; }
 .wellcome-titel p { font-size: 20px; font-weight: bold; }
 
 .wellcome-subtext h3 { font-size: 20px; color: var(--text-accent); margin: 20px 0 10px; }
 .wellcome-subtext p { color: var(--text-muted); }
-=======
 
 .wellcome-content-titel-img {
   width: 100px;
@@ -152,7 +144,6 @@
 .wellcome-subtext p {
   color: var(--text-muted);
 }
->>>>>>> Stashed changes
 
 .wellcome-buttons {
   display: flex;
@@ -190,14 +181,11 @@
   left: -100%;
   width: 100%;
   height: 100%;
-<<<<<<< Updated upstream
   background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
-=======
   background: linear-gradient(120deg,
       transparent,
       rgba(255, 255, 255, 0.4),
       transparent);
->>>>>>> Stashed changes
   transition: all 0.6s ease;
 }
 
@@ -212,8 +200,6 @@
 }
 
 /*WELLOCOME Login Button (outline style) */
-<<<<<<< Updated upstream
-=======
 .bg-glass-login {
   background-color: #f5f5f5;
   /* simple light background */
@@ -273,7 +259,6 @@ body.modal-open .bg-glass-login:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
->>>>>>> Stashed changes
 .btn-login {
   border: 2px solid var(--color-primary-dark);
   color: var(--color-primary-dark);
@@ -289,8 +274,6 @@ body.modal-open .bg-glass-login:hover {
 }
 
 
-<<<<<<< Updated upstream
-=======
 .two {
   top: 0%;
   left: 20%;
@@ -472,7 +455,7 @@ body.modal-open .bg-glass-login:hover {
 
 /******************* progress-section****************** */
 #ProgressSection {
-  background-color: #D3DBDE;
+  background-color: var(--bg-light);
   width: 100%;
 
 }
@@ -599,4 +582,60 @@ body.modal-open .bg-glass-login:hover {
   color: var(--scarlet-900);
   text-transform: uppercase;
 }
->>>>>>> Stashed changes
+.card-icon{
+  width: 40px;
+  height: 40px;
+  background-color: rgba(28, 16, 201, 0.432);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+}
+.card-content h6{
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+ }
+ .card-main{
+  display: flex;
+  gap: 15px;
+  background-color: var(--bg-light);
+ box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  width: 250px;
+  padding: 30px;
+  border-radius: 15px;
+  margin-top: 30px;
+  /* align-items: center; */
+ }
+ .card-main p{
+ font-size: 15px;
+   color: #4b4c4dab;
+
+}
+.card-section{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/**************** chart*************** */
+ .chart-container {
+      width: 400px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+    }
