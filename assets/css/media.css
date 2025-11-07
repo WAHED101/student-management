@@ -1,9 +1,50 @@
-/*  WellCOME PAGE */
-@media (max-width: 768px) {
-  .wellcome-titel h1 { font-size: 48px; }
-  .wellcome-content { padding: 35px 20px; }
+/* 📱 Mobile Responsiveness for Welcome Section Text */
+@media (max-width: 991px) {
+  .wellcome-titel h1 {
+    font-size: 48px;
+  }
+  .wellcome-titel p {
+    font-size: 18px;
+  }
+  .wellcome-subtext h3 {
+    font-size: 18px;
+  }
+  .wellcome-subtext p {
+    font-size: 16px;
+  }
+  .wellcome-buttons .btn-register,
+  .wellcome-buttons .btn-login {
+    padding: 10px 28px;
+    font-size: 14px;
+  }
 }
+
 @media (max-width: 576px) {
-  .wellcome-titel h1 { font-size: 36px; }
-  .wellcome-content-titel-img { width: 70px; }
+  .wellcome-titel-text h1 {
+    font-size: 26px;
+  }
+  .wellcome-titel-text p {
+    font-size: 14px;
+  }
+  .wellcome-subtext h3 {
+    font-size: 16px;
+  }
+  .wellcome-subtext p {
+    font-size: 14px;
+  }
+  .wellcome-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .wellcome-buttons .btn-register,
+  .wellcome-buttons .btn-login {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    display: none !important;
+  }
 }
