@@ -127,3 +127,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+  document.querySelectorAll('.web-img').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.querySelector('.overlay').style.opacity = '1';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.querySelector('.overlay').style.opacity = '0';
+    });
+  });
+
+      // Zoom effect for modal images
+    document.querySelectorAll('.zoom-img').forEach(img => {
+      img.addEventListener('click', () => {
+        img.classList.toggle('zoomed');
+      });
+    });
+
+    

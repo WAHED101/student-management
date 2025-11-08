@@ -373,36 +373,298 @@
                     <div class="col-md-9">
                       <div class="row">
                         <!-- Use g-3 for spacing between cards -->
-                        <div class="col-md-6">
-                          <div class="task-card p-3 border rounded-4 h-100">
-                            <div
-                              class="task-profile-img d-flex align-items-center mb-2"
-                            >
-                              <img
-                                src="./assets/img/profile/profile-one.jpg"
-                                class="img-fluid rounded-circle task-profile"
-                                alt=""
-                                style="
-                                  width: 40px;
-                                  height: 40px;
-                                  object-fit: cover;
-                                "
-                              />
-                              <p class="ms-2 fs-7 mb-0">@ARPON</p>
-                            </div>
-                            <div class="task-card-cont">
-                              <div class="web-img">
-                                <img src="./assets/img/task/task-1.png" class="img-fluid" alt="">
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+ <div class="row g-4 my-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-6">
+        <div class="task-card p-3 border rounded-4 h-100 shadow-sm bg-white">
+          <div class="task-profile-img d-flex align-items-center mb-2">
+            <img src="./assets/img/profile/profile-one.jpg" class="img-fluid rounded-circle task-profile" alt="" style="width: 40px; height: 40px; object-fit: cover;">
+            <p class="ms-2 fs-7 mb-0 fw-semibold">@ARPON</p>
+          </div>
+
+          <div class="web-img mb-3">
+            <img src="./assets/img/task/task-1.png" class="img-fluid rounded-3 shadow-sm zoom-img" alt="Task Image" data-bs-toggle="modal" data-bs-target="#imgModal1">
+
+            <div class="overlay rounded-2">
+              <button data-bs-toggle="modal" data-bs-target="#imgModal1">View</button>
+              <button data-bs-toggle="modal" data-bs-target="#descModal1">Details</button>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <span class="fw-semibold fs-7 opacity-50">Task by @Shishir</span>
+            <small class="fs-8 opacity-50">1 hour ago</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6">
+        <div class="task-card p-3 border rounded-4 h-100 shadow-sm bg-white">
+          <div class="task-profile-img d-flex align-items-center mb-2">
+            <img src="./assets/img/profile/profile-one.jpg" class="img-fluid rounded-circle task-profile" alt="" style="width: 40px; height: 40px; object-fit: cover;">
+            <p class="ms-2 fs-7 mb-0 fw-semibold">@ARPON</p>
+          </div>
+
+          <div class="web-img mb-3">
+            <img src="./assets/img/task/task-2.jpg" class="img-fluid rounded-3 shadow-sm zoom-img" alt="Task Image" data-bs-toggle="modal" data-bs-target="#imgModal2">
+
+            <div class="overlay rounded-2">
+              <button data-bs-toggle="modal" data-bs-target="#imgModal2">View</button>
+              <button data-bs-toggle="modal" data-bs-target="#descModal2">Details</button>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <span class="fw-semibold fs-7 opacity-50">Task by @Shishir</span>
+            <small class="fs-8 opacity-50">2 hours ago</small>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    <!-- Textbook Task Card Variant (1) -->
+<div class="col-md-6">
+  <div class="task-card p-3 border rounded-4 h-100 shadow-sm bg-white">
+    <!-- Profile Info -->
+    <div class="task-profile-img d-flex align-items-center mb-2">
+      <img src="./assets/img/profile/profile-one.jpg" class="img-fluid rounded-circle task-profile" alt="" style="width: 40px; height: 40px; object-fit: cover;">
+      <p class="ms-2 fs-7 mb-0 fw-semibold">@ARPON</p>
+    </div>
+
+    <!-- Textbook Task Content -->
+    <div class="task-card-cont task-card">
+      <!-- Task Title -->
+      <h5 class="fw-bold mb-2 color-t">Textbook Task: Chapter 5</h5>
+
+      <!-- Task Info -->
+      <p class="mb-1"><strong>Section:</strong> Rachanamulok 3–8</p>
+      <p class="mb-3"><strong>Task:</strong> Read the assigned chapters.</p>
+
+      <!-- Buttons -->
+      <div class="d-flex gap-2">
+        <button class="btn btn-sm" style="background-color: var(--scarlet-500); color:#fff;" data-bs-toggle="modal" data-bs-target="#textbookModal">View Details</button>
+      </div>
+
+      <!-- Task Meta Info -->
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <span class="fw-semibold fs-7 opacity-50">Assigned by @Teacher</span>
+        <small class="fs-8 opacity-50">1 hour ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Textbook Task Modal - Chapter 5 -->
+<div class="modal fade" id="textbookModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-desc">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Chapter 5 Task Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Chapter:</strong> 5</p>
+        <p><strong>Sections:</strong> Rachanamulok 3–8</p>
+        <ul>
+          <li>Read all the sections carefully</li>
+          <li>Summarize main points in your own words</li>
+          <li>Prepare notes for discussion in class</li>
+        </ul>
+        <p>Remember to note down examples and key terms. This task helps you prepare for the next exercise and strengthens comprehension skills.</p>
+
+        <!-- Submit Button -->
+        <button type="button" class="btn bg-t-b text-white mt-3" data-bs-toggle="modal" data-bs-target="#submitFileModal">
+          Submit Task
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Textbook Task Card Variant (2) -->
+<div class="col-md-6">
+  <div class="task-card p-3 border rounded-4 h-100 shadow-sm bg-white">
+    <!-- Profile Info -->
+    <div class="task-profile-img d-flex align-items-center mb-2">
+      <img src="./assets/img/profile/profile-one.jpg" class="img-fluid rounded-circle task-profile" alt="" style="width: 40px; height: 40px; object-fit: cover;">
+      <p class="ms-2 fs-7 mb-0 fw-semibold">@ARPON</p>
+    </div>
+
+    <!-- Textbook Task Content -->
+    <div class="task-card-cont task-card">
+      <!-- Task Title -->
+      <h5 class="fw-bold mb-2 color-t">Textbook Task: Chapter 2</h5>
+
+      <!-- Task Info -->
+      <p class="mb-1"><strong>Section:</strong> Rachanamulok 1–9</p>
+      <p class="mb-3"><strong>Task:</strong> Read the assigned chapters.</p>
+
+      <!-- Buttons -->
+      <div class="d-flex gap-2">
+        <button class="btn btn-sm" style="background-color: var(--scarlet-500); color:#fff;" data-bs-toggle="modal" data-bs-target="#textbookModal1">View Details</button>
+      </div>
+
+      <!-- Task Meta Info -->
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <span class="fw-semibold fs-7 opacity-50">Assigned by @Teacher</span>
+        <small class="fs-8 opacity-50">1 hour ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Textbook Task Modal -->
+<div class="modal fade" id="textbookModal1" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-desc">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Chapter 5 Task Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Chapter:</strong> 2</p>
+        <p><strong>Sections:</strong> Rachanamulok 1–9</p>
+        <ul>
+          <li>Read all the sections carefully</li>
+          <li>Summarize main points in your own words</li>
+          <li>Prepare notes for discussion in class</li>
+        </ul>
+        <p>Remember to note down examples and key terms. This task helps you prepare for the next exercise and strengthens comprehension skills.</p>
+
+        <!-- Submit Button -->
+        <button type="button" class="btn bg-t-b text-white mt-3" data-bs-toggle="modal" data-bs-target="#submitFileModal">
+          Submit Task
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- File Upload Modal -->
+<div class="modal fade" id="submitFileModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title opacity-50 color-t">Submit Your Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="fileSubmitForm">
+          <div class="mb-3">
+            <input class="form-control" type="file" id="taskFileInput" required>
+          </div>
+          <button type="submit" class="btn bg-t w-100">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+
+  </div>
+
+  <!-- Image Modal 1 -->
+  <div class="modal fade" id="imgModal1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content p-2 bg-transparent border-0">
+        <img src="./assets/img/task/task-1.png" class="img-fluid rounded-3 zoom-img" alt="Full Image">
+      </div>
+    </div>
+  </div>
+
+<!-- Description Modal 1 -->
+<div class="modal fade" id="descModal1" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-desc">
+      <div class="modal-header border-0">
+        <h5 class="modal-title color-t">Task title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Responsive web layout using Bootstrap 5</li>
+          <li>Clean and modern card design</li>
+          <li>Clickable thumbnail with full-size modal</li>
+        </ul>
+        <p>This task card includes a cropped hero image, a creative bullet list, and a short description. Lorem ipsum dolor sit amet consectetur.</p>
+
+        <!-- Submit Button -->
+        <button type="button" class="btn bg-t-b text-white mt-3" data-bs-toggle="modal" data-bs-target="#submitFileModal">
+          Submit Task
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- File Upload Modal (same as before) -->
+<div class="modal fade" id="submitFileModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title opacity-50 color-t">Submit Your Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="fileSubmitForm">
+          <div class="mb-3">
+            <input class="form-control" type="file" id="taskFileInput" required>
+          </div>
+          <button type="submit" class="btn bg-t w-100">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Image Modal 2 -->
+  <div class="modal fade" id="imgModal2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content p-2 bg-transparent border-0">
+        <img src="./assets/img/task/task-2.jpg" class="img-fluid rounded-3 zoom-img" alt="Full Image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Description Modal 2 -->
+<!-- Description Modal 2 -->
+<div class="modal fade" id="descModal2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-desc">
+      <div class="modal-header border-0">
+        <h5 class="modal-title color-t">Task title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Responsive web layout using Bootstrap 5</li>
+          <li>Clean and modern card design</li>
+          <li>Clickable thumbnail with full-size modal</li>
+        </ul>
+        <p>This task card includes a cropped hero image, a creative bullet list, and a short description. Lorem ipsum dolor sit amet consectetur.</p>
+
+        <!-- Submit Button -->
+        <button type="button" class="btn bg-t-b text-white mt-3" data-bs-toggle="modal" data-bs-target="#submitFileModal">
+          Submit Task
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
                     </div>
 
                     <div class="col-md-3 task-left-vh">
                       <div
-                        class="p-3 border rounded-4 h-100 d-flex justify-content-center align-items-center"
+                        class="m-3 border rounded-4 h-100 d-flex justify-content-center align-items-center"
                       >
                         <i class="fa-solid fa-image fs-1 text-muted"></i>
                       </div>

@@ -17,6 +17,9 @@
     background-color: var(--scarlet-400) !important;
     border-color: var(--scarlet-400) !important;
 }
+.bg-t-b{
+    background-color: var(--scarlet-500) !important;
+}
 .color-t{
     color: var(--scarlet-400) !important;
 }
@@ -164,8 +167,93 @@
 }
 .task-left-vh{
   height: 85vh;
+  position: fixed;
+  right: 0;
+}
+@media (max-width: 768px) {
+.task-left-vh{
+  position:relative !important;
+}
 }
 .web-img{
   height: 30vh;
   overflow: hidden;
 }
+
+
+
+
+
+    .task-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .web-img {
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.212);
+      opacity: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      transition: 0.3s;
+    }
+
+    .overlay button {
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-weight: bold;
+      color: #fff;
+      background: var(--scarlet-500);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .overlay button:hover {
+      background: var(--scarlet-400);
+
+    }
+
+    .web-img:hover .overlay {
+      opacity: 1;
+    }
+
+    .zoom-img {
+      transition: transform 0.3s ease;
+      cursor: zoom-in;
+    }
+
+    .zoom-img.zoomed {
+      transform: scale(1.5);
+      cursor: zoom-out;
+    }
+
+    .modal-desc {
+      border-radius: 15px;
+      padding: 2rem;
+      background: #fff0f0;
+    }
+
+    .modal-desc h5 {
+      color: var(--scarlet-700);
+      font-weight: bold;
+    }
+
+    .modal-desc ul {
+      padding-left: 1.2rem;
+    }
+
+    .modal-desc ul li {
+      margin-bottom: 0.5rem;
+      list-style: disc;
+    }
