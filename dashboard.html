@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="./assets/css/animation.css" />
     <link rel="stylesheet" href="./assets/css/media.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/notice.css">
+    <link rel="stylesheet" href="./assets/css/task.css">
     <!-- css link -->
   </head>
   <body>
@@ -412,16 +414,534 @@
             <!-- notice Section -->
             <section id="NoticeSection" class="content-section d-none page-s">
               <div class="page-s_content">
-                <h1>Notice</h1>
-                <p>No new messages available.</p>
+              <div class="notic">
+                <div class="container">
+                  <div class="notice-filters d-flex align-items-center justify-content-between gap-2 py-3 flex-wrap mb-0">
+                    <div class="btn-group" role="group" aria-label="Notice filters">
+                      <button type="button" class="btn btn-primary fw-bold bg-t filter-btn active" data-filter="all">All</button>
+                      <button type="button" class="btn btn-primary fw-bold bg-t filter-btn" data-filter="new">New</button>
+                      <button type="button" class="btn btn-primary fw-bold bg-t filter-btn" data-filter="important">Important</button>
+                      <button type="button" class="btn btn-primary fw-bold bg-t filter-btn" data-filter="event">Event</button>
+                    </div>
+                    <div class="ms-auto" style="min-width: 220px;">
+                      <div class="input-group">
+                        <input type="text" class="form-control rounded-start-pill border-t" placeholder="Search notice..." aria-label="Search notice" />
+                        <button type="button" class="btn btn-primary bg-t border-0">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row notify">
+                    <div class="col-md-8">
+                      <div class="d-flex justify-content-start p-5 pb-0">
+<div class="position-relative notice-item" data-category="new">
+  <div class="position-absolute top-0 start-0 rounded-3 p-1 translate-middle badge bg-t">
+    <div class="date">
+    <p class="fs-5 fw-bold mb-1">28</p>
+    <p class="mb-0 fs-9">NOV</p>
+    </div>
+  </div>
+  <div class="p-3 shadow-sm rounded-4 notice-card mx-auto highlight">
+    <h6  class="fw-bold text-truncate w-100">Schedule released.</h6>
+    <p class="text-truncate w-100 mb-0 fs-7" >The updated class schedule for this month has been published. Please review your batch timings. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis veritatis excepturi tenetur placeat est, vitae saepe nobis quae ipsam nostrum omnis deleniti quia aliquam sequi tempora officia deserunt incidunt voluptates?</p>
+    <div class="d-flex justify-content-between ">
+      <a class="readmore">Read more</a>
+      <div class="notice-meta">
+        <button class="btn d-flex align-items-center gap-1 p-0 view-btn" data-title="New schedule released." data-count="12"><i class="fa-sharp fa-thin fa-eye  fs-7"></i> <span class="fs-8">12</span></button>
+        <p class="text-secondary mb-0 fs-8">09:10 AM</p>
+      </div>
+    </div>
+  </div>
+</div>
+                      </div>
+                      <div class="d-flex justify-content-start p-5 pb-0">
+<div  class="position-relative notice-item" data-category="new">
+  <div class="position-absolute top-0 start-0 rounded-3 p-1 translate-middle badge bg-t">
+    <div class="date">
+    <p class="fs-5 fw-bold mb-1">20</p>
+    <p class="mb-0 fs-9">NOV</p>
+    </div>
+  </div>
+  <div class="p-3 shadow-sm rounded-4 notice-card mx-auto highlight">
+    <h6  class="fw-bold text-truncate w-100">Library hours extended.</h6>
+    <p class="text-truncate w-100 mb-0 fs-7" >The library will now remain open until 9 PM on weekdays to support exam preparation. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor optio quisquam ipsum adipisci, assumenda facere quia vitae ducimus repellendus culpa vero et unde sequi rem iste, iusto architecto minima ab?</p>
+    <div class="d-flex justify-content-between ">
+      <a class="readmore">Read more</a>
+      <div class="notice-meta">
+        <button class="btn d-flex align-items-center gap-1 p-0 view-btn" data-title="New: Library hours extended." data-count="5"><i class="fa-sharp fa-thin fa-eye  fs-7"></i> <span class="fs-8">5</span></button>
+        <p class="text-secondary mb-0 fs-8">06:15 PM</p>
+      </div>
+    </div>
+  </div>
+</div>
+                      </div>
+                      <div class="d-flex justify-content-start p-5 pb-0">
+<div class="position-relative notice-item" data-category="important">
+  <div class="position-absolute top-0 start-0 rounded-3 p-1 translate-middle badge bg-t">
+    <div class="date">
+    <p class="fs-5 fw-bold mb-1">18</p>
+    <p class="mb-0 fs-9">NOV</p>
+    </div>
+  </div>
+  <div class="p-3 shadow-sm rounded-4 notice-card mx-auto important">
+    <h6  class="fw-bold text-truncate w-100">Fee payment deadline.</h6>
+    <p class="text-truncate w-100 mb-0 fs-7" >Last date for semester fee payment is approaching. Ensure payment is completed to avoid late fees. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, quidem nulla tempora, distinctio et minima facilis enim soluta suscipit voluptatum accusamus laudantium maxime vel modi tempore, laborum alias recusandae exercitationem!</p>
+    <div class="d-flex justify-content-between ">
+      <a class="readmore">Read more</a>
+      <div class="notice-meta">
+        <button class="btn d-flex align-items-center gap-1 p-0 view-btn" data-title="Important: Fee payment deadline." data-count="8"><i class="fa-sharp fa-thin fa-eye  fs-7"></i> <span class="fs-8">8</span></button>
+        <p class="text-secondary mb-0 fs-8">01:30 PM</p>
+      </div>
+    </div>
+  </div>
+</div>
+                      </div>
+                      <div class="d-flex justify-content-start p-5 pb-0">
+<div class="position-relative notice-item" data-category="event">
+  <div class="position-absolute top-0 start-0 rounded-3 p-1 translate-middle badge bg-t">
+    <div class="date">
+    <p class="fs-5 fw-bold mb-1">08</p>
+    <p class="mb-0 fs-9">NOV</p>
+    </div>
+  </div>
+  <div class="p-3 shadow-sm rounded-4 notice-card mx-auto none-highlight">
+    <h6  class="fw-bold text-truncate w-100">Tech Talk on AI.</h6>
+    <p class="text-truncate w-100 mb-0 fs-7" >Join the guest lecture on AI trends this Friday at 3 PM in the auditorium. All are welcome. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, iure repellat provident accusamus labore similique aut eos perspiciatis unde quidem numquam magni tempore qui hic tenetur optio laborum omnis. Voluptate!</p>
+    <div class="d-flex justify-content-between ">
+      <a class="readmore">Read more</a>
+      <div class="notice-meta">
+        <button class="btn d-flex align-items-center gap-1 p-0 view-btn" data-title="Event: Tech Talk on AI." data-count="22"><i class="fa-sharp fa-thin fa-eye  fs-7"></i> <span class="fs-8">22</span></button>
+        <p class="text-secondary mb-0 fs-8">03:00 PM</p>
+      </div>
+    </div>
+  </div>
+</div>
+                      </div>
+                      <div class="d-flex justify-content-start p-5 pb-0">
+<div  class="position-relative notice-item" data-category="important">
+  <div class="position-absolute top-0 start-0 rounded-3 p-1 translate-middle badge bg-t">
+    <div class="date">
+    <p class="fs-5 fw-bold mb-1">05</p>
+    <p class="mb-0 fs-9">NOV</p>
+    </div>
+  </div>
+  <div class="p-3 shadow-sm rounded-4 notice-card mx-auto important">
+    <h6  class="fw-bold text-truncate w-100">Exam form submission.</h6>
+    <p class="text-truncate w-100 mb-0 fs-7" >Exam application forms must be submitted by the end of this week. Contact admin for assistance. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut similique quod vel dolorem doloribus a quas nobis eveniet explicabo quam porro veritatis, sunt sit incidunt ut deleniti, voluptatibus veniam ex.</p>
+    <div class="d-flex justify-content-between ">
+      <a class="readmore">Read more</a>
+      <div class="notice-meta">
+        <button class="btn d-flex align-items-center gap-1 p-0 view-btn" data-title="Important: Exam form submission." data-count="15"><i class="fa-sharp fa-thin fa-eye  fs-7"></i> <span class="fs-8">15</span></button>
+        <p class="text-secondary mb-0 fs-8">11:45 AM</p>
+      </div>
+    </div>
+  </div>
+</div>
+                      </div>
+                    </div>
+<div class="col-md-4 fixed-right vh-100">
+  <div class="fixed-card mx-4 border border-2 h-75 rounded-4 d-flex justify-content-center align-items-center">
+    <i class="fa-solid fa-image color-t fs-1"></i>
+  </div>
+</div>
+                  </div>
+                </div>
+                <!-- Views Modal -->
+                <div class="modal fade" id="noticeViewsModal" tabindex="-1" aria-labelledby="noticeViewsModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="noticeViewsModalLabel">Views</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <h6 class="mb-2" id="noticeViewsTitle">Notice title</h6>
+                        <p class="text-secondary mb-3 fs-8">Total views: <span id="noticeViewsCount">0</span></p>
+                        <ul class="list-group" id="noticeViewsList">
+                          <!-- populated by JS; design only -->
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               </div>
             </section>
   
             <!-- task Section -->
             <section id="TaskSection" class="content-section d-none page-s">
               <div class="page-s_content">
-                <h1>Task</h1>
-                <p>Here you can update your preferences and account details.</p>
+                <div class="task">
+                <div class="container">
+                  <!-- <div
+                    class="task-filters d-flex align-items-center justify-content-between gap-2 py-3 flex-wrap mb-0"
+                  >
+                    <div class="ms-auto" style="min-width: 220px">
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control rounded-start-pill border-t"
+                          placeholder="Search task..."
+                          aria-label="Search notice"
+                        />
+                        <button
+                          type="button"
+                          class="btn btn-primary bg-t border-0"
+                        >
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div> -->
+                  <div class="row">
+                    <div class="col-md-10 ">
+                      <div class="row">
+                        <!-- Use g-3 for spacing between cards -->
+ <div class="row g-4 my-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-6">
+        <div class="task-card p-3 border rounded-4 h-100 shadow-sm bg-white">
+          <div class="task-profile-img d-flex align-items-center mb-2">
+            <img src="./assets/img/profile/profile-one.jpg" class="img-fluid rounded-circle task-profile" alt="" style="width: 40px; height: 40px; object-fit: cover;">
+            <p class="ms-2 fs-7 mb-0 fw-semibold">@ARPON</p>
+          </div>
+
+          <div class="web-img mb-3">
+            <img src="./assets/img/task/task-1.png" class="img-fluid rounded-3 shadow-sm zoom-img" alt="Task Image" data-bs-toggle="modal" data-bs-target="#imgModal1">
+
+            <div class="overlay rounded-2">
+              <button data-bs-toggle="modal" data-bs-target="#imgModal1">View</button>
+              <button data-bs-toggle="modal" data-bs-target="#descModal1">Details</button>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <span class="fw-semibold fs-7 opacity-50">Task by @Shishir</span>
+            <small class="fs-8 opacity-50">1 hour ago</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6">
+        <div class="task-card p-3 border rounded-4 h-100 shadow-sm bg-white">
+          <div class="task-profile-img d-flex align-items-center mb-2">
+            <img src="./assets/img/profile/profile-one.jpg" class="img-fluid rounded-circle task-profile" alt="" style="width: 40px; height: 40px; object-fit: cover;">
+            <p class="ms-2 fs-7 mb-0 fw-semibold">@ARPON</p>
+          </div>
+
+          <div class="web-img mb-3">
+            <img src="./assets/img/task/task-2.jpg" class="img-fluid rounded-3 shadow-sm zoom-img" alt="Task Image" data-bs-toggle="modal" data-bs-target="#imgModal2">
+
+            <div class="overlay rounded-2">
+              <button data-bs-toggle="modal" data-bs-target="#imgModal2">View</button>
+              <button data-bs-toggle="modal" data-bs-target="#descModal2">Details</button>
+            </div>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mt-2">
+            <span class="fw-semibold fs-7 opacity-50">Task by @Shishir</span>
+            <small class="fs-8 opacity-50">2 hours ago</small>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+    <!-- Textbook Task Card Variant (1) -->
+<div class="col-md-6">
+  <div class="task-card p-3 border rounded-4 h-100 shadow-sm bg-white">
+    <!-- Profile Info -->
+    <div class="task-profile-img d-flex align-items-center mb-2">
+      <img src="./assets/img/profile/profile-one.jpg" class="img-fluid rounded-circle task-profile" alt="" style="width: 40px; height: 40px; object-fit: cover;">
+      <p class="ms-2 fs-7 mb-0 fw-semibold">@ARPON</p>
+    </div>
+
+    <!-- Textbook Task Content -->
+    <div class="task-card-cont task-card">
+      <!-- Task Title -->
+      <h5 class="fw-bold mb-2 color-t">Textbook Task: Chapter 5</h5>
+
+      <!-- Task Info -->
+      <p class="mb-1"><strong>Section:</strong> Rachanamulok 3–8</p>
+      <p class="mb-3"><strong>Task:</strong> Read the assigned chapters.</p>
+
+      <!-- Buttons -->
+      <div class="d-flex gap-2">
+        <button class="btn btn-sm" style="background-color: var(--scarlet-500); color:#fff;" data-bs-toggle="modal" data-bs-target="#textbookModal">View Details</button>
+      </div>
+
+      <!-- Task Meta Info -->
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <span class="fw-semibold fs-7 opacity-50">Assigned by @Teacher</span>
+        <small class="fs-8 opacity-50">1 hour ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Textbook Task Modal - Chapter 5 -->
+<div class="modal fade" id="textbookModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-desc">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Chapter 5 Task Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Chapter:</strong> 5</p>
+        <p><strong>Sections:</strong> Rachanamulok 3–8</p>
+        <ul>
+          <li>Read all the sections carefully</li>
+          <li>Summarize main points in your own words</li>
+          <li>Prepare notes for discussion in class</li>
+        </ul>
+        <p>Remember to note down examples and key terms. This task helps you prepare for the next exercise and strengthens comprehension skills.</p>
+
+        <!-- Submit Button -->
+        <button type="button" class="btn bg-t-b text-white mt-3" data-bs-toggle="modal" data-bs-target="#submitFileModal">
+          Submit Task
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Textbook Task Card Variant (2) -->
+<div class="col-md-6">
+  <div class="task-card p-3 border rounded-4 h-100 shadow-sm bg-white">
+    <!-- Profile Info -->
+    <div class="task-profile-img d-flex align-items-center mb-2">
+      <img src="./assets/img/profile/profile-one.jpg" class="img-fluid rounded-circle task-profile" alt="" style="width: 40px; height: 40px; object-fit: cover;">
+      <p class="ms-2 fs-7 mb-0 fw-semibold">@ARPON</p>
+    </div>
+
+    <!-- Textbook Task Content -->
+    <div class="task-card-cont task-card">
+      <!-- Task Title -->
+      <h5 class="fw-bold mb-2 color-t">Textbook Task: Chapter 2</h5>
+
+      <!-- Task Info -->
+      <p class="mb-1"><strong>Section:</strong> Rachanamulok 1–9</p>
+      <p class="mb-3"><strong>Task:</strong> Read the assigned chapters.</p>
+
+      <!-- Buttons -->
+      <div class="d-flex gap-2">
+        <button class="btn btn-sm" style="background-color: var(--scarlet-500); color:#fff;" data-bs-toggle="modal" data-bs-target="#textbookModal1">View Details</button>
+      </div>
+
+      <!-- Task Meta Info -->
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <span class="fw-semibold fs-7 opacity-50">Assigned by @Teacher</span>
+        <small class="fs-8 opacity-50">1 hour ago</small>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Textbook Task Modal -->
+<div class="modal fade" id="textbookModal1" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-desc">
+      <div class="modal-header border-0">
+        <h5 class="modal-title">Chapter 5 Task Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Chapter:</strong> 2</p>
+        <p><strong>Sections:</strong> Rachanamulok 1–9</p>
+        <ul>
+          <li>Read all the sections carefully</li>
+          <li>Summarize main points in your own words</li>
+          <li>Prepare notes for discussion in class</li>
+        </ul>
+        <p>Remember to note down examples and key terms. This task helps you prepare for the next exercise and strengthens comprehension skills.</p>
+
+        <!-- Submit Button -->
+        <button type="button" class="btn bg-t-b text-white mt-3" data-bs-toggle="modal" data-bs-target="#submitFileModal">
+          Submit Task
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- File Upload Modal -->
+<div class="modal fade" id="submitFileModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title opacity-50 color-t">Submit Your Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="fileSubmitForm">
+          <div class="mb-3">
+            <input class="form-control" type="file" id="taskFileInput" required>
+          </div>
+          <button type="submit" class="btn bg-t w-100">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+
+
+  </div>
+
+  <!-- Image Modal 1 -->
+  <div class="modal fade" id="imgModal1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content p-2 bg-transparent border-0">
+        <img src="./assets/img/task/task-1.png" class="img-fluid rounded-3 zoom-img" alt="Full Image">
+      </div>
+    </div>
+  </div>
+
+<!-- Description Modal 1 -->
+<div class="modal fade" id="descModal1" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-desc">
+      <div class="modal-header border-0">
+        <h5 class="modal-title color-t">Task title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Responsive web layout using Bootstrap 5</li>
+          <li>Clean and modern card design</li>
+          <li>Clickable thumbnail with full-size modal</li>
+        </ul>
+        <p>This task card includes a cropped hero image, a creative bullet list, and a short description. Lorem ipsum dolor sit amet consectetur.</p>
+
+        <!-- Submit Button -->
+        <button type="button" class="btn bg-t-b text-white mt-3" data-bs-toggle="modal" data-bs-target="#submitFileModal">
+          Submit Task
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- File Upload Modal (same as before) -->
+<div class="modal fade" id="submitFileModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title opacity-50 color-t">Submit Your Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="fileSubmitForm">
+          <div class="mb-3">
+            <input class="form-control" type="file" id="taskFileInput" required>
+          </div>
+          <button type="submit" class="btn bg-t w-100">Upload</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Image Modal 2 -->
+  <div class="modal fade" id="imgModal2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content p-2 bg-transparent border-0">
+        <img src="./assets/img/task/task-2.jpg" class="img-fluid rounded-3 zoom-img" alt="Full Image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Description Modal 2 -->
+<!-- Description Modal 2 -->
+<div class="modal fade" id="descModal2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content modal-desc">
+      <div class="modal-header border-0">
+        <h5 class="modal-title color-t">Task title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>Responsive web layout using Bootstrap 5</li>
+          <li>Clean and modern card design</li>
+          <li>Clickable thumbnail with full-size modal</li>
+        </ul>
+        <p>This task card includes a cropped hero image, a creative bullet list, and a short description. Lorem ipsum dolor sit amet consectetur.</p>
+
+        <!-- Submit Button -->
+        <button type="button" class="btn bg-t-b text-white mt-3" data-bs-toggle="modal" data-bs-target="#submitFileModal">
+          Submit Task
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+                    </div>
+
+                    <div class="col-md-2 task-left-vh">
+                      <div
+                        class="m-3 border rounded-4 h-100 d-flex justify-content-center align-items-center"
+                      >
+                        <i class="fa-solid fa-image fs-1 text-muted"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Views Modal -->
+                <div
+                  class="modal fade"
+                  id="noticeViewsModal"
+                  tabindex="-1"
+                  aria-labelledby="noticeViewsModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="noticeViewsModalLabel">
+                          Views
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <h6 class="mb-2" id="noticeViewsTitle">Notice title</h6>
+                        <p class="text-secondary mb-3 fs-8">
+                          Total views: <span id="noticeViewsCount">0</span>
+                        </p>
+                        <ul class="list-group" id="noticeViewsList">
+                          <!-- populated by JS; design only -->
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               </div>
             </section>
   
@@ -529,6 +1049,8 @@
 
     <!-- js link -->
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/notice.js"></script>
+    <script src="./assets/js/task.js"></script>
     <!-- js link -->
   </body>
 </html>

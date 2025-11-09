@@ -8,8 +8,8 @@
 .page-s_content {
   white-space: no-wrap;
   background-color: var( --bg-light);
-  height: 300vh;
-  padding: 30px;
+
+  /* padding: 30px; */
 }
 /*=========================================== Page Section importent code start  =========================================== */
 /* Global Reset and Base Styles */
