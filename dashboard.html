@@ -37,26 +37,25 @@
 
 
           <!-- Vertical Sidebar -->
-          <nav
-            id="sidebar"
-            class="col-lg-2 col-md-3 d-none d-md-block p-3 text-center position-relative h-100">
+          <nav id="sidebar"
+            class="col-lg-2 col-md-3 d-none d-md-block p-3 text-center position-relative h-100 ">
             <!-- Toggle Button -->
 
-              <div class="sidebar-header d-flex align-items-center justify-content-between p-3">
+              <div class="sidebar-header d-flex align-items-center justify-content-center ">
                 <div class="nav--brand d-flex align-items-center gap-2" id="sidebarLogo">
                   <img src="assets/img/logo/logo.png" alt="Logo" class="logo-img" />
                   <p class="m-0 fw-semibold text-light" >Student Management</p>
                 </div>
 
                 <!-- Toggle Button -->
-                <button id="toggleSidebarBtn" class="btn btn-light shadow-sm">
+                <button id="toggleSidebarBtn" class="btn border-0">
                   <i class="fa-solid fa-square-half-stroke"></i>
                 </button>
               </div>
 
   
             <div class="sidebar-scrollable"
-              style="overflow-y:auto; overflow-x: hidden; flex: 1; height: 60vh; margin-top: 30px; ">
+              style="overflow-y:auto; overflow-x: hidden; flex: 1; height: 75vh; margin-top: 30px; ">
               <!-- Navigation links -->
               <ul
                 class="nav flex-column text-start "
@@ -158,6 +157,7 @@
               <a class="navbar-brand" href="#">
                 <!-- trigger modal -->
                 <img
+                style="width: 30px;"
                   class="nav-modal"
                   data-bs-toggle="modal"
                   data-bs-target="#profileModalMobile"
@@ -201,17 +201,18 @@
               </a>
   
               <!-- Mobile top search  -->
-              <div
-                class="topbar-search ms-auto position-relative"
-                role="search"
-                aria-label="Search">
-                <i class="fa-regular fa-magnifying-glass search-icon"></i>
-                <input
-                  type="search"
-                  class="form-control top-search border-0"
-                  placeholder="Search something..."
-                  aria-label="Search input" />
-              </div>
+                <div
+                  class="topbar-search ms-auto position-relative"
+                  role="search"
+                  aria-label="Search">
+                  <i class="fa-regular fa-magnifying-glass search-icon"></i>
+                  <input
+                    type="search"
+                    class="form-control top-search border-0"
+                    placeholder="Search..."
+                    aria-label="Search input" />
+                </div>
+
   
               <!-- three dot menu  -->
               <button
@@ -240,11 +241,19 @@
                       Account</a
                     >
                   </li>
+                  <li class="nav-item">
+                       <!-- dark mood and light mood -->
+              <div class="dark-dood nav-link">
+                <button class="btn"><i class="fa-solid fa-moon"></i></button>
+              </div>
+                  </li>
                 </ul>
               </div>
             </div>
           </nav>
-  
+   
+
+
           <!-- Mobile bottom Navbar -->
           <nav
             class="navbar navbar-expand-lg navbar-dark d-md-none mobile-navbar-bottom">
@@ -337,29 +346,42 @@
   
           <!-- Main Content -->
           <main class="col-lg-10 col-md-9 p-0 h-100" id="mainContent">
+
             <!-- Topbar Content -->
-            <div class="topbar px-3 shadow-sm">
-              <!-- Left Section -->
-              <div class="topbar-left d-none d-md-flex align-items-center gap-2">
-                <span class="fw-semibold topbar-title" id="topbarTitle"
-                  >Dashboard</span
-                >
-              </div>
-  
-              <!-- Search Section -->
-              <div
-                class="topbar-search ms-auto position-relative"
-                role="search"
-                aria-label="Search">
-                <i class="fa-regular fa-magnifying-glass search-icon"></i>
-                <input
-                  type="search"
-                  class="form-control top-search border-0"
-                  placeholder="Search "
-                  aria-label="Search input" />
-              </div>
-            </div>
-  
+           <nav class="top-Nav">  
+               <div class="topbar px-3 ">
+        
+                 <div class="topbar-left d-none d-md-flex align-items-center gap-2">
+                   <span class="fw-semibold topbar-title" id="topbarTitle"
+                     >Dashboard</span>
+                 </div>
+     
+       
+                  <div class="position-relative ms-auto d-flex">
+                    <div
+                      class="topbar-search "
+                      role="search"
+                      aria-label="Search">
+                      <i class="fa-regular fa-magnifying-glass search-icon"></i>
+                      <input
+                        type="search"
+                        class="top-search border-0"
+                        placeholder="Search "
+                        aria-label="Search input" />
+                    </div>
+                    <div class="dark-mood">
+                      <button class="btn dark-mood-btn"><i class="fa-solid fa-moon"></i></button>
+                    </div>
+                      <div class="setting">
+                      <button class="btn setting-btn">
+                       <i class="fa-solid fa-gear"></i>
+                      </button>
+                    </div>
+                  </div>
+   
+               </div>
+             </nav> 
+
             <!-- Home Section -->
             <section id="homeSection" class="content-section page-s">
               <div class="page-s_content">
@@ -461,15 +483,15 @@
               data-bs-backdrop="true">
               <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content border-0 shadow-lg">
-                  <div class="modal-header bg-primary text-white">
+                  <div class="modal-header  d-flex justify-content-between" style="padding: 0 20px;">
                     <h5 class="modal-title" id="profileModalSidebarLabel">
-                      Profile Info
+                      Profile 
                     </h5>
                     <button
                       type="button"
-                      class="btn-close btn-close-white"
+                      class="btn"
                       data-bs-dismiss="modal"
-                      aria-label="Close"></button>
+                      aria-label="Close">Log out</button>
                   </div>
                   <div class="modal-body text-center">
                     <img

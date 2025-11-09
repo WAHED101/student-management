@@ -1,22 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function () {
-
-//   const sidebare = document.getElementById("sidebar");
-//   const toggleBtn = document.getElementById("toggleSidebarBtn");
-//   const tooltipTriggerList = [].slice.call(
-//     document.querySelectorAll('[data-bs-toggle="tooltip"]')
-//   );
-
-
-//   if (toggleBtn && sidebare) {
-//     toggleBtn.addEventListener('click', () => {
-//       sidebare.classList.toggle('collapsed');
-//       toggleBtn.classList.toggle('rotate');
-//     });
-//   }
-
-// });
-
-
 const sidebare = document.getElementById('sidebar');
 const toggleBtnn = document.getElementById('toggleSidebarBtn');
 const logo = document.getElementById('sidebarLogo');
@@ -172,21 +153,7 @@ logo.addEventListener('click', () => {
         if (groupOpt) groupOpt.classList.remove("has-error");
         return;
       }
-      // const valueEmpty = inp.value.trim() === '';
-      // const shouldShow = force || inp.dataset.touched === 'true';
-      // const group = inp.parentElement;
-      // if (!valueEmpty){
-      //   inp.classList.remove('is-invalid');
-      //   if (group) group.classList.remove('has-error');
-      //   return;
-      // }
-      // if (shouldShow){
-      //   inp.classList.add('is-invalid');
-      //   if (group) group.classList.add('has-error');
-      // } else {
-      //   inp.classList.remove('is-invalid');
-      //   if (group) group.classList.remove('has-error');
-      // }
+      
     });
   }
 
@@ -291,7 +258,7 @@ logo.addEventListener('click', () => {
   setStep(0);
 })();
 
-// ---------------------------- side bar collapsed code 
+// ---------------------------- side bar collapsed code Arpon
 
 
 
@@ -326,7 +293,7 @@ logo.addEventListener('click', () => {
 
 
 
-// ------------------------------------------- site bar section call code 
+// ------------------------------------------- site bar section call code Arpon
 // Mobile bottom navbar navigation
 const mobileBottomNavLinks = document.querySelectorAll('.mobile-navbar-bottom .nav-link[data-section]');
 mobileBottomNavLinks.forEach(link => {
@@ -436,7 +403,7 @@ if (mobileMoreToggle && mobileMoreDropdown && mobileMoreBackdrop) {
 
   
 
-// ======== Dynamic Topbar Title Updater ========
+// ======== Dynamic Topbar Title Updater Arpon========
 document.addEventListener('DOMContentLoaded', function () {
   const topbarTitle = document.querySelector('.topbar-left span');
   const sidebarLinks = document.querySelectorAll('#sidebar .nav-link, .mobile-navbar-bottom .nav-link[data-section]');
@@ -454,3 +421,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+
+
+
+

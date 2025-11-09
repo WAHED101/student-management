@@ -1,4 +1,4 @@
-/* 📱 Mobile Responsiveness for Welcome Section Text */
+/*  Mobile Responsiveness for Welcome Section Text */
 @media (max-width: 991px) {
   .wellcome-titel h1 {
     font-size: 48px;
@@ -48,3 +48,37 @@
     display: none !important;
   }
 }
+/* -------------------------------------------------------------------------- importent main and nav width ----------- */
+
+@media (min-width: 992px) {
+  #sidebar:not(.collapsed) {
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
+  /* match main content baseline for smooth transition */
+  #mainContent {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #sidebar:not(.collapsed) {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  /* match main content baseline for smooth transition */
+  #mainContent {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+}
+
+/* When sidebar is collapsed, let main content expand to fill remaining width */
+@media (min-width: 768px) {
+  #sidebar.collapsed ~ #mainContent {
+    flex: 0 0 calc(100% - 100px);
+    max-width: calc(100% - 100px);
+  }
+}
+/* -------------------------------------------------------------------------- importent main and nav width ----------- */
