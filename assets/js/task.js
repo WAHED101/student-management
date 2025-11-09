@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
-  var noticeSection = document.getElementById('NoticeSection');
+  var noticeSection = document.getElementById('TaskSection');
   if (!noticeSection) return;
 
   var filterButtons = noticeSection.querySelectorAll('.filter-btn');
-  var noticeItems = noticeSection.querySelectorAll('.notice-item');
+  var noticeItems = noticeSection.querySelectorAll('.task-item');
 
   function applyFilter(filterValue) {
     noticeItems.forEach(function (item) {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   // Prepare collapsible descriptions (keep width stable)
-  noticeSection.querySelectorAll('.notice-card p').forEach(function (p) {
+  noticeSection.querySelectorAll('.task-card p').forEach(function (p) {
     p.classList.add('desc-collapsible', 'is-collapsed');
     p.classList.remove('text-truncate');
     // set initial max-height explicitly so first expand can animate from 1.6em
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!readMore) return;
     e.preventDefault();
 
-    var card = readMore.closest('.notice-card');
+    var card = readMore.closest('.task-card');
     if (!card) return;
     var desc = card.querySelector('p');
     if (!desc) return;
@@ -127,3 +127,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+  document.querySelectorAll('.web-img').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      card.querySelector('.overlay').style.opacity = '1';
+    });
+    card.addEventListener('mouseleave', () => {
+      card.querySelector('.overlay').style.opacity = '0';
+    });
+  });
+
+      // Zoom effect for modal images
+    document.querySelectorAll('.zoom-img').forEach(img => {
+      img.addEventListener('click', () => {
+        img.classList.toggle('zoomed');
+      });
+    });
+
+    
