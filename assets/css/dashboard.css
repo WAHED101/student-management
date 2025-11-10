@@ -9,7 +9,7 @@
   border-radius: 16px;
   box-shadow: var(--shadow-soft);
   padding: 18px;
-  border: 1px solid rgba(0,0,0,0.04);
+  border: 1px solid var(--border-color);
 }
 .home-hero__icon {
   width: 48px;
@@ -47,7 +47,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  border: 1px solid rgba(0,0,0,0.04);
+  border: 1px solid var(--border-color);
 }
 .stat-card__icon {
   width: 40px;
@@ -78,12 +78,12 @@
   background: var(--bg-light);
   border-radius: 14px;
   box-shadow: var(--shadow-soft);
-  border: 1px solid rgba(0,0,0,0.04);
+  border: 1px solid var(--border-color);
   overflow: hidden;
 }
 .panel-card__header {
   padding: 14px 16px;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid var(--border-color);
   background: linear-gradient(90deg, var(--scarlet-50), rgba(255,255,255,0));
 }
 .panel-card__title {
@@ -106,7 +106,7 @@
   transition: background 0.2s ease;
 }
 .panel-list__item:hover {
-  background: var(--scarlet-50);
+  background: var(--row-hover-bg);
 }
 .panel-list__time {
   font-weight: 700;
@@ -137,14 +137,14 @@
   color: var(--scarlet-700);
 }
 .pill-warning {
-  background: #fef3c7;
-  border-color: #fde68a;
-  color: #a16207;
+  background: var(--warning-bg);
+  border-color: var(--warning-border);
+  color: var(--warning-text);
 }
 .pill-info {
-  background: #cffafe;
-  border-color: #a5f3fc;
-  color: #155e75;
+  background: var(--info-bg);
+  border-color: var(--info-border);
+  color: var(--info-text);
 }
 
 /* Quick Actions */
@@ -185,7 +185,7 @@
 }
 .mini-progress {
   height: 8px;
-  background: var(--scarlet-100);
+  background: var(--progress-track);
   border-radius: 999px;
 }
 .mini-progress .progress-bar {

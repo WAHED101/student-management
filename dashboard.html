@@ -106,12 +106,7 @@
                     <i class="fa-solid fa-book-open"></i><span>Lession</span>
                   </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="#" data-section="Points">
-                    <i class="fa-sharp fa-solid fa-feather-pointed"></i
-                    ><span>Points</span>
-                  </a>
-                </li>
+
                 <li class="nav-item">
                   <a class="nav-link text-white" href="#" data-section="TeacherReview">
                     <i class="fa-solid fa-hand-holding-star"></i>
@@ -250,12 +245,7 @@
                       Account</a
                     >
                   </li>
-                  <li class="nav-item">
-                       <!-- dark mood and light mood -->
-              <div class="dark-dood nav-link">
-                <button class="btn"><i class="fa-solid fa-moon"></i></button>
-              </div>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
@@ -379,10 +369,10 @@
                         aria-label="Search input" />
                     </div>
                     <div class="dark-mood">
-                      <button class="btn dark-mood-btn"><i class="fa-solid fa-moon"></i></button>
+                      <button class="btn dark-mood-btn border-0 "><i class="fa-solid fa-moon"></i></button>
                     </div>
                       <div class="setting">
-                      <button class="btn setting-btn">
+                      <button class="btn setting-btn border-0 ">
                        <i class="fa-solid fa-gear"></i>
                       </button>
                     </div>
@@ -1537,13 +1527,6 @@
               </div>
             </section>
   
-            <!-- points Section -->
-            <section id="PointsSection" class="content-section d-none page-s">
-              <div class="page-s_content">
-                <h1>Points</h1>
-                <p>Here you can update your preferences and account details.</p>
-              </div>
-            </section>
   
             <!-- TeacherS Review Section -->
             <section id="TeacherReviewSection" class="content-section d-none page-s">
@@ -1964,5 +1947,33 @@
     <script src="./assets/js/teacher-review.js"></script>
     <script src="./assets/js/payment.js"></script>
     <!-- js link -->
+    <script>
+      (function () {
+        var html = document.documentElement;
+        // ensure one of the theme classes exists at start
+        if (!html.classList.contains('theme-light') && !html.classList.contains('theme-dark')) {
+          html.classList.add('theme-light');
+        }
+        function applyIcon() {
+          var isDark = html.classList.contains('theme-dark');
+          var btn = document.querySelector('.dark-mood-btn i');
+          if (btn) {
+            btn.classList.toggle('fa-moon', !isDark);
+            btn.classList.toggle('fa-sun', isDark);
+          }
+        }
+        function toggleTheme() {
+          var isDark = html.classList.contains('theme-dark');
+          html.classList.toggle('theme-dark', !isDark);
+          html.classList.toggle('theme-light', isDark);
+          applyIcon();
+        }
+        var trigger = document.querySelector('.dark-mood-btn');
+        if (trigger) {
+          trigger.addEventListener('click', toggleTheme);
+        }
+        applyIcon();
+      })();
+    </script>
   </body>
 </html>

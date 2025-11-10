@@ -7,9 +7,12 @@
 }
 .page-s_content {
   white-space: no-wrap;
-  background-color: var( --bg-light);
-
+  background-color: var(--surface-1);
+  border-top: 4px solid var(--scarlet-200);
   /* padding: 30px; */
+}
+.theme-dark .page-s_content {
+  border-top-color: var(--scarlet-400);
 }
 /*=========================================== Page Section importent code start  =========================================== */
 /* Global Reset and Base Styles */
@@ -61,6 +64,25 @@
   --border-radius: 20px;
   --shadow-soft: 0 5px 20px rgba(0, 0, 0, 0.1);
   --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --border-color: rgba(0, 0, 0, 0.06);
+
+  /* Surfaces (semantic) */
+  --surface-1: var(--bg-light);
+  --surface-2: #ffffff;
+  --surface-3: #ffffff;
+
+  /* Component/State tokens */
+  --row-hover-bg: var(--scarlet-50);
+  --progress-track: var(--scarlet-100);
+
+  /* Semantic: warning/info pills */
+  --warning-bg: #fef3c7;
+  --warning-border: #fde68a;
+  --warning-text: #a16207;
+
+  --info-bg: #cffafe;
+  --info-border: #a5f3fc;
+  --info-text: #155e75;
 
   /* Scarlet Palette */
   --scarlet-50: #ffedec;
@@ -80,6 +102,90 @@
   --icon-bg: #E4A2A4;
 }
 
+/* Base theming */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+/* Typography defaults for readability */
+body, p, li, span, small {
+  color: var(--text-main);
+}
+h1, h2, h3, h4, h5, h6 {
+  color: var(--scarlet-900);
+}
+.theme-dark h1, .theme-dark h2, .theme-dark h3,
+.theme-dark h4, .theme-dark h5, .theme-dark h6 {
+  color: var(--text-light);
+}
+
+
+/* Explicit theme classes on <html>: .theme-light / .theme-dark */
+:root.theme-light {
+  /* uses the base variables above */
+}
+
+/* Dark theme overrides */
+:root.theme-dark {
+  /* Backgrounds */
+  --bg-main: #0f1316;
+  --bg-light: #171b21;
+  --bg-dark: #0b0e11;
+
+  /* Text Colors */
+  --text-dark: #000;
+  --text-main: #e3e6ea;
+  --text-light: #ffffff;
+  --text-muted: #9aa3ad;
+  --text-accent: var(--color-primary-light);
+
+  /* Shadows softened for dark */
+  --shadow-soft: 0 5px 20px rgba(0, 0, 0, 0.35);
+  --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --border-color: rgba(255, 255, 255, 0.08);
+
+  /* Surfaces */
+  --surface-1: #171b21;
+  --surface-2: #1c2229;
+  --surface-3: #222a31;
+
+  /* Scarlet accents can stay; background tints adapt via components */
+  --p-section-bg: #0f1417;
+  --icon-bg: #8a5a5c;
+
+  /* Component/State tokens for dark */
+  --row-hover-bg: rgba(255, 255, 255, 0.04);
+  --progress-track: rgba(255, 255, 255, 0.08);
+
+  /* Semantic: warning/info pills */
+  --warning-bg: #3a2f0a;
+  --warning-border: #4d3b0c;
+  --warning-text: #fde68a;
+
+  --info-bg: #073a44;
+  --info-border: #0b5563;
+  --info-text: #a5f3fc;
+}
+
+/* Dark theme specific component refinements */
+.theme-dark #sidebar {
+  background-color: var(--surface-2);
+  border-right: 1px solid var(--border-color);
+}
+.theme-dark #sidebar .nav-link {
+  color: var(--text-main) !important;
+}
+.theme-dark #sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--text-light) !important;
+}
+.theme-dark .nav--brand p,
+.theme-dark #toggleSidebarBtn {
+  color: var(--text-muted) !important;
+}
+.theme-dark .home-hero__title {
+  color: var(--text-light);
+}
 /* Login & Signup Cards */
 .signup-card::before {
   inset: 0 0 0 auto !important;
@@ -727,7 +833,7 @@ body.modal-open .bg-glass-login:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -735,6 +841,9 @@ body.modal-open .bg-glass-login:hover {
   padding: 30px 16px;
   background-color: var(--scarlet-100);
   /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); */
+}
+.theme-dark .topbar {
+  background-color: var(--surface-2);
 }
 .topbar-icon {
   background: linear-gradient(135deg, #007bff, #00aaff);
@@ -746,9 +855,12 @@ body.modal-open .bg-glass-login:hover {
 }
 .topbar-title {
   font-size: 18px;
-  color:var(--scarlet-600);
+  color: var(--scarlet-600);
   font-weight: 600;
   letter-spacing: 0.3px;
+}
+.theme-dark .topbar-title {
+  color: var(--text-light);
 }
 
 /* ================= Topbar Search ================= */
@@ -756,7 +868,7 @@ body.modal-open .bg-glass-login:hover {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #ffffff;
+  background: var(--surface-2);
   border-radius: 20px;
   padding: 2px 10px;
   border: 1px solid transparent;
