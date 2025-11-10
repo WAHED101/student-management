@@ -106,7 +106,7 @@
 }
 
 .fixed-card {
-  margin-top: 12vh;
+  margin-top: 20vh !important;
 }
 
 /* Responsive adjustments for Notice section only */
