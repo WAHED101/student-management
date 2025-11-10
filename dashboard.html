@@ -32,6 +32,9 @@
     <link rel="stylesheet" href="./assets/css/task.css">
     <link rel="stylesheet" href="./assets/css/progress.css">
     <link rel="stylesheet" href="./assets/css/dashboard.css">
+    <link rel="stylesheet" href="./assets/css/mycours.css">
+    <link rel="stylesheet" href="./assets/css/lession.css">
+    <link rel="stylesheet" href="./assets/css/help.css">
     <!-- css link -->
   </head>
   <body>
@@ -1276,16 +1279,259 @@
             <!-- mycours Section -->
             <section id="My-courseSection" class="content-section d-none page-s">
               <div class="page-s_content">
-                <h1>mycours</h1>
-                <p>Here you can update your preferences and account details.</p>
+                <div class="container mycourses">
+                  <div class="myc-header d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3 gap-md-4 mb-3">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="fa-solid fa-books myc-title-icon"></i>
+                      <div>
+                        <h3 class="m-0 myc-title">My Courses</h3>
+                        <p class="m-0 myc-sub">Track your progress and continue learning</p>
+                      </div>
+                    </div>
+                    <div class="ms-md-auto w-100 w-md-auto d-flex flex-wrap align-items-center gap-2 myc-controls">
+                      <div class="myc-search position-relative">
+                        <i class="fa-regular fa-magnifying-glass myc-search-icon"></i>
+                        <input type="search" class="form-control myc-search-input" id="mycSearch" placeholder="Search courses">
+                      </div>
+                      <select class="form-select myc-select" id="mycSort" aria-label="Sort courses">
+                        <option value="recent" selected>Recent</option>
+                        <option value="progress">Progress</option>
+                        <option value="az">A → Z</option>
+                        <option value="za">Z → A</option>
+                      </select>
+                      <div class="btn-group myc-view" role="group" aria-label="Toggle view">
+                        <button class="btn myc-view-btn active" data-view="grid" id="mycViewGrid" aria-label="Grid view">
+                          <i class="fa-solid fa-grid-2"></i>
+                        </button>
+                        <button class="btn myc-view-btn" data-view="list" id="mycViewList" aria-label="List view">
+                          <i class="fa-solid fa-list"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="myc-filters d-flex flex-wrap align-items-center gap-2 mb-3" id="mycFilters">
+                    <button class="btn myc-chip active" data-filter="all">All</button>
+                    <button class="btn myc-chip" data-filter="web">Web Dev</button>
+                    <button class="btn myc-chip" data-filter="design">Design</button>
+                    <button class="btn myc-chip" data-filter="data">Data</button>
+                    <button class="btn myc-chip" data-filter="language">Language</button>
+                  </div>
+                  
+                  <div class="myc-grid" id="mycGrid" aria-live="polite">
+                    <!-- Course Card -->
+                    <article class="myc-card" data-title="Modern Web Development" data-category="web" data-progress="72">
+                      <div class="myc-thumb">
+                        <img src="./assets/img/task/task-1.png" alt="Modern Web Development" class="img-fluid">
+                        <span class="myc-badge">Web</span>
+                      </div>
+                      <div class="myc-body">
+                        <h5 class="myc-card-title">Modern Web Development</h5>
+                        <p class="myc-card-meta"><i class="fa-regular fa-user"></i> John Carter · <i class="fa-regular fa-clock"></i> 36h</p>
+                        <div class="myc-progress">
+                          <div class="myc-progress-bar" style="width: 72%"></div>
+                          <span class="myc-progress-text">72%</span>
+                        </div>
+                        <div class="myc-actions">
+                          <button class="btn myc-btn-primary" data-action="continue"><i class="fa-solid fa-play"></i> Continue</button>
+                          <button class="btn myc-btn-ghost" data-action="details">Details</button>
+                        </div>
+                      </div>
+                    </article>
+                  
+                    <article class="myc-card" data-title="UI/UX Fundamentals" data-category="design" data-progress="45">
+                      <div class="myc-thumb">
+                        <img src="./assets/img/task/task-2.jpg" alt="UI/UX Fundamentals" class="img-fluid">
+                        <span class="myc-badge">Design</span>
+                      </div>
+                      <div class="myc-body">
+                        <h5 class="myc-card-title">UI/UX Fundamentals</h5>
+                        <p class="myc-card-meta"><i class="fa-regular fa-user"></i> Sarah Lee · <i class="fa-regular fa-clock"></i> 18h</p>
+                        <div class="myc-progress">
+                          <div class="myc-progress-bar" style="width: 45%"></div>
+                          <span class="myc-progress-text">45%</span>
+                        </div>
+                        <div class="myc-actions">
+                          <button class="btn myc-btn-primary" data-action="continue"><i class="fa-solid fa-play"></i> Continue</button>
+                          <button class="btn myc-btn-ghost" data-action="details">Details</button>
+                        </div>
+                      </div>
+                    </article>
+                  
+                    <article class="myc-card" data-title="Data Analysis with Python" data-category="data" data-progress="86">
+                      <div class="myc-thumb">
+                        <img src="./assets/img/signup-in/signup-image.jpg" alt="Data Analysis with Python" class="img-fluid">
+                        <span class="myc-badge">Data</span>
+                      </div>
+                      <div class="myc-body">
+                        <h5 class="myc-card-title">Data Analysis with Python</h5>
+                        <p class="myc-card-meta"><i class="fa-regular fa-user"></i> Amit Kumar · <i class="fa-regular fa-clock"></i> 22h</p>
+                        <div class="myc-progress">
+                          <div class="myc-progress-bar" style="width: 86%"></div>
+                          <span class="myc-progress-text">86%</span>
+                        </div>
+                        <div class="myc-actions">
+                          <button class="btn myc-btn-primary" data-action="continue"><i class="fa-solid fa-play"></i> Continue</button>
+                          <button class="btn myc-btn-ghost" data-action="details">Details</button>
+                        </div>
+                      </div>
+                    </article>
+                  
+                    <article class="myc-card" data-title="Spoken English Basics" data-category="language" data-progress="12">
+                      <div class="myc-thumb">
+                        <img src="./assets/img/signup-in/signin-image.jpg" alt="Spoken English Basics" class="img-fluid">
+                        <span class="myc-badge">Language</span>
+                      </div>
+                      <div class="myc-body">
+                        <h5 class="myc-card-title">Spoken English Basics</h5>
+                        <p class="myc-card-meta"><i class="fa-regular fa-user"></i> Emma Wilson · <i class="fa-regular fa-clock"></i> 12h</p>
+                        <div class="myc-progress">
+                          <div class="myc-progress-bar" style="width: 12%"></div>
+                          <span class="myc-progress-text">12%</span>
+                        </div>
+                        <div class="myc-actions">
+                          <button class="btn myc-btn-primary" data-action="continue"><i class="fa-solid fa-play"></i> Continue</button>
+                          <button class="btn myc-btn-ghost" data-action="details">Details</button>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
               </div>
             </section>
   
             <!-- lession Section -->
             <section id="LessionSection" class="content-section d-none page-s">
               <div class="page-s_content">
-                <h1>Lession</h1>
-                <p>Here you can update your preferences and account details.</p>
+                <div class="container lessons">
+                  <div class="les-header d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3 gap-md-4 mb-3">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="fa-solid fa-book-open les-title-icon"></i>
+                      <div>
+                        <h3 class="m-0 les-title">Lessons</h3>
+                        <p class="m-0 les-sub">Browse lessons and continue where you left off</p>
+                      </div>
+                    </div>
+                    <div class="ms-md-auto w-100 w-md-auto d-flex flex-wrap align-items-center gap-2 les-controls">
+                      <div class="les-search position-relative">
+                        <i class="fa-regular fa-magnifying-glass les-search-icon"></i>
+                        <input type="search" class="form-control les-search-input" id="lesSearch" placeholder="Search lessons">
+                      </div>
+                      <select class="form-select les-select" id="lesSort" aria-label="Sort lessons">
+                        <option value="recent" selected>Recent</option>
+                        <option value="duration">Duration</option>
+                        <option value="az">A → Z</option>
+                        <option value="za">Z → A</option>
+                      </select>
+                      <div class="btn-group les-view" role="group" aria-label="Toggle view">
+                        <button class="btn les-view-btn active" data-view="grid" id="lesViewGrid" aria-label="Grid view">
+                          <i class="fa-solid fa-grid-2"></i>
+                        </button>
+                        <button class="btn les-view-btn" data-view="list" id="lesViewList" aria-label="List view">
+                          <i class="fa-solid fa-list"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="les-filters d-flex flex-wrap align-items-center gap-2 mb-3" id="lesFilters">
+                    <button class="btn les-chip active" data-filter="all">All</button>
+                    <button class="btn les-chip" data-filter="module1">Module 1</button>
+                    <button class="btn les-chip" data-filter="module2">Module 2</button>
+                    <button class="btn les-chip" data-filter="module3">Module 3</button>
+                    <button class="btn les-chip" data-filter="practice">Practice</button>
+                  </div>
+
+                  <div class="les-grid" id="lesGrid" aria-live="polite">
+                    <!-- Lesson Card 1 -->
+                    <article class="les-card" data-title="Intro to HTML" data-category="module1" data-duration="35" data-progress="100">
+                      <div class="les-thumb">
+                        <img src="./assets/img/task/task-1.png" alt="Intro to HTML" class="img-fluid">
+                        <span class="les-badge">Module 1</span>
+                      </div>
+                      <div class="les-body">
+                        <h5 class="les-card-title">Intro to HTML</h5>
+                        <p class="les-card-meta">
+                          <i class="fa-regular fa-clock"></i> 35m · <i class="fa-solid fa-circle-check"></i> Completed
+                        </p>
+                        <div class="les-progress">
+                          <div class="les-progress-bar" style="width: 100%"></div>
+                          <span class="les-progress-text">100%</span>
+                        </div>
+                        <div class="les-actions">
+                          <button class="btn les-btn-ghost" data-action="review">Review</button>
+                          <button class="btn les-btn-primary" data-action="details">Details</button>
+                        </div>
+                      </div>
+                    </article>
+
+                    <!-- Lesson Card 2 -->
+                    <article class="les-card" data-title="CSS Basics" data-category="module2" data-duration="42" data-progress="60">
+                      <div class="les-thumb">
+                        <img src="./assets/img/task/task-2.jpg" alt="CSS Basics" class="img-fluid">
+                        <span class="les-badge">Module 2</span>
+                      </div>
+                      <div class="les-body">
+                        <h5 class="les-card-title">CSS Basics</h5>
+                        <p class="les-card-meta">
+                          <i class="fa-regular fa-clock"></i> 42m · <i class="fa-regular fa-circle-half-stroke"></i> In progress
+                        </p>
+                        <div class="les-progress">
+                          <div class="les-progress-bar" style="width: 60%"></div>
+                          <span class="les-progress-text">60%</span>
+                        </div>
+                        <div class="les-actions">
+                          <button class="btn les-btn-primary" data-action="continue"><i class="fa-solid fa-play"></i> Continue</button>
+                          <button class="btn les-btn-ghost" data-action="details">Details</button>
+                        </div>
+                      </div>
+                    </article>
+
+                    <!-- Lesson Card 3 -->
+                    <article class="les-card" data-title="Responsive Layouts" data-category="module3" data-duration="28" data-progress="20">
+                      <div class="les-thumb">
+                        <img src="./assets/img/signup-in/signup-image.jpg" alt="Responsive Layouts" class="img-fluid">
+                        <span class="les-badge">Module 3</span>
+                      </div>
+                      <div class="les-body">
+                        <h5 class="les-card-title">Responsive Layouts</h5>
+                        <p class="les-card-meta">
+                          <i class="fa-regular fa-clock"></i> 28m · <i class="fa-regular fa-circle"></i> Not started
+                        </p>
+                        <div class="les-progress">
+                          <div class="les-progress-bar" style="width: 20%"></div>
+                          <span class="les-progress-text">20%</span>
+                        </div>
+                        <div class="les-actions">
+                          <button class="btn les-btn-primary" data-action="start"><i class="fa-solid fa-play"></i> Start</button>
+                          <button class="btn les-btn-ghost" data-action="details">Details</button>
+                        </div>
+                      </div>
+                    </article>
+
+                    <!-- Lesson Card 4 -->
+                    <article class="les-card" data-title="Practice: Flexbox" data-category="practice" data-duration="18" data-progress="0">
+                      <div class="les-thumb">
+                        <img src="./assets/img/signup-in/signin-image.jpg" alt="Practice Flexbox" class="img-fluid">
+                        <span class="les-badge">Practice</span>
+                      </div>
+                      <div class="les-body">
+                        <h5 class="les-card-title">Practice: Flexbox</h5>
+                        <p class="les-card-meta">
+                          <i class="fa-regular fa-clock"></i> 18m · <i class="fa-regular fa-circle"></i> Not started
+                        </p>
+                        <div class="les-progress">
+                          <div class="les-progress-bar" style="width: 0%"></div>
+                          <span class="les-progress-text">0%</span>
+                        </div>
+                        <div class="les-actions">
+                          <button class="btn les-btn-primary" data-action="start"><i class="fa-solid fa-play"></i> Start</button>
+                          <button class="btn les-btn-ghost" data-action="details">Details</button>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
               </div>
             </section>
   
@@ -1316,8 +1562,125 @@
             <!-- Help Section -->
             <section id="HelpSection" class="content-section d-none page-s">
               <div class="page-s_content">
-                <h1>Help</h1>
-                <p>Here you can update your preferences and account details.</p>
+                <div class="container help-center">
+                  <div class="help-header d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3 gap-md-4 mb-3">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="fa-brands fa-hire-a-helper help-title-icon"></i>
+                      <div>
+                        <h3 class="m-0 help-title">Help Center</h3>
+                        <p class="m-0 help-sub">Find answers, resources, and ways to contact us</p>
+                      </div>
+                    </div>
+                    <div class="ms-md-auto w-100 w-md-auto d-flex flex-wrap align-items-center gap-2 help-controls">
+                      <div class="help-search position-relative">
+                        <i class="fa-regular fa-magnifying-glass help-search-icon"></i>
+                        <input type="search" class="form-control help-search-input" id="helpSearch" placeholder="Search help topics">
+                      </div>
+                      <div class="btn-group help-actions" role="group">
+                        <button class="btn help-btn-ghost" id="helpExpandAll" aria-label="Expand all">Expand all</button>
+                        <button class="btn help-btn-ghost" id="helpCollapseAll" aria-label="Collapse all">Collapse all</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row g-3">
+                    <div class="col-lg-8">
+                      <div class="accordion help-accordion" id="helpAccordion">
+                        <div class="accordion-item help-item" data-keywords="account login password reset">
+                          <h2 class="accordion-header" id="h1">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#hc1" aria-expanded="true" aria-controls="hc1">
+                              How do I reset my password?
+                            </button>
+                          </h2>
+                          <div id="hc1" class="accordion-collapse collapse show" aria-labelledby="h1" data-bs-parent="#helpAccordion">
+                            <div class="accordion-body">
+                              Go to Login → Forgot Password, enter your email, and follow the link sent to you to create a new password.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="accordion-item help-item" data-keywords="course enroll join my courses subscription">
+                          <h2 class="accordion-header" id="h2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hc2" aria-expanded="false" aria-controls="hc2">
+                              How can I enroll in a new course?
+                            </button>
+                          </h2>
+                          <div id="hc2" class="accordion-collapse collapse" aria-labelledby="h2" data-bs-parent="#helpAccordion">
+                            <div class="accordion-body">
+                              Open My Courses → click Add/Enroll, choose your course, and confirm. If payment is required, complete checkout to get access.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="accordion-item help-item" data-keywords="progress tracking grades analytics reports">
+                          <h2 class="accordion-header" id="h3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hc3" aria-expanded="false" aria-controls="hc3">
+                              Where can I see my progress and grades?
+                            </button>
+                          </h2>
+                          <div id="hc3" class="accordion-collapse collapse" aria-labelledby="h3" data-bs-parent="#helpAccordion">
+                            <div class="accordion-body">
+                              Go to Progress to view charts, attendance, and exam results. Each course card also shows per-course progress.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="accordion-item help-item" data-keywords="tasks assignments upload submit files">
+                          <h2 class="accordion-header" id="h4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hc4" aria-expanded="false" aria-controls="hc4">
+                              How do I submit assignments?
+                            </button>
+                          </h2>
+                          <div id="hc4" class="accordion-collapse collapse" aria-labelledby="h4" data-bs-parent="#helpAccordion">
+                            <div class="accordion-body">
+                              Open Task → select the assignment → click Submit → upload your file(s) and confirm. You’ll see a success message when done.
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="accordion-item help-item" data-keywords="notice announcements alerts notifications">
+                          <h2 class="accordion-header" id="h5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#hc5" aria-expanded="false" aria-controls="hc5">
+                              How do I view latest notices and announcements?
+                            </button>
+                          </h2>
+                          <div id="hc5" class="accordion-collapse collapse" aria-labelledby="h5" data-bs-parent="#helpAccordion">
+                            <div class="accordion-body">
+                              Go to Notice to see all updates. Use filters for New, Important, and Events. Click Read more to expand any notice.
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="help-side stack-16">
+                        <div class="help-card contact-card">
+                          <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="fa-regular fa-life-ring"></i>
+                            <h6 class="m-0">Need more help?</h6>
+                          </div>
+                          <p class="text-muted mb-2">Our team is here for you 9am–6pm (Mon–Fri)</p>
+                          <div class="d-grid gap-2">
+                            <a href="mailto:support@example.com" class="btn help-btn-primary"><i class="fa-regular fa-envelope"></i> Email Support</a>
+                            <a href="#" class="btn help-btn-ghost"><i class="fa-regular fa-comments"></i> Live Chat</a>
+                          </div>
+                        </div>
+                        <div class="help-card quicklinks-card">
+                          <div class="d-flex align-items-center gap-2 mb-2">
+                            <i class="fa-regular fa-link"></i>
+                            <h6 class="m-0">Quick links</h6>
+                          </div>
+                          <ul class="list-unstyled m-0 help-links">
+                            <li><a href="#" data-section="My-course" class="help-link" data-go="courses"><i class="fa-solid fa-books"></i> My Courses</a></li>
+                            <li><a href="#" data-section="Task" class="help-link" data-go="tasks"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
+                            <li><a href="#" data-section="Progress" class="help-link" data-go="progress"><i class="fa-solid fa-chart-line"></i> Progress</a></li>
+                            <li><a href="#" data-section="Notice" class="help-link" data-go="notice"><i class="fa-regular fa-bell"></i> Notices</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
   
@@ -1385,6 +1748,9 @@
     <script src="./assets/js/task.js"></script>
     <script src="./assets/js/progress.js"></script>
     <script src="./assets/js/dashboard.js"></script>
+    <script src="./assets/js/mycours.js"></script>
+    <script src="./assets/js/lession.js"></script>
+    <script src="./assets/js/help.js"></script>
     <!-- js link -->
   </body>
 </html>

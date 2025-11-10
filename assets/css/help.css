@@ -1,0 +1,33 @@
+/* Help Center styles using root theme variables */
+.help-center{--help-text:var(--text-main);--help-muted:var(--text-muted);--help-line:var(--scarlet-100);--help-primary:var(--scarlet-400);--help-primary-600:var(--scarlet-500);--help-surface:#fff}
+.help-center .help-title{font-weight:700;color:var(--help-text)}
+.help-center .help-sub{color:var(--help-muted);font-size:.9rem}
+.help-center .help-title-icon{color:var(--help-primary);font-size:1.5rem}
+.help-center .help-header{background:var(--scarlet-50);border:1px solid var(--help-line);border-radius:14px;padding:12px}
+.help-center .help-controls .help-search{min-width:260px;flex:1}
+.help-center .help-search-input{background:#fff;border:1px solid var(--help-line);color:var(--help-text);padding-left:2rem;border-radius:10px}
+.help-center .help-search-input::placeholder{color:var(--help-muted)}
+.help-center .help-search-icon{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);color:var(--help-muted);font-size:.9rem}
+.help-center .help-btn-ghost{background:#fff;border:1px solid var(--help-line);border-radius:10px;color:var(--help-text);font-weight:600}
+.help-center .help-btn-ghost:hover{border-color:var(--help-primary);color:var(--help-primary)}
+
+/* Accordion */
+.help-center .help-accordion .accordion-item{border:1px solid var(--help-line);border-radius:12px;margin-bottom:.75rem;overflow:hidden;background:var(--help-surface);box-shadow:var(--shadow-soft)}
+.help-center .help-accordion .accordion-button{font-weight:600}
+.help-center .help-accordion .accordion-button:focus{box-shadow:none}
+.help-center .help-accordion .accordion-button:not(.collapsed){background:var(--scarlet-50);color:var(--help-primary)}
+
+/* Sidebar cards */
+.help-center .help-side .help-card{background:#fff;border:1px solid var(--help-line);border-radius:12px;padding:14px;box-shadow:var(--shadow-soft)}
+.help-center .help-side .help-card h6{color:var(--help-text);font-weight:700}
+.help-center .help-side .help-card i{color:var(--help-primary)}
+.help-center .help-btn-primary{background:var(--help-primary);color:#fff;border:0;border-radius:10px;font-weight:700}
+.help-center .help-btn-primary:hover{background:var(--help-primary-600)}
+.help-center .help-links li+li{margin-top:.35rem}
+.help-center .help-link{display:inline-flex;align-items:center;gap:.5rem;color:var(--help-text);text-decoration:none}
+.help-center .help-link:hover{color:var(--help-primary)}
+.help-center .stack-16>*+*{margin-top:16px}
+
+/* Section spacing */
+.page-s .container.help-center{padding-top:.5rem;padding-bottom:1rem}
+
