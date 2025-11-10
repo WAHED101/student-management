@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="./assets/css/notice.css">
     <link rel="stylesheet" href="./assets/css/task.css">
     <link rel="stylesheet" href="./assets/css/progress.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
     <!-- css link -->
   </head>
   <body>
@@ -388,8 +389,150 @@
             <!-- Home Section -->
             <section id="homeSection" class="content-section page-s">
               <div class="page-s_content">
-                <h1>Dashboard</h1>
-                <p>Welcome to your dashboard overview.</p>
+                                <div class="container home-dashboard">
+                  <!-- Header/Greeting -->
+                  <div class="row g-3 align-items-stretch mb-3">
+                    <div class="col-12">
+                      <div class="home-hero d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between">
+                        <div class="d-flex align-items-center gap-3">
+                          <div class="home-hero__icon d-flex align-items-center justify-content-center">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                          </div>
+                          <div>
+                            <h2 class="home-hero__title m-0" id="homeGreeting">Welcome back</h2>
+                            <p class="home-hero__subtitle m-0" id="homeSubInfo">Have a productive day of learning</p>
+                          </div>
+                        </div>
+                        <div class="home-hero__meta mt-3 mt-md-0">
+                          <div class="d-flex align-items-center gap-2">
+                            <i class="fa-regular fa-calendar"></i>
+                            <span id="homeDate">Today</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Quick Stats -->
+                  <div class="row g-3 quick-stats">
+                    <div class="col-6 col-md-3">
+                      <div class="stat-card">
+                        <div class="stat-card__icon bg-accent-1"><i class="fa-solid fa-books"></i></div>
+                        <div class="stat-card__content">
+                          <p class="stat-card__label">Active Courses</p>
+                          <h4 class="stat-card__value" id="statCourses">06</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="stat-card">
+                        <div class="stat-card__icon bg-accent-2"><i class="fa-solid fa-user-check"></i></div>
+                        <div class="stat-card__content">
+                          <p class="stat-card__label">Attendance</p>
+                          <h4 class="stat-card__value"><span id="statAttendance">92</span>%</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="stat-card">
+                        <div class="stat-card__icon bg-accent-3"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="stat-card__content">
+                          <p class="stat-card__label">Points</p>
+                          <h4 class="stat-card__value" id="statPoints">1,240</h4>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-6 col-md-3">
+                      <div class="stat-card">
+                        <div class="stat-card__icon bg-accent-4"><i class="fa-solid fa-list-check"></i></div>
+                        <div class="stat-card__content">
+                          <p class="stat-card__label">Tasks Due</p>
+                          <h4 class="stat-card__value" id="statTasks">03</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Two Column: Upcoming + Quick Actions -->
+                  <div class="row g-3 mt-1">
+                    <div class="col-lg-7">
+                      <div class="panel-card h-100">
+                        <div class="panel-card__header">
+                          <h5 class="panel-card__title m-0"><i class="fa-regular fa-clock me-2"></i>Upcoming Schedule</h5>
+                        </div>
+                        <ul class="list-unstyled m-0 p-0 panel-list" id="upcomingList">
+                          <li class="panel-list__item">
+                            <div class="panel-list__time">09:00</div>
+                            <div class="panel-list__content">
+                              <p class="panel-list__title m-0">Mathematics - Algebra</p>
+                              <span class="panel-list__meta">Room 204 · 45 min</span>
+                            </div>
+                            <span class="badge status-pill pill-primary">Class</span>
+                          </li>
+                          <li class="panel-list__item">
+                            <div class="panel-list__time">11:00</div>
+                            <div class="panel-list__content">
+                              <p class="panel-list__title m-0">English - Essay Review</p>
+                              <span class="panel-list__meta">Room 106 · 40 min</span>
+                            </div>
+                            <span class="badge status-pill pill-warning">Reminder</span>
+                          </li>
+                          <li class="panel-list__item">
+                            <div class="panel-list__time">14:30</div>
+                            <div class="panel-list__content">
+                              <p class="panel-list__title m-0">Science - Lab prep</p>
+                              <span class="panel-list__meta">Lab A · 60 min</span>
+                            </div>
+                            <span class="badge status-pill pill-info">Lab</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-lg-5">
+                      <div class="panel-card h-100">
+                        <div class="panel-card__header">
+                          <h5 class="panel-card__title m-0"><i class="fa-solid fa-bolt me-2"></i>Quick Actions</h5>
+                        </div>
+                        <div class="quick-actions">
+                          <button class="qa-btn" data-action="open-progress"><i class="fa-solid fa-chart-pie me-2"></i>View Progress</button>
+                          <button class="qa-btn" data-action="open-tasks"><i class="fa-solid fa-list-check me-2"></i>My Tasks</button>
+                          <button class="qa-btn" data-action="open-notice"><i class="fa-regular fa-bell me-2"></i>Notices</button>
+                          <button class="qa-btn" data-action="open-courses"><i class="fa-solid fa-books me-2"></i>My Courses</button>
+                        </div>
+                        <div class="mini-summary">
+                          <div class="mini-summary__row">
+                            <span>Weekly Study Goal</span>
+                            <div class="progress mini-progress">
+                              <div class="progress-bar" role="progressbar" id="weeklyGoalBar" style="width: 68%"></div>
+                            </div>
+                            <span class="mini-summary__value" id="weeklyGoalText">68%</span>
+                          </div>
+                          <div class="mini-summary__row">
+                            <span>Attendance</span>
+                            <div class="progress mini-progress">
+                              <div class="progress-bar bar-purple" role="progressbar" id="attendanceGoalBar" style="width: 92%"></div>
+                            </div>
+                            <span class="mini-summary__value" id="attendanceGoalText">92%</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                <!-- Performance Trend (Line Chart) -->
+                <div class="row g-3 mt-1">
+                  <div class="col-12">
+                    <div class="panel-card">
+                      <div class="panel-card__header d-flex align-items-center justify-content-between">
+                        <h5 class="panel-card__title m-0"><i class="fa-solid fa-chart-line me-2"></i>Performance Trend</h5>
+                      </div>
+                      <div class="line-chart-wrap p-3">
+                        <canvas id="homeLineChart" aria-label="Weekly performance trend"></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
               </div>
             </section>
   
@@ -1241,6 +1384,7 @@
     <script src="./assets/js/notice.js"></script>
     <script src="./assets/js/task.js"></script>
     <script src="./assets/js/progress.js"></script>
+    <script src="./assets/js/dashboard.js"></script>
     <!-- js link -->
   </body>
 </html>
