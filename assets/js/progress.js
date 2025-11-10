@@ -1,0 +1,424 @@
+
+
+// ===== nupur =====
+// Chart initialization for Progress section
+let chartInstances = {
+  subjectChart: null,
+  subjectChart2: null,
+  subjectChart3: null,
+  subjectChart4: null,
+  attendanceChart: null,
+  attendancePieChart: null
+};
+
+// ===== nupur =====
+function initializeCharts() {
+  // Check if Chart.js is loaded
+  if (typeof Chart === 'undefined') {
+    console.warn('Chart.js is not loaded');
+    return;
+  }
+
+  // Check if Progress section is visible
+  const progressSection = document.getElementById('ProgressSection');
+  if (!progressSection || progressSection.classList.contains('d-none')) {
+    return;
+  }
+
+  // ===== nupur =====
+  // Initialize charts only if they don't exist yet
+  try {
+    // ===== nupur =====
+    // 1st chart - Class progress
+    if (!chartInstances.subjectChart) {
+      const ctxPie = document.getElementById('subjectChart');
+      if (ctxPie) {
+        const dataPie = {
+          labels: ['Presence', 'Absence'],
+          datasets: [{
+            label: 'Class Progress %',
+            data: [85, 15],
+            backgroundColor: ['#7B61FF', '#7b61ff29'],
+            hoverOffset: 10,
+            borderWidth: 2,
+            borderColor: '#fff'
+          }]
+        };
+
+        const configPie = {
+          type: 'doughnut',
+          data: dataPie,
+          options: {
+            cutout: '70%',
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: 'circle',
+                  boxWidth: 8,
+                  boxHeight: 8,
+                  padding: 15,
+                  font: { size: 12, weight: '500' }
+                }
+              },
+              tooltip: {
+                enabled: true,
+                backgroundColor: 'rgba(30, 34, 40, 0.9)',
+                titleFont: { size: 6, weight: '600' },
+                bodyFont: { size: 13 },
+                displayColors: false,
+                callbacks: {
+                  label: ctx => `${ctx.label}: ${ctx.parsed}%`
+                }
+              }
+            },
+            animation: {
+              animateRotate: true,
+              duration: 1200
+            }
+          }
+        };
+
+        chartInstances.subjectChart = new Chart(ctxPie, configPie);
+      }
+    }
+
+    // ===== nupur =====
+    // 2nd chart - Attendance progress
+    if (!chartInstances.subjectChart2) {
+      const ctxPie2 = document.getElementById('subjectChart2');
+      if (ctxPie2) {
+        const dataPie2 = {
+          labels: ['Present', 'Absent'],
+          datasets: [{
+            label: 'Attendance %',
+            data: [95, 5],
+            backgroundColor: ['#7B61FF', '#7b61ff29'],
+            hoverOffset: 10,
+            borderWidth: 2,
+            borderColor: '#fff'
+          }]
+        };
+
+        const configPie2 = {
+          type: 'doughnut',
+          data: dataPie2,
+          options: {
+            cutout: '70%',
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: 'circle',
+                  boxWidth: 8,
+                  boxHeight: 8,
+                  padding: 15,
+                  font: { size: 12, weight: '500' }
+                }
+              },
+              tooltip: {
+                enabled: true,
+                backgroundColor: 'rgba(30, 34, 40, 0.9)',
+                titleFont: { size: 6, weight: '600' },
+                bodyFont: { size: 13 },
+                displayColors: false,
+                callbacks: {
+                  label: ctx => `${ctx.label}: ${ctx.parsed}%`
+                }
+              }
+            },
+            animation: {
+              animateRotate: true,
+              duration: 1200
+            }
+          }
+        };
+        chartInstances.subjectChart2 = new Chart(ctxPie2, configPie2);
+      }
+    }
+
+    // ===== nupur =====
+    // 3rd chart - Subject progress
+    if (!chartInstances.subjectChart3) {
+      const ctxPie3 = document.getElementById('subjectChart3');
+      if (ctxPie3) {
+        const dataPie3 = {
+          labels: ['Completed', 'Remaining'],
+          datasets: [{
+            label: 'Subject Progress %',
+            data: [75, 25],
+            backgroundColor: ['#7B61FF', '#7b61ff29'],
+            hoverOffset: 10,
+            borderWidth: 2,
+            borderColor: '#fff'
+          }]
+        };
+
+        const configPie3 = {
+          type: 'doughnut',
+          data: dataPie3,
+          options: {
+            cutout: '70%',
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: 'circle',
+                  boxWidth: 8,
+                  boxHeight: 8,
+                  padding: 15,
+                  font: { size: 12, weight: '500' }
+                }
+              },
+              tooltip: {
+                enabled: true,
+                backgroundColor: 'rgba(30, 34, 40, 0.9)',
+                titleFont: { size: 6, weight: '600' },
+                bodyFont: { size: 13 },
+                displayColors: false,
+                callbacks: {
+                  label: ctx => `${ctx.label}: ${ctx.parsed}%`
+                }
+              }
+            },
+            animation: {
+              animateRotate: true,
+              duration: 1200
+            }
+          }
+        };
+        chartInstances.subjectChart3 = new Chart(ctxPie3, configPie3);
+      }
+    }
+
+    // ===== nupur =====
+    // 4th chart - Course progress
+    if (!chartInstances.subjectChart4) {
+      const ctxPie4 = document.getElementById('subjectChart4');
+      if (ctxPie4) {
+        const dataPie4 = {
+          labels: ['Completed', 'Remaining'],
+          datasets: [{
+            label: 'Course Progress %',
+            data: [68, 32],
+            backgroundColor: ['#7B61FF', '#7b61ff29'],
+            hoverOffset: 10,
+            borderWidth: 2,
+            borderColor: '#fff'
+          }]
+        };
+
+        const configPie4 = {
+          type: 'doughnut',
+          data: dataPie4,
+          options: {
+            cutout: '70%',
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: 'circle',
+                  boxWidth: 8,
+                  boxHeight: 8,
+                  padding: 15,
+                  font: { size: 12, weight: '500' }
+                }
+              },
+              tooltip: {
+                enabled: true,
+                backgroundColor: 'rgba(30, 34, 40, 0.9)',
+                titleFont: { size: 6, weight: '600' },
+                bodyFont: { size: 13 },
+                displayColors: false,
+                callbacks: {
+                  label: ctx => `${ctx.label}: ${ctx.parsed}%`
+                }
+              }
+            },
+            animation: {
+              animateRotate: true,
+              duration: 1200
+            }
+          }
+        };
+        chartInstances.subjectChart4 = new Chart(ctxPie4, configPie4);
+      }
+    }
+
+    // ===== nupur =====
+    // Attendance Bar Chart
+    if (!chartInstances.attendanceChart) {
+      const ctxBar = document.getElementById('attendanceChart');
+      if (ctxBar) {
+        const dataBar = {
+          labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          datasets: [{
+            label: 'Attendance',
+            data: [95, 88, 92, 90, 85, 78, 82],
+            backgroundColor: '#7B61FF',
+            borderColor: '#7B61FF',
+            borderWidth: 2,
+            borderRadius: 8
+          }]
+        };
+
+        const configBar = {
+          type: 'bar',
+          data: dataBar,
+          options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            plugins: {
+              legend: {
+                display: false
+              },
+              tooltip: {
+                enabled: true,
+                backgroundColor: 'rgba(30, 34, 40, 0.9)',
+                titleFont: { size: 12, weight: '600' },
+                bodyFont: { size: 13 },
+                callbacks: {
+                  label: ctx => `Attendance: ${ctx.parsed.y}%`
+                }
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true,
+                max: 100,
+                ticks: {
+                  callback: function(value) {
+                    return value + '%';
+                  }
+                }
+              }
+            },
+            animation: {
+              duration: 1200
+            }
+          }
+        };
+        chartInstances.attendanceChart = new Chart(ctxBar, configBar);
+      }
+    }
+
+    // ===== nupur =====
+    // Attendance Pie Chart (in attendance tab)
+    if (!chartInstances.attendancePieChart) {
+      const ctxPieAttendance = document.getElementById('attendancePieChart');
+      if (ctxPieAttendance) {
+        const dataPieAttendance = {
+          labels: ['Present', 'Absent', 'Late'],
+          datasets: [{
+            label: 'Attendance Breakdown',
+            data: [85, 10, 5],
+            backgroundColor: ['#7B61FF', '#ff6b6b', '#ffd93d'],
+            hoverOffset: 10,
+            borderWidth: 2,
+            borderColor: '#fff'
+          }]
+        };
+
+        const configPieAttendance = {
+          type: 'doughnut',
+          data: dataPieAttendance,
+          options: {
+            cutout: '70%',
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  usePointStyle: true,
+                  pointStyle: 'circle',
+                  boxWidth: 8,
+                  boxHeight: 8,
+                  padding: 15,
+                  font: { size: 12, weight: '500' }
+                }
+              },
+              tooltip: {
+                enabled: true,
+                backgroundColor: 'rgba(30, 34, 40, 0.9)',
+                titleFont: { size: 6, weight: '600' },
+                bodyFont: { size: 13 },
+                displayColors: false,
+                callbacks: {
+                  label: ctx => `${ctx.label}: ${ctx.parsed}%`
+                }
+              }
+            },
+            animation: {
+              animateRotate: true,
+              duration: 1200
+            }
+          }
+        };
+        chartInstances.attendancePieChart = new Chart(ctxPieAttendance, configPieAttendance);
+      }
+    }
+  } catch (error) {
+    console.error('Error initializing charts:', error);
+  }
+}
+
+// ===== nupur =====
+// Tab switching functionality for Progress section
+function initializeTabs() {
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const targetTab = this.getAttribute('data-tab');
+
+      // Remove active class from all buttons and contents
+      tabButtons.forEach(btn => btn.classList.remove('active'));
+      tabContents.forEach(content => content.classList.remove('active'));
+
+      // Add active class to clicked button
+      this.classList.add('active');
+
+      // Show corresponding tab content
+      const targetContent = document.getElementById(targetTab);
+      if (targetContent) {
+        targetContent.classList.add('active');
+        // ===== nupur =====
+        // Initialize charts when attendance tab is shown
+        if (targetTab === 'attendance') {
+          setTimeout(initializeCharts, 100);
+        }
+      }
+    });
+  });
+}
+
+// ===== nupur =====
+// Initialize charts when Progress section is shown
+document.addEventListener('DOMContentLoaded', function() {
+  // ===== nupur =====
+  // Initialize tabs
+  initializeTabs();
+
+  // ===== nupur =====
+  // Initialize charts after a short delay to ensure DOM is ready
+  setTimeout(initializeCharts, 100);
+
+  // ===== nupur =====
+  // Watch for section changes
+  const sidebarLinks = document.querySelectorAll('#sidebar .nav-link, .mobile-navbar-bottom .nav-link[data-section]');
+  sidebarLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // ===== nupur =====
+      if (this.dataset.section === 'Progress') {
+        setTimeout(() => {
+          initializeCharts();
+          initializeTabs();
+        }, 300);
+      }
+    });
+  });
+});
