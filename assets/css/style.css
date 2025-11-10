@@ -745,7 +745,7 @@ body.modal-open .bg-glass-login:hover {
   box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
 }
 .topbar-title {
-  font-size: 12px;
+  font-size: 18px;
   color:var(--scarlet-600);
   font-weight: 600;
   letter-spacing: 0.3px;

@@ -35,6 +35,8 @@
     <link rel="stylesheet" href="./assets/css/mycours.css">
     <link rel="stylesheet" href="./assets/css/lession.css">
     <link rel="stylesheet" href="./assets/css/help.css">
+    <link rel="stylesheet" href="./assets/css/teacher-review.css">
+    <link rel="stylesheet" href="./assets/css/payment.css">
     <!-- css link -->
   </head>
   <body>
@@ -1546,16 +1548,224 @@
             <!-- TeacherS Review Section -->
             <section id="TeacherReviewSection" class="content-section d-none page-s">
               <div class="page-s_content">
-                <h1>TeacherS Review</h1>
-                <p>Here you can update your preferences and account details.</p>
+                <div class="container teacher-review">
+                  <div class="tr-header d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3 gap-md-4 mb-3">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="fa-solid fa-hand-holding-star tr-title-icon"></i>
+                      <div>
+                        <h3 class="m-0 tr-title">Teachers Review</h3>
+                        <p class="m-0 tr-sub">Read feedback, rate teachers, and filter by subject</p>
+                      </div>
+                    </div>
+                    <div class="ms-md-auto w-100 w-md-auto d-flex flex-wrap align-items-center gap-2 tr-controls">
+                      <div class="tr-search position-relative">
+                        <i class="fa-regular fa-magnifying-glass tr-search-icon"></i>
+                        <input type="search" class="form-control tr-search-input" id="trSearch" placeholder="Search reviews or teachers">
+                      </div>
+                      <select class="form-select tr-select" id="trSubject" aria-label="Filter by subject">
+                        <option value="all" selected>All subjects</option>
+                        <option value="math">Mathematics</option>
+                        <option value="science">Science</option>
+                        <option value="english">English</option>
+                        <option value="history">History</option>
+                      </select>
+                      <select class="form-select tr-select" id="trSort" aria-label="Sort reviews">
+                        <option value="recent" selected>Most recent</option>
+                        <option value="rating">Highest rating</option>
+                        <option value="a2z">A → Z</option>
+                        <option value="z2a">Z → A</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row g-3">
+                    <div class="col-lg-8">
+                      <div class="tr-list" id="trList" aria-live="polite">
+                        <!-- Review Card -->
+                        <article class="tr-card" data-teacher="John Smith" data-subject="math" data-rating="5" data-date="2025-10-28">
+                          <div class="tr-card-head d-flex justify-content-between align-items-start">
+                            <div>
+                              <h6 class="m-0 tr-teacher">John Smith</h6>
+                              <span class="tr-subject">Mathematics</span>
+                            </div>
+                            <div class="tr-stars" aria-label="5 stars" data-value="5"></div>
+                          </div>
+                          <p class="tr-text">Explains complex algebra topics with clarity. Homework feedback is timely and helpful.</p>
+                          <div class="tr-meta">
+                            <span class="tr-date">Oct 28, 2025</span>
+                            <button class="btn tr-btn-ghost" data-action="helpful">Helpful</button>
+                          </div>
+                        </article>
+                        <article class="tr-card" data-teacher="Sarah Lee" data-subject="english" data-rating="4" data-date="2025-10-20">
+                          <div class="tr-card-head d-flex justify-content-between align-items-start">
+                            <div>
+                              <h6 class="m-0 tr-teacher">Sarah Lee</h6>
+                              <span class="tr-subject">English</span>
+                            </div>
+                            <div class="tr-stars" aria-label="4 stars" data-value="4"></div>
+                          </div>
+                          <p class="tr-text">Great at improving vocabulary and reading comprehension. Could pace grammar a bit slower.</p>
+                          <div class="tr-meta">
+                            <span class="tr-date">Oct 20, 2025</span>
+                            <button class="btn tr-btn-ghost" data-action="helpful">Helpful</button>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="d-flex justify-content-between align-items-center mt-2">
+                        <small class="text-muted" id="trCount"></small>
+                        <div class="tr-pagination">
+                          <button class="btn tr-btn-ghost" id="trPrev">Prev</button>
+                          <button class="btn tr-btn-ghost" id="trNext">Next</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="tr-side stack-16">
+                        <div class="tr-summary tr-card">
+                          <h6 class="m-0">Summary</h6>
+                          <div class="d-flex align-items-center gap-2 mt-2">
+                            <div class="tr-stars" aria-label="Average 4.5 stars" data-value="4.5"></div>
+                            <strong id="trAvg">4.5</strong><span class="text-muted">/ 5</span>
+                          </div>
+                          <p class="text-muted mb-0" id="trTotal">Based on 2 reviews</p>
+                        </div>
+                        <div class="tr-form tr-card">
+                          <h6 class="m-0 mb-2">Write a review</h6>
+                          <form id="trForm">
+                            <div class="mb-2">
+                              <label class="form-label">Teacher</label>
+                              <input type="text" class="form-control" id="trFormTeacher" placeholder="e.g., John Smith" required>
+                            </div>
+                            <div class="mb-2">
+                              <label class="form-label">Subject</label>
+                              <select class="form-select" id="trFormSubject" required>
+                                <option value="math">Mathematics</option>
+                                <option value="science">Science</option>
+                                <option value="english">English</option>
+                                <option value="history">History</option>
+                              </select>
+                            </div>
+                            <div class="mb-2">
+                              <label class="form-label">Rating</label>
+                              <div class="tr-stars-input" id="trFormStars" data-value="0" aria-label="Set rating"></div>
+                            </div>
+                            <div class="mb-2">
+                              <label class="form-label">Feedback</label>
+                              <textarea class="form-control" id="trFormText" rows="3" placeholder="Share your experience" required></textarea>
+                            </div>
+                            <button type="submit" class="btn tr-btn-primary w-100">Submit Review</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
   
             <!-- payment Section -->
             <section id="PaymentSection" class="content-section d-none page-s">
               <div class="page-s_content">
-                <h1>Payment</h1>
-                <p>Here you can update your preferences and account details.</p>
+                <div class="container payment">
+                  <div class="pay-header d-flex flex-column flex-md-row align-items-start align-items-md-center gap-3 gap-md-4 mb-3">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="fa-solid fa-credit-card pay-title-icon"></i>
+                      <div>
+                        <h3 class="m-0 pay-title">Payments</h3>
+                        <p class="m-0 pay-sub">Manage methods, pay fees, and view history</p>
+                      </div>
+                    </div>
+                    <div class="ms-md-auto w-100 w-md-auto d-flex flex-wrap align-items-center gap-2 pay-controls">
+                      <select class="form-select pay-select" id="payFilter" aria-label="Filter history">
+                        <option value="all" selected>All</option>
+                        <option value="success">Success</option>
+                        <option value="failed">Failed</option>
+                        <option value="refund">Refund</option>
+                      </select>
+                      <select class="form-select pay-select" id="paySort" aria-label="Sort history">
+                        <option value="recent" selected>Most recent</option>
+                        <option value="amount">Amount</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="row g-3">
+                    <div class="col-lg-7">
+                      <div class="pay-card pay-checkout">
+                        <h6 class="m-0 mb-2">Checkout</h6>
+                        <div class="row g-2">
+                          <div class="col-md-6">
+                            <label class="form-label">Name on card</label>
+                            <input type="text" class="form-control" id="cardName" placeholder="John Doe" required>
+                          </div>
+                          <div class="col-md-6">
+                            <label class="form-label">Card number</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="4242 4242 4242 4242" inputmode="numeric" maxlength="19" required>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <label class="form-label">Expiry</label>
+                            <input type="text" class="form-control" id="cardExpiry" placeholder="MM/YY" maxlength="5" required>
+                          </div>
+                          <div class="col-6 col-md-4">
+                            <label class="form-label">CVC</label>
+                            <input type="password" class="form-control" id="cardCvc" placeholder="CVC" maxlength="4" required>
+                          </div>
+                          <div class="col-md-4">
+                            <label class="form-label">Amount</label>
+                            <div class="input-group">
+                              <span class="input-group-text">$</span>
+                              <input type="number" class="form-control" id="payAmount" placeholder="0.00" min="0" step="0.01" required>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <label class="form-label">Promo code</label>
+                            <div class="input-group">
+                              <input type="text" class="form-control" id="promoCode" placeholder="Enter code">
+                              <button class="btn pay-btn-ghost" id="applyPromo">Apply</button>
+                            </div>
+                            <small class="text-muted" id="promoMsg"></small>
+                          </div>
+                          <div class="col-12">
+                            <div class="d-flex justify-content-between align-items-center pay-summary">
+                              <span>Subtotal</span><strong id="sumSubtotal">$0.00</strong>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center pay-summary">
+                              <span>Discount</span><strong id="sumDiscount">-$0.00</strong>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center pay-summary">
+                              <span>Total</span><strong id="sumTotal">$0.00</strong>
+                            </div>
+                          </div>
+                          <div class="col-12 d-grid">
+                            <button class="btn pay-btn-primary" id="payNow"><i class="fa-solid fa-lock"></i> Pay securely</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-5">
+                      <div class="pay-card">
+                        <h6 class="m-0 mb-2">Saved methods</h6>
+                        <ul class="list-unstyled m-0" id="savedMethods">
+                          <li class="pay-method" data-brand="visa" data-last4="4242"><i class="fa-brands fa-cc-visa"></i> Visa •••• 4242</li>
+                          <li class="pay-method" data-brand="mc" data-last4="4444"><i class="fa-brands fa-cc-mastercard"></i> MasterCard •••• 4444</li>
+                        </ul>
+                      </div>
+                      <div class="pay-card">
+                        <h6 class="m-0 mb-2">History</h6>
+                        <ul class="list-unstyled m-0" id="payHistory" aria-live="polite">
+                          <li class="pay-history-item" data-status="success" data-amount="120.00" data-date="2025-10-15">
+                            <span><i class="fa-regular fa-circle-check text-success"></i> Tuition</span>
+                            <strong>$120.00</strong>
+                          </li>
+                          <li class="pay-history-item" data-status="failed" data-amount="60.00" data-date="2025-10-12">
+                            <span><i class="fa-regular fa-circle-xmark text-danger"></i> Library fee</span>
+                            <strong>$60.00</strong>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </section>
   
@@ -1751,6 +1961,8 @@
     <script src="./assets/js/mycours.js"></script>
     <script src="./assets/js/lession.js"></script>
     <script src="./assets/js/help.js"></script>
+    <script src="./assets/js/teacher-review.js"></script>
+    <script src="./assets/js/payment.js"></script>
     <!-- js link -->
   </body>
 </html>

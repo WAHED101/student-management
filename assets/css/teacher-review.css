@@ -1,0 +1,31 @@
+/* Teacher Review styles using root theme variables */
+.teacher-review{--tr-text:var(--text-main);--tr-muted:var(--text-muted);--tr-line:var(--scarlet-100);--tr-primary:var(--scarlet-400);--tr-primary-600:var(--scarlet-500);--tr-surface:#fff}
+.teacher-review .tr-title{font-weight:700;color:var(--tr-text)}
+.teacher-review .tr-sub{color:var(--tr-muted);font-size:.9rem}
+.teacher-review .tr-title-icon{color:var(--tr-primary);font-size:1.5rem}
+.teacher-review .tr-controls .tr-search{min-width:260px;flex:1}
+.teacher-review .tr-search-input{background:#fff;border:1px solid var(--tr-line);color:var(--tr-text);padding-left:2rem;border-radius:10px}
+.teacher-review .tr-search-input::placeholder{color:var(--tr-muted)}
+.teacher-review .tr-search-icon{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);color:var(--tr-muted);font-size:.9rem}
+.teacher-review .tr-select{background:#fff;border:1px solid var(--tr-line);color:var(--tr-text);min-width:150px;border-radius:10px}
+
+.teacher-review .tr-card{background:#fff;border:1px solid var(--tr-line);border-radius:12px;padding:14px;box-shadow:var(--shadow-soft)}
+.teacher-review .tr-card+.tr-card{margin-top:12px}
+.teacher-review .tr-subject{display:inline-block;color:var(--tr-muted);font-size:.8rem}
+.teacher-review .tr-text{color:var(--tr-text);margin:.5rem 0}
+.teacher-review .tr-meta{display:flex;justify-content:space-between;align-items:center}
+.teacher-review .tr-date{color:var(--tr-muted);font-size:.8rem}
+.teacher-review .tr-btn-primary{background:var(--tr-primary);color:#fff;border:0;border-radius:10px;font-weight:700}
+.teacher-review .tr-btn-primary:hover{background:var(--tr-primary-600)}
+.teacher-review .tr-btn-ghost{background:#fff;border:1px solid var(--tr-line);border-radius:10px;color:var(--tr-text);font-weight:600}
+.teacher-review .tr-btn-ghost:hover{border-color:var(--tr-primary);color:var(--tr-primary)}
+.teacher-review .tr-stars{--size:18px;display:inline-flex;gap4:4px}
+.teacher-review .tr-stars i{color:#f5c042;font-size:var(--size)}
+.teacher-review .tr-stars-input{display:inline-flex;gap:4px;cursor:pointer}
+.teacher-review .tr-stars-input i{color:#d7d7d7;font-size:20px}
+.teacher-review .tr-stars-input i.active{color:#f5c042}
+.teacher-review .tr-summary h6{font-weight:700}
+.teacher-review .stack-16>*+*{margin-top:16px}
+
+.page-s .container.teacher-review{padding-top:.5rem;padding-bottom:1rem}
+

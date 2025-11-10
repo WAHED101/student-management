@@ -1,0 +1,20 @@
+/* Payment styles using root theme variables */
+.payment{--pay-text:var(--text-main);--pay-muted:var(--text-muted);--pay-line:var(--scarlet-100);--pay-primary:var(--scarlet-400);--pay-primary-600:var(--scarlet-500);--pay-surface:#fff}
+.payment .pay-title{font-weight:700;color:var(--pay-text)}
+.payment .pay-sub{color:var(--pay-muted);font-size:.9rem}
+.payment .pay-title-icon{color:var(--pay-primary);font-size:1.5rem}
+.payment .pay-controls .pay-select{background:#fff;border:1px solid var(--pay-line);color:var(--pay-text);min-width:150px;border-radius:10px}
+.payment .pay-card{background:#fff;border:1px solid var(--pay-line);border-radius:12px;padding:14px;box-shadow:var(--shadow-soft)}
+.payment .pay-btn-primary{background:var(--pay-primary);color:#fff;border:0;border-radius:10px;font-weight:700}
+.payment .pay-btn-primary:hover{background:var(--pay-primary-600)}
+.payment .pay-btn-ghost{background:#fff;border:1px solid var(--pay-line);border-radius:10px;color:var(--pay-text);font-weight:600}
+.payment .pay-btn-ghost:hover{border-color:var(--pay-primary);color:var(--pay-primary)}
+.payment .pay-summary{padding:.25rem 0;border-bottom:1px dashed var(--pay-line)}
+.payment .pay-summary:last-child{border-bottom:0}
+.payment #savedMethods .pay-method{padding:.5rem;border:1px solid var(--pay-line);border-radius:10px;margin-bottom:.5rem;display:flex;align-items:center;gap:.5rem;cursor:pointer}
+.payment #savedMethods .pay-method:hover{border-color:var(--pay-primary);color:var(--pay-primary)}
+.payment #payHistory .pay-history-item{padding:.5rem;border:1px solid var(--pay-line);border-radius:10px;margin-bottom:.5rem;display:flex;align-items:center;justify-content:space-between}
+.payment #payHistory .text-success{color:#16a34a!important}
+.payment #payHistory .text-danger{color:#dc2626!important}
+.page-s .container.payment{padding-top:.5rem;padding-bottom:1rem}
+
