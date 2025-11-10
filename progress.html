@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Student-Managemetn</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <link rel="icon" href="./assets/img/logo/logo.png" />
     <!-- bootstrap cdn -->
     <link
@@ -298,112 +299,204 @@
         <!-- Main Content -->
         <main class="col-lg-10 col-md-9 p-0" id="mainContent">
           <!-- progress Section -->
-          <section id="ProgressSection" class="content-section">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-12">
-                  <h1 class="Overview text-center">Overview</h1>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="profile-card mx-auto">
-                    <div class="profile mx-auto">
-                      <img src="assets/img/profile/girl-avatar.jpg" alt="" />
-                    </div>
-                    <div class="profile-content">
-                      <h4 class="text-center">Sarika Binte Shanto</h4>
-                      <p class="text-center text-muted">sarika019@gmail.com</p>
-                      <hr />
-                      <div class="profile-icon">
-                        <p><i class="fa-solid fa-id-card-clip"></i>ID-651806</p>
-                        <p><i class="fa-solid fa-user-sith"></i>Second Batch</p>
-                        <p>
-                          <i class="fa-solid fa-graduation-cap"></i>GPA-5.00
-                        </p>
-                        <p>
-                          <i class="fa-solid fa-location-dot"></i>JI. Lavender
-                          Tangerang
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-8">
-                  <div class="row">
-                    <!-- card-1 -->
-                    <div class="col-md-6">
-                      <div class="card-section float-end">
-                        <div class="card">
-                          <div class="hed-liner mx-auto"></div>
-                          <h4 class="text-center">ACADEMIC</h4>
-                          <hr />
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Mollitia harum tenetur at dolores. Repellat
-                            est aut sit officiis, consectetur aliquam minus
-                            doloremque beatae fugiat blanditiis libero eius
-                            voluptatibus reiciendis enim.
-                          </p>
+          <section id="ProgressSection" class="content-section page-s">
+            <div class="page-s_content">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="progress-big-card">
+                      <div class="report-box">
+                        <h2 class="title">Progress Overview</h2>
+                        <p class="subtitle">Your academic progress overview</p>
+
+                        <div class="circle-progress">
+                          <span>78%</span>
                         </div>
-                      </div>
-                    </div>
-                    <!-- card-2 -->
-                    <div class="col-md-6">
-                      <div class="card-section">
-                        <div class="card">
-                          <div class="hed-liner mx-auto"></div>
-                          <h4 class="text-center">ATTENDANCE</h4>
-                          <hr />
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Mollitia harum tenetur at dolores. Repellat
-                            est aut sit officiis, consectetur aliquam minus
-                            doloremque beatae fugiat blanditiis libero eius
-                            voluptatibus reiciendis enim.
-                          </p>
+
+                        <div class="status-box">
+                          <div class="box best">
+                            <p class="label">🏆 Best Subject</p>
+                            <h4>Mathematics</h4>
+                          </div>
+                          <div class="box improve">
+                            <p class="label">📈 Needs Improvement</p>
+                            <h4>English Grammar</h4>
+                          </div>
                         </div>
+
+                        <button class="download-btn">
+                          <i class="fa-solid fa-download"></i> Download Report
+                        </button>
                       </div>
                     </div>
                   </div>
 
-                  <div class="row">
-                    <!-- card-3 -->
-                    <div class="col-md-6">
-                      <div class="card-section float-end">
-                        <div class="card">
-                          <div class="hed-liner mx-auto"></div>
-                          <h4 class="text-center">CLASS</h4>
-                          <hr />
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Mollitia harum tenetur at dolores. Repellat
-                            est aut sit officiis, consectetur aliquam minus
-                            doloremque beatae fugiat blanditiis libero eius
-                            voluptatibus reiciendis enim.
-                          </p>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="pie-card">
+                          <div class="pie-chart">
+                            <p>progress of Attendance</p>
+                            <canvas id="subjectChart2"></canvas>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="pie-card">
+                          <div class="pie-chart">
+                            <p>progress of Class</p>
+                            <canvas id="subjectChart"></canvas>
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <!-- card-4 -->
-                    <div class="col-md-6">
-                      <div class="card-section">
-                        <div class="card">
-                          <div class="hed-liner mx-auto"></div>
-                          <h4 class="text-center">TOTAL COURSE</h4>
-                          <hr />
-                          <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Mollitia harum tenetur at dolores. Repellat
-                            est aut sit officiis, consectetur aliquam minus
-                            doloremque beatae fugiat blanditiis libero eius
-                            voluptatibus reiciendis enim.
-                          </p>
+
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="pie-card">
+                          <div class="pie-chart">
+                            <p>progress of Subject</p>
+                            <canvas id="subjectChart3"></canvas>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="pie-card">
+                          <div class="pie-chart">
+                            <p>progress of course</p>
+                            <canvas id="subjectChart4"></canvas>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="tab-wrapper">
+                      <div class="tab-header">
+                        <button class="tab-btn active" data-tab="exam">
+                          Exam
+                        </button>
+                        <button class="tab-btn" data-tab="skills">
+                          Skills
+                        </button>
+                        <button class="tab-btn" data-tab="attendance">
+                          Attendance
+                        </button>
+                      </div>
+
+                      <!-- Exam Tab -->
+                      <div class="tab-content active" id="exam">
+                        <div class="tab-card">
+                          <h4>Mathematics</h4>
+                          <div class="progress-bar">
+                            <span style="width: 88%"></span>
+                          </div>
+                          <div class="score">Score: 88 / 100</div>
+                        </div>
+                        <div class="tab-card">
+                          <h4>Science</h4>
+                          <div class="progress-bar">
+                            <span style="width: 79%"></span>
+                          </div>
+                          <div class="score">Score: 79 / 100</div>
+                        </div>
+                        <div class="tab-card">
+                          <h4>English</h4>
+                          <div class="progress-bar">
+                            <span style="width: 92%"></span>
+                          </div>
+                          <div class="score">Score: 92 / 100</div>
+                        </div>
+                      </div>
+
+                      <!-- Skills Tab -->
+                      <div class="tab-content" id="skills">
+                        <div class="tab-card">
+                          <h4>Web Development</h4>
+                          <div class="progress-bar">
+                            <span style="width: 75%"></span>
+                          </div>
+                          <div class="score">Progress: 75%</div>
+                        </div>
+                        <div class="tab-card">
+                          <h4>Photoshop</h4>
+                          <div class="progress-bar">
+                            <span style="width: 60%"></span>
+                          </div>
+                          <div class="score">Progress: 60%</div>
+                        </div>
+                        <div class="tab-card">
+                          <h4>Database Management</h4>
+                          <div class="progress-bar">
+                            <span style="width: 50%"></span>
+                          </div>
+                          <div class="score">Progress: 50%</div>
+                        </div>
+                      </div>
+
+                      <!-- Attendance Tab -->
+                      <div class="tab-content" id="attendance">
+                        <!-- Bar Chart -->
+                        <canvas id="attendanceChart"></canvas>
+
+                        <!-- Pie Chart -->
+                        <div class="pie-wrapper">
+                          <canvas id="subjectChart"></canvas>
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <div class="row">
+                  
+                  <div class="col-md-4">
+                    chart-bar
+                    <div class="">
+                      <div class="">
+                        <h2>Monthly Attendance</h2>
+                        <canvas id="attendanceChart"></canvas>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="chart-container pie-chart">
+                      <h6>progress of each subject</h6>
+                      <canvas id="subjectChart"></canvas>
+                    </div>
+                  </div>
+                </div> -->
+
+                <!-- <div class="row">
+                  <div class="col-md-4">
+                    <div class="chart-container bar-chart-exam">
+                      <h2>Exam Result Overview</h2>
+                      <canvas id="examChart"></canvas>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="chart-card glassy-card">
+                      <h3>Weekly Project Review</h3>
+                      <canvas id="projectReviewChart"></canvas>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="chart-card extracurricular-chart">
+                      <h6>Extracurricular Activities</h6>
+                      <canvas id="activitiesPieChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+                 -->
               </div>
             </div>
           </section>
