@@ -1,75 +1,75 @@
 /* ========================
        BAR CHART (Attendance %)
     =========================*/
-    const ctxBar = document.getElementById('attendanceChart').getContext('2d');
+    // const ctxBar = document.getElementById('attendanceChart').getContext('2d');
 
-    const labelsBar = [
-      '1','2','3','4','5','6','7','8','9','10',
-      '11','12','13','14','15','16','17','18','19','20',
-      '21','22','23','24','25','26','27','28','29','30'
-    ];
+    // const labelsBar = [
+    //   '1','2','3','4','5','6','7','8','9','10',
+    //   '11','12','13','14','15','16','17','18','19','20',
+    //   '21','22','23','24','25','26','27','28','29','30'
+    // ];
 
-    const dataBar = {
-      labels: labelsBar,
-      datasets: [{
-        label: 'Attendance (%)',
-        data: [
-          90, 85, 92, 95, 100, 88, 91, 85, 93, 97,
-          92, 89, 94, 100, 86, 90, 92, 88, 96, 91,
-          95, 89, 90, 92, 97, 94, 88, 90, 93, 95
-        ],
-        backgroundColor: 'rgba(123, 97, 255, 0.7)',
-        borderColor: '#7B61FF',
-        borderWidth: 2,
-        borderRadius: 4,
-        hoverBackgroundColor: '#5A3FFF',
-      }]
-    };
+    // const dataBar = {
+    //   labels: labelsBar,
+    //   datasets: [{
+    //     label: 'Attendance (%)',
+    //     data: [
+    //       90, 85, 92, 95, 100, 88, 91, 85, 93, 97,
+    //       92, 89, 94, 100, 86, 90, 92, 88, 96, 91,
+    //       95, 89, 90, 92, 97, 94, 88, 90, 93, 95
+    //     ],
+    //     backgroundColor: 'rgba(123, 97, 255, 0.7)',
+    //     borderColor: '#7B61FF',
+    //     borderWidth: 2,
+    //     borderRadius: 4,
+    //     hoverBackgroundColor: '#5A3FFF',
+    //   }]
+    // };
 
-    const configBar = {
-      type: 'bar',
-      data: dataBar,
-      options: {
-        responsive: false,
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 100,
-            ticks: {
-              stepSize: 20,
-              callback: value => value + '%'
-            },
-            title: {
-              display: true,
-              text: 'Attendance %'
-            }
-          },
-          x: {
-            title: {
-              display: true,
-              text: 'Day'
-            },
-            ticks: {
-              autoSkip: true,
-              maxRotation: 0,
-              minRotation: 0
-            }
-          }
-        },
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            enabled: true,
-            displayColors: false,
-            callbacks: {
-              label: ctx => `Day ${ctx.label}: ${ctx.parsed.y}%`
-            }
-          }
-        }
-      }
-    };
+    // const configBar = {
+    //   type: 'bar',
+    //   data: dataBar,
+    //   options: {
+    //     responsive: false,
+    //     scales: {
+    //       y: {
+    //         beginAtZero: true,
+    //         max: 100,
+    //         ticks: {
+    //           stepSize: 20,
+    //           callback: value => value + '%'
+    //         },
+    //         title: {
+    //           display: true,
+    //           text: 'Attendance %'
+    //         }
+    //       },
+    //       x: {
+    //         title: {
+    //           display: true,
+    //           text: 'Day'
+    //         },
+    //         ticks: {
+    //           autoSkip: true,
+    //           maxRotation: 0,
+    //           minRotation: 0
+    //         }
+    //       }
+    //     },
+    //     plugins: {
+    //       legend: { display: false },
+    //       tooltip: {
+    //         enabled: true,
+    //         displayColors: false,
+    //         callbacks: {
+    //           label: ctx => `Day ${ctx.label}: ${ctx.parsed.y}%`
+    //         }
+    //       }
+    //     }
+    //   }
+    // };
 
-    new Chart(ctxBar, configBar);
+    // new Chart(ctxBar, configBar);
 
 
     /* ==========================
@@ -78,14 +78,13 @@
    const ctxPie = document.getElementById('subjectChart').getContext('2d');
 
 const dataPie = {
-  labels: ['Academic', 'Attendance', 'Class', 'Total course'],
+   labels: ['Presence','Absence',],
   datasets: [{
     label: 'Attendance %',
-    data: [92, 88, 95, 85],
+    data: [ 95, 85],
     backgroundColor: [
       '#7B61FF', 
-      '#7b61ffbb', 
-      '#7b61ff75', 
+      
       '#7b61ff29'
     ],
     hoverOffset: 10,
@@ -98,7 +97,7 @@ const configPie = {
   type: 'doughnut',
   data: dataPie,
   options: {
-    cutout: '65%',
+    cutout: '70%',
     plugins: {
       legend: {
         position: 'bottom',
@@ -108,13 +107,14 @@ const configPie = {
            boxWidth: 8,        // circle size
            boxHeight: 8,       // for better balance
            padding: 15,        // space between items
-           font: { size: 13, weight: '500' }
+           font: { size: 12, weight: '500'}
+           
         }
       },
       tooltip: {
         enabled: true,
         backgroundColor: 'rgba(30, 34, 40, 0.9)',
-        titleFont: { size: 13, weight: '600' },
+        titleFont: { size: 6, weight: '600' },
         bodyFont: { size: 13 },
         displayColors: false,
         callbacks: {
@@ -139,14 +139,13 @@ new Chart(ctxPie, configPie);
 const ctxPie2 = document.getElementById('subjectChart2').getContext('2d');
 
 const dataPie2 = {
-  labels: ['WDD', 'Photoshop', 'D.M', 'Networking'],
+  labels: ['Presence','Absence',],
   datasets: [{
     label: 'Attendance %',
-    data: [92, 88, 95, 85],
+    data: [ 95, 85],
     backgroundColor: [
       '#7B61FF', 
-      '#7b61ffbb', 
-      '#7b61ff75', 
+      
       '#7b61ff29'
     ],
     hoverOffset: 10,
@@ -159,7 +158,7 @@ const configPie2 = {
   type: 'doughnut',
   data: dataPie2,
   options: {
-    cutout: '65%',
+    cutout: '70%',
     plugins: {
       legend: {
         position: 'bottom',
@@ -169,13 +168,14 @@ const configPie2 = {
            boxWidth: 8,        // circle size
            boxHeight: 8,       // for better balance
            padding: 15,        // space between items
-           font: { size: 13, weight: '500' }
+           font: { size: 12, weight: '500'}
+           
         }
       },
       tooltip: {
         enabled: true,
         backgroundColor: 'rgba(30, 34, 40, 0.9)',
-        titleFont: { size: 13, weight: '600' },
+        titleFont: { size: 6, weight: '600' },
         bodyFont: { size: 13 },
         displayColors: false,
         callbacks: {
@@ -191,76 +191,305 @@ const configPie2 = {
 };
 new Chart(ctxPie2, configPie2);
 
+//3rd chart***********
 
+const ctxPie3 = document.getElementById('subjectChart3').getContext('2d');
 
-//exam chart
-const ctx = document.getElementById('examChart').getContext('2d');
-    const examChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Midterm', 'Final', 'Quiz 1', 'Quiz 2', 'Project'],
-        datasets: [{
-          label: 'Average Marks',
-          data: [72, 85, 60, 78, 90],
-          backgroundColor: [
-            '#a78bfa', // light purple
-            '#c084fc',
-            '#93c5fd',
-            '#818cf8',
-            '#7dd3fc'
-          ],
-          borderRadius: 8,
-          barThickness: 40,
-        }]
+const dataPie3 = {
+  labels: ['Presence','Absence',],
+  datasets: [{
+    label: 'Attendance %',
+    data: [ 95, 85],
+    backgroundColor: [
+      '#7B61FF', 
+      
+      '#7b61ff29'
+    ],
+    hoverOffset: 10,
+    borderWidth: 2,
+    borderColor: '#fff'
+  }]
+};
+
+const configPie3 = {
+  type: 'doughnut',
+  data: dataPie2,
+  options: {
+    cutout: '70%',
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+           usePointStyle: true,
+           pointStyle: 'circle',
+           boxWidth: 8,        // circle size
+           boxHeight: 8,       // for better balance
+           padding: 15,        // space between items
+           font: { size: 12, weight: '500'}
+           
+        }
       },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true,
-            max: 100,
-            title: {
-              display: true,
-              text: 'Average Marks'
-            }
-          },
-          x: {
-            title: {
-              display: true,
-              text: 'Exam Name'
-            }
-          }
-        },
-        plugins: {
-          legend: {
-            display: false
-          },
-          tooltip: {
-            backgroundColor: '#5a4fcf',
-            titleColor: '#fff',
-            bodyColor: '#fff'
-          }
+      tooltip: {
+        enabled: true,
+        backgroundColor: 'rgba(30, 34, 40, 0.9)',
+        titleFont: { size: 6, weight: '600' },
+        bodyFont: { size: 13 },
+        displayColors: false,
+        callbacks: {
+          label: ctx => `${ctx.label}: ${ctx.parsed}%`
         }
       }
-    });
-
-document.addEventListener('DOMContentLoaded', function () {
-
-  const sidebare = document.getElementById("sidebar");
-  const toggleBtn = document.getElementById("toggleSidebarBtn");
-  const tooltipTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  );
-
-
-  if (toggleBtn && sidebare) {
-    toggleBtn.addEventListener('click', () => {
-      sidebare.classList.toggle('collapsed');
-      toggleBtn.classList.toggle('rotate');
-    });
+    },
+    animation: {
+      animateRotate: true,
+      duration: 1200
+    }
   }
+};
+new Chart(ctxPie3, configPie3);
 
-});
+//4th chart***********
+
+const ctxPie4 = document.getElementById('subjectChart4').getContext('2d');
+
+const dataPie4 = {
+  labels: ['Presence','Absence',],
+  datasets: [{
+    label: 'Attendance %',
+    data: [ 95, 85],
+    backgroundColor: [
+      '#7B61FF', 
+      
+      '#7b61ff29'
+    ],
+    hoverOffset: 10,
+    borderWidth: 2,
+    borderColor: '#fff'
+  }]
+};
+
+const configPie4 = {
+  type: 'doughnut',
+  data: dataPie2,
+  options: {
+    cutout: '70%',
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+           usePointStyle: true,
+           pointStyle: 'circle',
+           boxWidth: 8,        // circle size
+           boxHeight: 8,       // for better balance
+           padding: 15,        // space between items
+           font: { size: 12, weight: '500'}
+           
+        }
+      },
+      tooltip: {
+        enabled: true,
+        backgroundColor: 'rgba(30, 34, 40, 0.9)',
+        titleFont: { size: 6, weight: '600' },
+        bodyFont: { size: 13 },
+        displayColors: false,
+        callbacks: {
+          label: ctx => `${ctx.label}: ${ctx.parsed}%`
+        }
+      }
+    },
+    animation: {
+      animateRotate: true,
+      duration: 1200
+    }
+  }
+};
+new Chart(ctxPie4, configPie4);
+
+//tab-section***************************
+const tabBtns = document.querySelectorAll(".tab-btn");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach(b => b.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+
+//exam chart
+// const ctx = document.getElementById('examChart').getContext('2d');
+//     const examChart = new Chart(ctx, {
+//       type: 'bar',
+//       data: {
+//         labels: ['Midterm', 'Final', 'Quiz 1', 'Quiz 2', 'Project'],
+//         datasets: [{
+//           label: 'Average Marks',
+//           data: [72, 85, 60, 78, 90],
+//           backgroundColor: [
+//             '#a78bfa', // light purple
+//             '#c084fc',
+//             '#93c5fd',
+//             '#818cf8',
+//             '#7dd3fc'
+//           ],
+//           borderRadius: 8,
+//           barThickness: 40,
+//         }]
+//       },
+//       options: {
+//         responsive: true,
+//         scales: {
+//           y: {
+//             beginAtZero: true,
+//             max: 100,
+//             title: {
+//               display: true,
+//               text: 'Average Marks'
+//             }
+//           },
+//           x: {
+//             title: {
+//               display: true,
+//               text: 'Exam Name'
+//             }
+//           }
+//         },
+//         plugins: {
+//           legend: {
+//             display: false
+//           },
+//           tooltip: {
+//             backgroundColor: '#5a4fcf',
+//             titleColor: '#fff',
+//             bodyColor: '#fff'
+//           }
+//         }
+//       }
+//     });
+
+    //line-chart for project review
+  //  const ctxline = document.getElementById("projectReviewChart").getContext("2d");
+
+  //   const projectReviewChart = new Chart(ctxline, {
+  //     type: "line",
+  //     data: {
+  //       labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ],
+  //       datasets: [
+  //         {
+  //           label: "Review Score",
+  //           data: [60, 75, 82, 70, 90, 85, 95],
+  //           borderColor: "#8a56f0",
+  //           backgroundColor: "rgba(138, 86, 240, 0.2)",
+  //           fill: true,
+  //           tension: 0.4,
+  //           pointBackgroundColor: "#8a56f0",
+  //           pointBorderColor: "#fff",
+  //           pointRadius: 5,
+  //           pointHoverRadius: 7,
+  //         },
+  //       ],
+  //     },
+  //     options: {
+  //       responsive: true,
+  //       plugins: {
+  //         legend: { display: false },
+  //         tooltip: {
+  //           backgroundColor: "#fff",
+  //           titleColor: "#333",
+  //           bodyColor: "#333",
+  //           borderColor: "#8a56f0",
+  //           borderWidth: 1,
+  //           bodyFont: { size: 13 },
+  //           titleFont: { weight: "bold" },
+  //         },
+  //       },
+  //       scales: {
+  //         x: {
+  //           grid: { display: false },
+  //           ticks: { color: "#888" },
+  //         },
+  //         y: {
+  //           grid: { color: "#eee" },
+  //           ticks: { color: "#888", stepSize: 20 },
+  //           beginAtZero: true,
+  //         },
+  //       },
+  //     },
+  //   });
+
+
+    //extracurricular activities chart
+//       const ctxex = document.getElementById("activitiesPieChart").getContext("2d");
+
+//     const activitiesPieChart = new Chart(ctxex, {
+//       type: "pie",
+//       data: {
+//         labels: ["Sports", "Music", "Art", "Debate"],
+//         datasets: [
+//           {
+//             data: [35, 25, 20, 20],
+//             backgroundColor: [
+//               "#7B61FF",   // Sports
+//               "#7b61ffbb",   // Music
+//               "#7b61ff75",   // Art
+//               "#7b61ff29",   // Debate
+//             ],
+//             borderColor: "#fff",
+//             borderWidth: 4,
+//             hoverOffset: 10,
+//           },
+//         ],
+//       },
+//       options: {
+//         responsive: true,
+//         plugins: {
+//           legend: {
+//             position: "bottom",
+//             labels: {
+//               color: "#555",
+//               usePointStyle: true,
+//               pointStyle: "circle",
+//               font: { size: 13 },
+//             },
+//           },
+//           tooltip: {
+//             backgroundColor: "#fff",
+//             titleColor: "#333",
+//             bodyColor: "#555",
+//             borderColor: "#ccc",
+//             borderWidth: 1,
+//             bodyFont: { size: 13 },
+//             titleFont: { weight: "bold" },
+//             displayColors: true,
+//             callbacks: {
+//               label: (context) =>
+//                 `${context.label}: ${context.formattedValue}%`,
+//             },
+//           },
+//         },
+//       },
+//     });
+
+// document.addEventListener('DOMContentLoaded', function () {
+
+//   const sidebare = document.getElementById("sidebar");
+//   const toggleBtn = document.getElementById("toggleSidebarBtn");
+//   const tooltipTriggerList = [].slice.call(
+//     document.querySelectorAll('[data-bs-toggle="tooltip"]')
+//   );
+
+
+//   if (toggleBtn && sidebare) {
+//     toggleBtn.addEventListener('click', () => {
+//       sidebare.classList.toggle('collapsed');
+//       toggleBtn.classList.toggle('rotate');
+//     });
+//   }
+
+// });
 
 // Password visibility toggle
 (function () {
@@ -657,7 +886,75 @@ if (mobileMoreToggle && mobileMoreDropdown && mobileMoreBackdrop) {
 };
   
 
-  
+ ///chart
+
+ const ctx1 = document.getElementById('attendanceChart').getContext('2d');
+
+    const labels = [
+      '1','2','3','4','5','6','7','8','9','10',
+      '11','12','13','14','15','16','17','18','19','20',
+      '21','22','23','24','25','26','27','28','29','30'
+    ];
+
+    new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Attendance (%)',
+          data: [
+            90, 85, 92, 95, 100, 88, 91, 85, 93, 97,
+            92, 89, 94, 100, 86, 90, 92, 88, 96, 91,
+            95, 89, 90, 92, 97, 94, 88, 90, 93, 95
+          ],
+          backgroundColor: 'rgba(123, 97, 255, 0.7)',
+          borderColor: '#7B61FF',
+          borderWidth: 2,
+          borderRadius: 4,
+          hoverBackgroundColor: '#5A3FFF',
+        }]
+      },
+      options: {
+        responsive: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            ticks: {
+              stepSize: 20,
+              callback: value => value + '%'
+            },
+            title: {
+              display: true,
+              text: 'Attendance %'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Day'
+            },
+            ticks: {
+              autoSkip: true,
+              maxRotation: 0,
+              minRotation: 0
+            }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            enabled: true,
+            callbacks: {
+              label: ctx => ctx.parsed.y + '%'
+            }
+          }
+        }
+      }
+    });
+
+
+
 
 // ======== Dynamic Topbar Title Updater ========
 document.addEventListener('DOMContentLoaded', function () {
