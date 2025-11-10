@@ -38,7 +38,7 @@ function initializeCharts() {
           datasets: [{
             label: 'Class Progress %',
             data: [85, 15],
-            backgroundColor: ['#7B61FF', '#7b61ff29'],
+           backgroundColor: ['#d3280c','#fed5d3'],
             hoverOffset: 10,
             borderWidth: 2,
             borderColor: '#fff'
@@ -94,7 +94,7 @@ function initializeCharts() {
           datasets: [{
             label: 'Attendance %',
             data: [95, 5],
-            backgroundColor: ['#7B61FF', '#7b61ff29'],
+            backgroundColor: ['#d3280c','#fed5d3'],
             hoverOffset: 10,
             borderWidth: 2,
             borderColor: '#fff'
@@ -149,7 +149,7 @@ function initializeCharts() {
           datasets: [{
             label: 'Subject Progress %',
             data: [75, 25],
-            backgroundColor: ['#7B61FF', '#7b61ff29'],
+            backgroundColor: ['#d3280c','#fed5d3'],
             hoverOffset: 10,
             borderWidth: 2,
             borderColor: '#fff'
@@ -204,7 +204,7 @@ function initializeCharts() {
           datasets: [{
             label: 'Course Progress %',
             data: [68, 32],
-            backgroundColor: ['#7B61FF', '#7b61ff29'],
+           backgroundColor: ['#d3280c','#fed5d3'],
             hoverOffset: 10,
             borderWidth: 2,
             borderColor: '#fff'
@@ -259,8 +259,8 @@ function initializeCharts() {
           datasets: [{
             label: 'Attendance',
             data: [95, 88, 92, 90, 85, 78, 82],
-            backgroundColor: '#7B61FF',
-            borderColor: '#7B61FF',
+            backgroundColor: '#d3280c',
+            borderColor: '#d3280c',
             borderWidth: 2,
             borderRadius: 8
           }]
@@ -280,7 +280,7 @@ function initializeCharts() {
                 enabled: true,
                 backgroundColor: 'rgba(30, 34, 40, 0.9)',
                 titleFont: { size: 12, weight: '600' },
-                bodyFont: { size: 13 },
+                bodyFont: { size: 15 },
                 callbacks: {
                   label: ctx => `Attendance: ${ctx.parsed.y}%`
                 }
