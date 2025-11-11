@@ -162,6 +162,72 @@ if (mobileMoreToggle && mobileMoreDropdown && mobileMoreBackdrop) {
 };
   
 
+// ================== Theme toggle (light/dark) ==================
+(function () {
+  const rootEl = document.documentElement; // :root
+  const THEME_KEY = 'theme';
+
+  function applyStoredTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'dark') {
+      rootEl.classList.add('theme-dark');
+    } else if (saved === 'light') {
+      rootEl.classList.remove('theme-dark');
+    }
+    updateToggleIcons();
+  }
+
+  function updateToggleIcons() {
+    // Desktop topbar button icon
+    const desktopBtn = document.querySelector('.dark-mood-btn i');
+    const mobileIcon = document.querySelector('#mobileDarkToggle i');
+    const isDark = rootEl.classList.contains('theme-dark');
+    if (desktopBtn) {
+      desktopBtn.classList.toggle('fa-moon', !isDark);
+      desktopBtn.classList.toggle('fa-sun', isDark);
+    }
+    if (mobileIcon) {
+      mobileIcon.classList.toggle('fa-moon', !isDark);
+      mobileIcon.classList.toggle('fa-sun', isDark);
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = rootEl.classList.toggle('theme-dark');
+    localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
+    updateToggleIcons();
+  }
+
+  // Wire desktop button
+  document.addEventListener('click', function (e) {
+    const btn = e.target.closest('.dark-mood-btn');
+    if (btn) {
+      e.preventDefault();
+      toggleTheme();
+    }
+  });
+
+  // Wire mobile three-dot menu item
+  const mobileDark = document.getElementById('mobileDarkToggle');
+  if (mobileDark) {
+    mobileDark.addEventListener('click', function (e) {
+      e.preventDefault();
+      toggleTheme();
+    });
+  }
+  // Wire top mobile menu item
+  const mobileDarkTop = document.getElementById('mobileDarkToggleTop');
+  if (mobileDarkTop) {
+    mobileDarkTop.addEventListener('click', function (e) {
+      e.preventDefault();
+      toggleTheme();
+    });
+  }
+
+  // Apply on load
+  applyStoredTheme();
+})();
+
 // ======== Dynamic Topbar Title Updater Arpon========
 document.addEventListener('DOMContentLoaded', function () {
   const topbarTitle = document.querySelector('.topbar-left span');
