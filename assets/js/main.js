@@ -165,6 +165,7 @@ if (mobileMoreToggle && mobileMoreDropdown && mobileMoreBackdrop) {
 // ================== Theme toggle (light/dark) ==================
 (function () {
   const rootEl = document.documentElement; // :root
+  const bodyEl = document.body;
   const THEME_KEY = 'theme';
 
   function applyStoredTheme() {
@@ -194,6 +195,8 @@ if (mobileMoreToggle && mobileMoreDropdown && mobileMoreBackdrop) {
 
   function toggleTheme() {
     const isDark = rootEl.classList.toggle('theme-dark');
+    // Mirror on body for components that rely on body selector
+    bodyEl.classList.toggle('theme-dark', isDark);
     localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light');
     updateToggleIcons();
   }
@@ -204,6 +207,17 @@ if (mobileMoreToggle && mobileMoreDropdown && mobileMoreBackdrop) {
     if (btn) {
       e.preventDefault();
       toggleTheme();
+    }
+  });
+  // Also bind directly to the desktop button on DOM ready for reliability
+  document.addEventListener('DOMContentLoaded', function () {
+    const desktopBtnEl = document.querySelector('.dark-mood-btn');
+    if (desktopBtnEl && !desktopBtnEl._themeBound) {
+      desktopBtnEl.addEventListener('click', function (e) {
+        e.preventDefault();
+        toggleTheme();
+      });
+      desktopBtnEl._themeBound = true;
     }
   });
 
@@ -226,6 +240,8 @@ if (mobileMoreToggle && mobileMoreDropdown && mobileMoreBackdrop) {
 
   // Apply on load
   applyStoredTheme();
+  // Ensure late-loaded DOM (icons) sync after ready
+  document.addEventListener('DOMContentLoaded', updateToggleIcons);
 })();
 
 // ======== Dynamic Topbar Title Updater Arpon========
