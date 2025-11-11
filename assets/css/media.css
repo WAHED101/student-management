@@ -49,6 +49,27 @@
   }
 }
 
+/* Mobile and Tablet: improve top navbar */
+@media (max-width: 991.98px) {
+  .mobile-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background-color: var(--scarlet-100);
+    border-bottom: 1px solid var(--border-color);
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .theme-dark .mobile-navbar {
+    background-color: var(--surface-2);
+  }
+  .mobile-navbar .topbar-search {
+    flex: 1 1 auto;
+    max-width: 50%;
+    margin-left: auto;
+  }
+}
+
 /* Global mobile improvements */
 @media (max-width: 575.98px) {
   .content-section .page-s_content{
