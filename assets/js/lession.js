@@ -6,8 +6,6 @@
   const searchInput = document.getElementById('lesSearch');
   const sortSelect = document.getElementById('lesSort');
   const filtersWrap = document.getElementById('lesFilters');
-  const viewGridBtn = document.getElementById('lesViewGrid');
-  const viewListBtn = document.getElementById('lesViewList');
 
   const getCards = () => Array.from(grid.querySelectorAll('.les-card'));
 
@@ -49,18 +47,6 @@
     grid.appendChild(frag);
   }
 
-  function setView(view) {
-    const buttons = [viewGridBtn, viewListBtn];
-    buttons.forEach((b) => b && b.classList.remove('active'));
-    if (view === 'list') {
-      grid.classList.add('list');
-      viewListBtn && viewListBtn.classList.add('active');
-    } else {
-      grid.classList.remove('list');
-      viewGridBtn && viewGridBtn.classList.add('active');
-    }
-  }
-
   if (searchInput) {
     searchInput.addEventListener('input', () => {
       applySearch();
@@ -83,9 +69,6 @@
     sortSelect.addEventListener('change', () => applySort(sortSelect.value));
   }
 
-  if (viewGridBtn) viewGridBtn.addEventListener('click', () => setView('grid'));
-  if (viewListBtn) viewListBtn.addEventListener('click', () => setView('list'));
-
   // Action buttons (demo)
   grid.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-action]');
@@ -101,7 +84,7 @@
   });
 
   // Initial state
-  setView('list');
+  grid.classList.remove('list');
   applyFilter('all');
   applySort(sortSelect?.value || 'recent');
 })();

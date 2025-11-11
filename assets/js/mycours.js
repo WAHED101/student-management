@@ -6,8 +6,6 @@
   const searchInput = document.getElementById('mycSearch');
   const sortSelect = document.getElementById('mycSort');
   const filtersWrap = document.getElementById('mycFilters');
-  const viewGridBtn = document.getElementById('mycViewGrid');
-  const viewListBtn = document.getElementById('mycViewList');
 
   const getCards = () => Array.from(grid.querySelectorAll('.myc-card'));
 
@@ -50,18 +48,6 @@
     grid.appendChild(frag);
   }
 
-  function setView(view) {
-    const buttons = [viewGridBtn, viewListBtn];
-    buttons.forEach((b) => b && b.classList.remove('active'));
-    if (view === 'list') {
-      grid.classList.add('list');
-      viewListBtn && viewListBtn.classList.add('active');
-    } else {
-      grid.classList.remove('list');
-      viewGridBtn && viewGridBtn.classList.add('active');
-    }
-  }
-
   // Wire up events
   if (searchInput) {
     searchInput.addEventListener('input', () => {
@@ -85,9 +71,6 @@
     sortSelect.addEventListener('change', () => applySort(sortSelect.value));
   }
 
-  if (viewGridBtn) viewGridBtn.addEventListener('click', () => setView('grid'));
-  if (viewListBtn) viewListBtn.addEventListener('click', () => setView('list'));
-
   // Action buttons (demo)
   grid.addEventListener('click', (e) => {
     const btn = e.target.closest('[data-action]');
@@ -105,7 +88,7 @@
   });
 
   // Initial state
-  setView('grid');
+  grid.classList.remove('list');
   applyFilter('all');
   applySort(sortSelect?.value || 'recent');
 })();

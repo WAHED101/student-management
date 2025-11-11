@@ -48,6 +48,31 @@
     display: none !important;
   }
 }
+
+/* Global mobile improvements */
+@media (max-width: 575.98px) {
+  .content-section .page-s_content{
+    padding: 12px !important;
+    padding-bottom: 84px !important; /* space for fixed bottom navbar */
+  }
+  .content-section h1{
+    font-size: 1.25rem;
+  }
+  .content-section p{
+    font-size: 0.95rem;
+  }
+  /* Make modal dialogs fit viewport width better */
+  .modal-dialog{
+    max-width: 92%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Mobile dropdowns take most of the width */
+  .mobile-menu-dropdown{
+    width: 92%;
+    min-width: 0;
+  }
+}
 /* -------------------------------------------------------------------------- importent main and nav width ----------- */
 
 @media (min-width: 992px) {

@@ -1,16 +1,15 @@
 /* Lessons - scoped styles using root theme variables, with a distinct look from My Courses */
-.lessons{--les-bg:var(--bg-light);--les-card:var(--bg-light);--les-muted:var(--text-muted);--les-text:var(--text-main);--les-line:var(--scarlet-100);--les-primary:var(--color-primary-dark);--les-primary-600:var(--color-primary-hover);--les-chip:#fff;--les-chip-active:var(--color-primary-light-ultra)}
+.lessons{--les-bg:var(--bg-light);--les-card:var(--bg-light);--les-muted:var(--text-muted);--les-text:var(--text-main);--les-line:var(--scarlet-100);--les-primary:var(--color-primary-dark);--les-primary-600:var(--color-primary-hover);--les-chip:var(--bg-light);--les-chip-active:var(--color-primary-light-ultra);--les-overlay:rgba(255,255,255,.95);--les-progress-stripe:var(--bg-light)}
 .lessons .les-header{background:var(--scarlet-50);border:1px solid var(--les-line);border-radius:14px;padding:12px}
-.lessons .les-title{font-weight:700;color:var(--les-text)}
+.lessons .les-title{font-weight:700;color:var(--les-text);text-align: start;}
 .lessons .les-sub{color:var(--les-muted);font-size:.9rem}
 .lessons .les-title-icon{color:var(--les-primary);font-size:1.5rem}
-.lessons .les-controls .les-search{min-width:220px;flex:1}
-.lessons .les-search-input{background:#fff;border:1px solid var(--les-line);color:var(--les-text);padding-left:2rem;border-radius:10px}
+.lessons .les-controls{flex-wrap:nowrap!important}
+.lessons .les-controls .les-search{min-width:220px;flex:1 1 240px;}
+.lessons .les-search-input{background:var(--les-card);border:1px solid var(--les-line);color:var(--les-text);padding-left:2rem;border-radius:10px}
 .lessons .les-search-input::placeholder{color:var(--les-muted)}
 .lessons .les-search-icon{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);color:var(--les-muted);font-size:.9rem}
-.lessons .les-select{background:#fff;border:1px solid var(--les-line);color:var(--les-text);min-width:150px;border-radius:10px}
-.lessons .les-view .les-view-btn{background:#fff;border:1px solid var(--les-line);color:var(--les-muted);border-radius:10px}
-.lessons .les-view .les-view-btn.active{border-color:var(--les-primary);color:var(--les-primary)}
+.lessons .les-select{background:var(--les-card);border:1px solid var(--les-line);color:var(--les-text);min-width:150px;border-radius:10px;flex:0 0 auto}
 
 /* Filter chips */
 .lessons .les-chip{background:var(--les-chip);color:var(--les-text);border:1px solid var(--les-line);padding:.35rem .7rem;border-radius:10px;font-weight:600}
@@ -24,19 +23,19 @@
 @media (min-width:1400px){.lessons .les-card{grid-column:span 3}}
 
 /* Card - distinct: left accent border, banner-like thumbnail */
-.lessons .les-card{background:#fff;border:1px solid var(--les-line);border-left:4px solid var(--les-primary);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease;box-shadow:var(--shadow-soft)}
+.lessons .les-card{background:var(--les-card);border:1px solid var(--les-line);border-left:4px solid var(--les-primary);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease;box-shadow:var(--shadow-soft)}
 .lessons .les-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-strong)}
 .lessons .les-thumb{position:relative;aspect-ratio:21/9;overflow:hidden}
 .lessons .les-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
 .lessons .les-card:hover .les-thumb img{transform:scale(1.05)}
-.lessons .les-badge{position:absolute;right:.75rem;bottom:.75rem;background:rgba(255,255,255,.95);backdrop-filter:blur(4px);border:1px solid var(--les-line);color:var(--les-primary);font-weight:700;font-size:.7rem;padding:.2rem .55rem;border-radius:6px}
+.lessons .les-badge{position:absolute;right:.75rem;bottom:.75rem;background:var(--les-overlay);backdrop-filter:blur(4px);border:1px solid var(--les-line);color:var(--les-primary);font-weight:700;font-size:.7rem;padding:.2rem .55rem;border-radius:6px}
 .lessons .les-body{padding:1rem}
-.lessons .les-card-title{color:var(--les-text);margin-bottom:.25rem;font-weight:700}
+.lessons .les-card-title{color:var(--les-text);margin-bottom:.25rem;font-weight:700;text-align: start;}
 .lessons .les-card-meta{color:var(--les-muted);font-size:.85rem;display:flex;gap:.5rem;align-items:center}
 .lessons .les-card-meta i{color:var(--les-muted)}
 
 /* Progress */
-.lessons .les-progress{position:relative;margin:.75rem 0;background:repeating-linear-gradient(45deg, var(--les-chip-active), var(--les-chip-active) 8px, #fff 8px, #fff 16px);border:1px solid var(--les-line);border-radius:10px;height:.5rem;overflow:hidden}
+.lessons .les-progress{position:relative;margin:.75rem 0;background:repeating-linear-gradient(45deg, var(--les-chip-active), var(--les-chip-active) 8px, var(--les-progress-stripe) 8px, var(--les-progress-stripe) 16px);border:1px solid var(--les-line);border-radius:10px;height:.5rem;overflow:hidden}
 .lessons .les-progress-bar{height:100%;background:linear-gradient(90deg,var(--les-primary),var(--les-primary-600));border-radius:10px}
 .lessons .les-progress-text{position:absolute;right:.5rem;top:50%;transform:translateY(-50%);font-size:.72rem;color:var(--les-primary)}
 
@@ -54,4 +53,44 @@
 
 /* Section spacing */
 .page-s .container.lessons{padding-top:.5rem;padding-bottom:1rem}
+
+/* Lessons form + controls */
+.lessons .form-control{background:var(--les-card);border:1px solid var(--les-line);color:var(--les-text)}
+.lessons .form-control:focus{background:var(--les-card);border-color:var(--les-primary);color:var(--les-text);box-shadow:0 0 0 0.2rem rgba(253,137,132,0.2)}
+.lessons .form-control::placeholder{
+    color:var(--les-muted);
+    opacity:0.7
+}
+.lessons .form-label{
+    color:var(--les-text);
+    font-weight:600
+}
+.lessons .form-select{
+    background:var(--les-card);
+    border:1px solid var(--les-line);
+    color:var(--les-text);
+    width: 40%;
+}
+.lessons .form-select:focus{
+    background:var(--les-card);
+    border-color:var(--les-primary);
+    color:var(--les-text);
+    box-shadow:0 0 0 0.2rem rgba(253,137,132,0.2)
+}
+
+/* Dark theme overrides */
+.theme-dark .lessons{--les-bg:var(--surface-1);
+    --les-card:var(--surface-2);
+    --les-muted:var(--text-muted);
+    --les-text:var(--text-main);
+    --les-line:var(--border-color);
+    --les-chip:var(--surface-2);
+    --les-overlay:rgba(255,255,255,0.08);--les-progress-stripe:rgba(255,255,255,0.12)}
+.theme-dark .lessons .les-header{background:var(--surface-2);border-color:var(--border-color)}
+.theme-dark .lessons .les-search-input{background:var(--les-card);border-color:var(--les-line)}
+.theme-dark .lessons .les-select{background:var(--les-card);border-color:var(--les-line);color:var(--les-text)}
+.theme-dark .lessons .les-card{border-color:var(--les-line)}
+.theme-dark .lessons .les-btn-ghost{background:var(--les-card);color:var(--les-text);border-color:var(--les-line)}
+.theme-dark .lessons .les-btn-ghost:hover{background:var(--row-hover-bg);color:var(--les-primary)}
+
 
