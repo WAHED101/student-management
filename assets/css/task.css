@@ -74,8 +74,8 @@
 .task-card{
     width: 100%;
     max-width: 720px;
-    background: var(--surface-1);
-    border: 1px solid var(--border-color) !important;
+    background: var(--scarlet-50);
+    border: 1px solid var(--scarlet-100) !important;
     box-shadow: var(--shadow-soft);
 }
 
@@ -217,7 +217,7 @@
       padding: 0.5rem 1rem;
       border-radius: 50px;
       font-weight: bold;
-      color: #fff;
+      color: var(--text-dark);
       background: var(--scarlet-500);
       transition: 0.3s;
       cursor: pointer;
@@ -274,3 +274,36 @@
 /* Dark theme tweaks */
 .theme-dark .task-card .opacity-50{ color: var(--text-muted) !important; }
 .theme-dark .overlay{ background: rgba(0,0,0,0.35); }
+/* Improve overall task section contrast in dark mode */
+.theme-dark .task-filters{
+  background: var(--surface-2);
+  border-bottom-color: var(--border-color);
+}
+.theme-dark .task-filters .btn{
+  color: var(--text-main);
+  border-color: var(--border-color);
+  background: transparent;
+}
+.theme-dark .filter-btn.active{
+  background-color: var(--scarlet-400) !important;
+  border-color: var(--scarlet-400) !important;
+  color: var(--text-light) !important;
+}
+.theme-dark .task-card{
+  background: var(--surface-2);
+  border-color: var(--border-color) !important;
+  box-shadow: var(--shadow-soft);
+}
+.theme-dark .task-card h5,
+.theme-dark .task-card p,
+.theme-dark .task-card .task-meta,
+.theme-dark .task-card .text-dark{
+  color: var(--text-main) !important;
+}
+.theme-dark .important{
+  border-left-color: var(--scarlet-300) !important;
+  border-bottom-color: var(--scarlet-300) !important;
+}
+.theme-dark .none-highlight{
+  border-left-color: rgba(255, 255, 255, 0.12) !important;
+}
