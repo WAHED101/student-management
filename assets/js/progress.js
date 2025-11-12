@@ -196,58 +196,87 @@ function initializeCharts() {
 
     // ===== nupur =====
     // 4th chart - Course progress
-    if (!chartInstances.subjectChart4) {
-      const ctxPie4 = document.getElementById('subjectChart4');
-      if (ctxPie4) {
-        const dataPie4 = {
-          labels: ['Completed', 'Remaining'],
-          datasets: [{
-            label: 'Course Progress %',
-            data: [68, 32],
-           backgroundColor: ['#d3280c','#fed5d3'],
-            hoverOffset: 10,
-            borderWidth: 2,
-            borderColor: '#fff'
-          }]
-        };
 
-        const configPie4 = {
-          type: 'doughnut',
-          data: dataPie4,
-          options: {
-            cutout: '70%',
-            plugins: {
-              legend: {
-                position: 'bottom',
-                labels: {
-                  usePointStyle: true,
-                  pointStyle: 'circle',
-                  boxWidth: 8,
-                  boxHeight: 8,
-                  padding: 15,
-                  font: { size: 12, weight: '500' }
-                }
-              },
-              tooltip: {
-                enabled: true,
-                backgroundColor: 'rgba(30, 34, 40, 0.9)',
-                titleFont: { size: 6, weight: '600' },
-                bodyFont: { size: 13 },
-                displayColors: false,
-                callbacks: {
-                  label: ctx => `${ctx.label}: ${ctx.parsed}%`
-                }
-              }
-            },
-            animation: {
-              animateRotate: true,
-              duration: 1200
+  if (!chartInstances.subjectChart4) {
+  const ctxPie4 = document.getElementById('subjectChart4');
+  if (ctxPie4) {
+
+    // 🧠 1️⃣ Custom positioner + caret flipping
+    Chart.Tooltip.positioners.smartArc = function (elements, eventPosition) {
+      if (!elements.length) return false;
+      const { element } = elements[0];
+      const { x, y } = element;
+      const label = element.$context.label;
+
+      // decide tooltip direction and vertical offset
+      let offsetY = 58;
+      if (label === 'Completed') {
+        offsetY = 55;   // show below
+        element.$context.chart.tooltip.options.yAlign = 'top'; // caret points UP
+      } else if (label === 'Remaining') {
+        offsetY = 100;  // show above
+        element.$context.chart.tooltip.options.yAlign = 'bottom'; // caret points DOWN
+      }
+
+      return { x: x, y: y + offsetY };
+    };
+
+    // 🧾 2️⃣ Data (same as before)
+    const dataPie4 = {
+      labels: ['Completed', 'Remaining'],
+      datasets: [{
+        label: 'Course Progress %',
+        data: [68, 32],
+        backgroundColor: ['#d3280c', '#fed5d3'],
+        hoverOffset: 10,
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    };
+
+    // ⚙️ 3️⃣ Config with smart tooltip
+    const configPie4 = {
+      type: 'doughnut',
+      data: dataPie4,
+      options: {
+        cutout: '70%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              usePointStyle: true,
+              pointStyle: 'circle',
+              boxWidth: 8,
+              boxHeight: 8,
+              padding: 15,
+              font: { size: 12, weight: '500' }
+            }
+          },
+          tooltip: {
+            enabled: true,
+            position: 'smartArc', // 🧭 custom positioner
+            backgroundColor: 'rgba(30, 34, 40, 0.9)',
+            titleFont: { size: 6, weight: '600' },
+            bodyFont: { size: 13 },
+            displayColors: false,
+            padding: 8,
+            caretSize: 6, // visible arrow
+            callbacks: {
+              label: ctx => `${ctx.label}: ${ctx.parsed}%`
             }
           }
-        };
-        chartInstances.subjectChart4 = new Chart(ctxPie4, configPie4);
+        },
+        animation: {
+          animateRotate: true,
+          duration: 1200
+        }
       }
-    }
+    };
+
+    // 🪄 4️⃣ Create chart
+    chartInstances.subjectChart4 = new Chart(ctxPie4, configPie4);
+  }
+}
 
     // ===== nupur =====
     // Attendance Bar Chart
@@ -422,3 +451,76 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+
+//exam-result-chart
+
+const ctx = document.getElementById("examResultChart").getContext("2d");
+
+    const labels = ["Class Test", "Quiz Test", "Mid-Term", "Final Semester"];
+
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: "Actual Marks",
+          data: [68, 72, 77, 85],
+          borderColor: "#f43f5e",
+          backgroundColor: "rgba(244,63,94,0.15)",
+          fill: true,
+          tension: 0.4,
+          pointBackgroundColor: "#fff",
+          pointBorderColor: "#f43f5e",
+          pointBorderWidth: 2,
+        },
+        {
+          label: "Target Marks",
+          data: [70, 75, 80, 90],
+          borderColor: "#6366f1",
+          borderDash: [6, 6],
+          backgroundColor: "transparent",
+          fill: false,
+          tension: 0.4,
+          pointBackgroundColor: "#fff",
+          pointBorderColor: "#6366f1",
+          pointBorderWidth: 2,
+        }
+      ]
+    };
+
+    const options = {
+      responsive: true,
+      plugins: {
+        legend: {
+          position: "top",
+          labels: {
+            usePointStyle: true,
+            pointStyle: "circle",
+          },
+        },
+        tooltip: {
+          callbacks: {
+            label: function (context) {
+              const label = context.dataset.label || "";
+              return `${label}: ${context.parsed.y} marks`;
+            },
+          },
+        },
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          suggestedMax: 100,
+          title: {
+            display: true,
+            text: "Marks",
+          },
+        },
+      },
+    };
+
+    new Chart(ctx, {
+      type: "line",
+      data: data,
+      options: options,
+    });
