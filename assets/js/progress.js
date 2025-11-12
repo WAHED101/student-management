@@ -31,58 +31,86 @@ function initializeCharts() {
     // ===== nupur =====
     // 1st chart - Class progress
     if (!chartInstances.subjectChart) {
-      const ctxPie = document.getElementById('subjectChart');
-      if (ctxPie) {
-        const dataPie = {
-          labels: ['Presence', 'Absence'],
-          datasets: [{
-            label: 'Class Progress %',
-            data: [85, 15],
-           backgroundColor: ['#d3280c','#fed5d3'],
-            hoverOffset: 10,
-            borderWidth: 2,
-            borderColor: '#fff'
-          }]
-        };
+  const ctxPie = document.getElementById('subjectChart');
+  if (ctxPie) {
 
-        const configPie = {
-          type: 'doughnut',
-          data: dataPie,
-          options: {
-            cutout: '70%',
-            plugins: {
-              legend: {
-                position: 'bottom',
-                labels: {
-                  usePointStyle: true,
-                  pointStyle: 'circle',
-                  boxWidth: 8,
-                  boxHeight: 8,
-                  padding: 15,
-                  font: { size: 12, weight: '500' }
-                }
-              },
-              tooltip: {
-                enabled: true,
-                backgroundColor: 'rgba(30, 34, 40, 0.9)',
-                titleFont: { size: 6, weight: '600' },
-                bodyFont: { size: 13 },
-                displayColors: false,
-                callbacks: {
-                  label: ctx => `${ctx.label}: ${ctx.parsed}%`
-                }
-              }
-            },
-            animation: {
-              animateRotate: true,
-              duration: 1200
+    // 🧠 1️⃣ Custom positioner + caret flipping
+    Chart.Tooltip.positioners.smartArc = function (elements, eventPosition) {
+      if (!elements.length) return false;
+      const { element } = elements[0];
+      const { x, y } = element;
+      const label = element.$context.label;
+
+      // decide tooltip direction and vertical offset
+      let offsetY = 58;
+      if (label === 'Completed') {
+        offsetY = 55;   // show below
+        element.$context.chart.tooltip.options.yAlign = 'top'; // caret points UP
+      } else if (label === 'Remaining') {
+        offsetY = 100;  // show above
+        element.$context.chart.tooltip.options.yAlign = 'bottom'; // caret points DOWN
+      }
+
+      return { x: x, y: y + offsetY };
+    };
+
+    // 🧾 2️⃣ Data (same as before)
+    const dataPie = {
+      labels: ['Completed', 'Remaining'],
+      datasets: [{
+        label: 'Course Progress %',
+        data: [68, 32],
+        backgroundColor: ['#d3280c', '#fed5d3'],
+        hoverOffset: 10,
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    };
+
+    // ⚙️ 3️⃣ Config with smart tooltip
+    const configPie = {
+      type: 'doughnut',
+      data: dataPie,
+      options: {
+        cutout: '70%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              usePointStyle: true,
+              pointStyle: 'circle',
+              boxWidth: 8,
+              boxHeight: 8,
+              padding: 15,
+              font: { size: 12, weight: '500' }
+            }
+          },
+          tooltip: {
+            enabled: true,
+            position: 'smartArc', // 🧭 custom positioner
+            backgroundColor: 'rgba(30, 34, 40, 0.9)',
+            titleFont: { size: 6, weight: '600' },
+            bodyFont: { size: 13 },
+            displayColors: false,
+            padding: 8,
+            caretSize: 6, // visible arrow
+            callbacks: {
+              label: ctx => `${ctx.label}: ${ctx.parsed}%`
             }
           }
-        };
-
-        chartInstances.subjectChart = new Chart(ctxPie, configPie);
+        },
+        animation: {
+          animateRotate: true,
+          duration: 1200
+        }
       }
-    }
+    };
+
+    // 🪄 4️⃣ Create chart
+    chartInstances.subjectChart = new Chart(ctxPie, configPie);
+  }
+}
+
 
     // ===== nupur =====
     // 2nd chart - Attendance progress
