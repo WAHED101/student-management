@@ -62,7 +62,8 @@
     position: sticky;
     top: 0;
     z-index: 1020;
-    background: #fff;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border-color);
     padding: 0;
 }
 
@@ -70,6 +71,9 @@
 .notice-card{
     width: 100%;
     max-width: 720px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-soft);
 }
 
 /* Ensure truncation elements behave consistently */
@@ -158,3 +162,15 @@
   .notice-filters .ms-auto{ width: 100%; margin-left: 0 !important; }
   .notice-filters .input-group{ width: 100%; }
 }
+
+/* Inputs in filters */
+.notice-filters .form-control{
+  background: var(--surface-2);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+.notice-filters .form-control::placeholder{ color: var(--text-muted); }
+
+/* Dark theme tweaks */
+.theme-dark .notice-card h6{ color: var(--text-light); }
+.theme-dark .notice-meta p{ color: var(--text-muted) !important; }

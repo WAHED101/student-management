@@ -1,15 +1,15 @@
 /* Teacher Review styles using root theme variables */
-.teacher-review{--tr-text:var(--text-main);--tr-muted:var(--text-muted);--tr-line:var(--scarlet-100);--tr-primary:var(--scarlet-400);--tr-primary-600:var(--scarlet-500);--tr-surface:#fff}
-.teacher-review .tr-title{font-weight:700;color:var(--tr-text)}
+.teacher-review{--tr-text:var(--text-main);--tr-muted:var(--text-muted);--tr-line:var(--scarlet-100);--tr-primary:var(--scarlet-400);--tr-primary-600:var(--scarlet-500);--tr-surface:var(--bg-light)}
+.teacher-review .tr-title{font-weight:700;color:var(--tr-text);text-align: start;}
 .teacher-review .tr-sub{color:var(--tr-muted);font-size:.9rem}
 .teacher-review .tr-title-icon{color:var(--tr-primary);font-size:1.5rem}
 .teacher-review .tr-controls .tr-search{min-width:260px;flex:1}
-.teacher-review .tr-search-input{background:#fff;border:1px solid var(--tr-line);color:var(--tr-text);padding-left:2rem;border-radius:10px}
+.teacher-review .tr-search-input{background:var(--bg-light);border:1px solid var(--tr-line);color:var(--tr-text);padding-left:2rem;border-radius:10px}
 .teacher-review .tr-search-input::placeholder{color:var(--tr-muted)}
 .teacher-review .tr-search-icon{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);color:var(--tr-muted);font-size:.9rem}
-.teacher-review .tr-select{background:#fff;border:1px solid var(--tr-line);color:var(--tr-text);min-width:150px;border-radius:10px}
+.teacher-review .tr-select{background:var(--bg-light);border:1px solid var(--tr-line);color:var(--tr-text);min-width:150px;border-radius:10px}
 
-.teacher-review .tr-card{background:#fff;border:1px solid var(--tr-line);border-radius:12px;padding:14px;box-shadow:var(--shadow-soft)}
+.teacher-review .tr-card{background:var(--bg-light);border:1px solid var(--tr-line);border-radius:12px;padding:14px;box-shadow:var(--shadow-soft)}
 .teacher-review .tr-card+.tr-card{margin-top:12px}
 .teacher-review .tr-subject{display:inline-block;color:var(--tr-muted);font-size:.8rem}
 .teacher-review .tr-text{color:var(--tr-text);margin:.5rem 0}
@@ -17,7 +17,7 @@
 .teacher-review .tr-date{color:var(--tr-muted);font-size:.8rem}
 .teacher-review .tr-btn-primary{background:var(--tr-primary);color:#fff;border:0;border-radius:10px;font-weight:700}
 .teacher-review .tr-btn-primary:hover{background:var(--tr-primary-600)}
-.teacher-review .tr-btn-ghost{background:#fff;border:1px solid var(--tr-line);border-radius:10px;color:var(--tr-text);font-weight:600}
+.teacher-review .tr-btn-ghost{background:var(--bg-light);border:1px solid var(--tr-line);border-radius:10px;color:var(--tr-text);font-weight:600}
 .teacher-review .tr-btn-ghost:hover{border-color:var(--tr-primary);color:var(--tr-primary)}
 .teacher-review .tr-stars{--size:18px;display:inline-flex;gap4:4px}
 .teacher-review .tr-stars i{color:#f5c042;font-size:var(--size)}
@@ -28,4 +28,26 @@
 .teacher-review .stack-16>*+*{margin-top:16px}
 
 .page-s .container.teacher-review{padding-top:.5rem;padding-bottom:1rem}
+
+/* Teacher Review form inputs */
+.teacher-review .form-control{background:var(--bg-light);border:1px solid var(--tr-line);color:var(--tr-text)}
+.teacher-review .form-control:focus{background:var(--bg-light);border-color:var(--tr-primary);color:var(--tr-text);box-shadow:0 0 0 0.2rem rgba(253, 137, 132, 0.25)}
+.teacher-review .form-control::placeholder{color:var(--tr-muted);opacity:0.7}
+.teacher-review .form-label{color:var(--tr-text);font-weight:600}
+.teacher-review .form-select{background:var(--bg-light);border:1px solid var(--tr-line);color:var(--tr-text)}
+.teacher-review .form-select:focus{background:var(--bg-light);border-color:var(--tr-primary);color:var(--tr-text);box-shadow:0 0 0 0.2rem rgba(253, 137, 132, 0.25)}
+
+/* Dark theme overrides for teacher review */
+.theme-dark .teacher-review{--tr-line:var(--border-color)}
+.theme-dark .teacher-review .tr-search-input{background:var(--surface-2);border-color:var(--border-color);color:var(--text-main)}
+.theme-dark .teacher-review .tr-select{background:var(--surface-2);border-color:var(--border-color);color:var(--text-main)}
+.theme-dark .teacher-review .tr-card{background:var(--surface-2);border-color:var(--border-color)}
+.theme-dark .teacher-review .tr-btn-ghost{background:var(--surface-2);border-color:var(--border-color);color:var(--text-main)}
+.theme-dark .teacher-review .tr-btn-ghost:hover{background:var(--row-hover-bg);border-color:var(--tr-primary);color:var(--tr-primary)}
+.theme-dark .teacher-review .form-control{background:var(--surface-2);border-color:var(--border-color);color:var(--text-main)}
+.theme-dark .teacher-review .form-control:focus{background:var(--surface-2);border-color:var(--tr-primary);color:var(--text-main);box-shadow:0 0 0 0.2rem rgba(253, 137, 132, 0.25)}
+.theme-dark .teacher-review .form-control::placeholder{color:var(--text-muted);opacity:0.7}
+.theme-dark .teacher-review .form-label{color:var(--text-main)}
+.theme-dark .teacher-review .form-select{background:var(--surface-2);border-color:var(--border-color);color:var(--text-main)}
+.theme-dark .teacher-review .form-select:focus{background:var(--surface-2);border-color:var(--tr-primary);color:var(--text-main);box-shadow:0 0 0 0.2rem rgba(253, 137, 132, 0.25)}
 

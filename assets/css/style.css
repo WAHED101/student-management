@@ -7,9 +7,12 @@
 }
 .page-s_content {
   white-space: no-wrap;
-  background-color: var( --bg-light);
-
+  background-color: var(--surface-1);
+  border-top: 4px solid var(--scarlet-200);
   /* padding: 30px; */
+}
+.theme-dark .page-s_content {
+  border-top-color: var(--scarlet-400);
 }
 /*=========================================== Page Section importent code start  =========================================== */
 /* Global Reset and Base Styles */
@@ -32,12 +35,59 @@
 .sidebar-scrollable::-webkit-scrollbar {
   display: none;
 }
+-------------- main scrollbar code start -------------------------------------------------------------
+
+/* Main Content Scrollbar */
+.page-s::-webkit-scrollbar {
+  width: 10px;
+}
+
+.page-s::-webkit-scrollbar-track {
+  background: var(--scarlet-50);
+  border-radius: 10px;
+}
+
+.page-s::-webkit-scrollbar-thumb {
+  background: var(--scarlet-300);
+  border-radius: 10px;
+  border: 2px solid var(--scarlet-50);
+}
+
+.page-s::-webkit-scrollbar-thumb:hover {
+  background: var(--scarlet-400);
+}
+
+/* Dark theme scrollbar */
+.theme-dark .page-s::-webkit-scrollbar-track {
+  background: var(--surface-2);
+}
+
+.theme-dark .page-s::-webkit-scrollbar-thumb {
+  background: var(--scarlet-500);
+  border-color: var(--surface-2);
+}
+
+.theme-dark .page-s::-webkit-scrollbar-thumb:hover {
+  background: var(--scarlet-400);
+}
+
+/* Firefox scrollbar */
+.page-s {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scarlet-300) var(--scarlet-50);
+}
+
+.theme-dark .page-s {
+  scrollbar-color: var(--scarlet-500) var(--surface-2);
+}
+---------------- main scrollbar code end -------------------------------------------------------------
 
 /* Import External Styles */
-@import url("./register.css");
+/* @import url("./register.css"); */
 
 /* Root Variables */
 :root {
+  
   /* Brand Colors */
   --color-primary: #fd8984;
   --color-primary-light-ultra: #ffc2c1;
@@ -61,8 +111,28 @@
   --border-radius: 20px;
   --shadow-soft: 0 5px 20px rgba(0, 0, 0, 0.1);
   --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.15);
+  --border-color: rgba(0, 0, 0, 0.06);
+
+  /* Surfaces (semantic) */
+  --surface-1: var(--bg-light);
+  --surface-2: #ffffff;
+  --surface-3: #ffffff;
+
+  /* Component/State tokens */
+  --row-hover-bg: var(--scarlet-50);
+  --progress-track: var(--scarlet-100);
+
+  /* Semantic: warning/info pills */
+  --warning-bg: #fef3c7;
+  --warning-border: #fde68a;
+  --warning-text: #a16207;
+
+  --info-bg: #cffafe;
+  --info-border: #a5f3fc;
+  --info-text: #155e75;
 
   /* Scarlet Palette */
+    --scarlet-51: #ffffff;
   --scarlet-50: #ffedec;
   --scarlet-100: #fed5d3;
   --scarlet-200: #feaeac;
@@ -80,6 +150,91 @@
   --icon-bg: #E4A2A4;
 }
 
+/* Base theming */
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+/* Typography defaults for readability */
+body, p, li, span, small {
+  color: var(--text-main);
+}
+h1, h2, h3, h4, h5, h6 {
+  color: var(--scarlet-900);
+}
+.theme-dark h1, .theme-dark h2, .theme-dark h3,
+.theme-dark h4, .theme-dark h5, .theme-dark h6 {
+  color: var(--text-light);
+}
+
+
+/* Explicit theme classes on <html>: .theme-light / .theme-dark */
+/* :root.theme-light {
+} */
+/* uses the base variables above */
+
+/* Dark theme overrides */
+:root.theme-dark {
+  /* Backgrounds */
+  --bg-main: #0f1316;
+  --bg-light: #171b21;
+  --bg-dark: #0b0e11;
+
+  /* Text Colors */
+  --text-dark: #000;
+  --text-main: #e3e6ea;
+  --text-light: #ffffff;
+  --text-muted: #9aa3ad;
+  --text-accent: var(--color-primary-light);
+
+  /* Shadows softened for dark */
+  --shadow-soft: 0 5px 20px rgba(0, 0, 0, 0.35);
+  --shadow-strong: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --border-color: rgba(255, 255, 255, 0.277);
+
+  /* Surfaces */
+  --surface-1: #171b21;
+  --surface-2: #1c2229;
+  --surface-3: #222a31;
+
+  /* Scarlet accents can stay; background tints adapt via components */
+  --p-section-bg: #0f1417;
+  --icon-bg: #8a5a5c;
+
+  /* Component/State tokens for dark */
+  --row-hover-bg: rgba(255, 255, 255, 0.04);
+  --progress-track: rgba(255, 255, 255, 0.08);
+    --progress-track-demo: rgba(0, 0, 0, 0.932);
+
+  /* Semantic: warning/info pills */
+  --warning-bg: #3a2f0a;
+  --warning-border: #4d3b0c;
+  --warning-text: #fde68a;
+
+  --info-bg: #073a44;
+  --info-border: #0b5563;
+  --info-text: #a5f3fc;
+}
+
+/* Dark theme specific component refinements */
+.theme-dark #sidebar {
+  background-color: var(--surface-2);
+  border-right: 1px solid var(--border-color);
+}
+.theme-dark #sidebar .nav-link {
+  color: var(--text-main) !important;
+}
+.theme-dark #sidebar .nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+  color: var(--text-light) !important;
+}
+.theme-dark .nav--brand p,
+.theme-dark #toggleSidebarBtn {
+  color: var(--text-muted) !important;
+}
+.theme-dark .home-hero__title {
+  color: var(--text-light);
+}
 /* Login & Signup Cards */
 .signup-card::before {
   inset: 0 0 0 auto !important;
@@ -716,10 +871,14 @@ body.modal-open .bg-glass-login:hover {
 
 /* ================= Mobile Navbar Bottom ================= */
 .mobile-navbar-bottom {
-  position: absolute;
+  position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
-  background-color: black;
-  color: #ffffff;
+  background-color: var(--surface-2);
+  color: var(--text-light);
+  border-top: 1px solid var(--border-color);
+  z-index: 60;
 }
 
 /* ================= Topbar ================= */
@@ -727,7 +886,7 @@ body.modal-open .bg-glass-login:hover {
   position: sticky;
   top: 0;
   z-index: 50;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -735,6 +894,9 @@ body.modal-open .bg-glass-login:hover {
   padding: 30px 16px;
   background-color: var(--scarlet-100);
   /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); */
+}
+.theme-dark .topbar {
+  background-color: var(--surface-2);
 }
 .topbar-icon {
   background: linear-gradient(135deg, #007bff, #00aaff);
@@ -746,9 +908,12 @@ body.modal-open .bg-glass-login:hover {
 }
 .topbar-title {
   font-size: 18px;
-  color:var(--scarlet-600);
+  color: var(--scarlet-600);
   font-weight: 600;
   letter-spacing: 0.3px;
+}
+.theme-dark .topbar-title {
+  color: var(--text-light);
 }
 
 /* ================= Topbar Search ================= */
@@ -756,24 +921,65 @@ body.modal-open .bg-glass-login:hover {
   display: flex;
   align-items: center;
   gap: 6px;
-  background: #ffffff;
+  background: var(--bg-light);
   border-radius: 20px;
   padding: 2px 10px;
-  border: 1px solid transparent;
+  border: 1px solid var(--border-color);
   height: 34px;
   transition: all 0.25s ease;
 }
 
 .topbar-search:hover {
   border-color: var(--scarlet-400);
-  box-shadow: 0 2px 6px var(--scarlet-300);
+  box-shadow: 0 2px 6px rgba(253, 137, 132, 0.2);
 }
 .topbar-search:focus-within {
-  border-color: var(--scarlet-200);
-  box-shadow: 0 2px 8px var(--scarlet-400);
+  border-color: var(--scarlet-400);
+  box-shadow: 0 2px 8px rgba(253, 137, 132, 0.3);
+  background: var(--bg-light);
 }
+
+/* Search input field */
+.topbar-search .top-search {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-main);
+  font-size: 14px;
+  padding: 0;
+  flex: 1;
+  min-width: 0;
+}
+
+.topbar-search .top-search::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
 .topbar-search i.search-icon {
   color: var(--scarlet-600);
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* Dark theme search */
+.theme-dark .topbar-search {
+  background: var(--surface-2);
+  border-color: var(--border-color);
+}
+
+.theme-dark .topbar-search:hover {
+  border-color: var(--scarlet-400);
+  box-shadow: 0 2px 6px rgba(253, 137, 132, 0.15);
+}
+
+.theme-dark .topbar-search:focus-within {
+  border-color: var(--scarlet-400);
+  box-shadow: 0 2px 8px rgba(253, 137, 132, 0.25);
+}
+
+.theme-dark .topbar-search i.search-icon {
+  color: var(--scarlet-400);
 }
 
 

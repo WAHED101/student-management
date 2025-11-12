@@ -51,7 +51,7 @@
 /**************** chart*************** */
 .chart-container {
   max-width: 400px;
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--bg-light);
   backdrop-filter: blur(10px);
   border-radius: 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -106,7 +106,7 @@ canvas {
   background-color: var(--bg-light);
   height: 200px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  background-color: #FFFFFF !important;
+  background-color: var(--bg-light) !important;
   backdrop-filter: blur(10px);
 }
 
@@ -121,7 +121,7 @@ canvas {
   width: 100%;
   /* max-width: 700px; */
   margin-top: 10px;
-  background: #fff;
+  background: var(--bg-light);
   padding: 20px 30px;
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
@@ -138,7 +138,7 @@ h2 {
 
 .chart-card {
   max-width: 400px;
-  background: #fff;
+  background: var(--bg-light);
   border-radius: 20px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
   padding: 25px;
@@ -160,7 +160,7 @@ h3 {
   margin: 0 auto;
   text-align: center;
   margin-top: 10px;
-  background: white;
+  background: var(--bg-light);
   border-radius: 25px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   /* padding: 30px 35px; */
@@ -236,7 +236,7 @@ canvas {
   position: absolute;
   width: 80px;
   height: 80px;
-  background: white;
+  background: var(--bg-light);
   border-radius: 50%;
 }
 

@@ -65,7 +65,8 @@
     position: sticky;
     top: 0;
     z-index: 1020;
-    background: #fff;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border-color);
     padding: 0;
 }
 
@@ -73,6 +74,9 @@
 .task-card{
     width: 100%;
     max-width: 720px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-soft);
 }
 
 /* Ensure truncation elements behave consistently */
@@ -241,11 +245,12 @@
     .modal-desc {
       border-radius: 15px;
       padding: 2rem;
-      background: #fff0f0;
+      background: var(--surface-1);
+      border: 1px solid var(--border-color);
     }
 
     .modal-desc h5 {
-      color: var(--scarlet-700);
+      color: var(--text-main);
       font-weight: bold;
     }
 
@@ -257,3 +262,15 @@
       margin-bottom: 0.5rem;
       list-style: disc;
     }
+
+/* Inputs in filters */
+.task-filters .form-control{
+  background: var(--surface-2);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+}
+.task-filters .form-control::placeholder{ color: var(--text-muted); }
+
+/* Dark theme tweaks */
+.theme-dark .task-card .opacity-50{ color: var(--text-muted) !important; }
+.theme-dark .overlay{ background: rgba(0,0,0,0.35); }
